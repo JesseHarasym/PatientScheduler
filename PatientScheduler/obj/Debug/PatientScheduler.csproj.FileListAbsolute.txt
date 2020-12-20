@@ -11,3 +11,4 @@ C:\Users\jghar\source\repos\PatientScheduler\PatientScheduler\obj\Debug\PatientS
 C:\Users\jghar\source\repos\PatientScheduler\PatientScheduler\bin\Debug\PatientSchedulerData.mdf
 C:\Users\jghar\source\repos\PatientScheduler\PatientScheduler\bin\Debug\PatientSchedulerData_log.ldf
 C:\Users\jghar\source\repos\PatientScheduler\PatientScheduler\obj\Debug\PatientScheduler.Components.RegistrationForm.resources
+C:\Users\jghar\source\repos\PatientScheduler\PatientScheduler\obj\Debug\PatientScheduler.Components.TitleBar.resources

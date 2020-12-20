@@ -30,75 +30,81 @@
         {
             this.txtUsername = new System.Windows.Forms.MaskedTextBox();
             this.txtPassword = new System.Windows.Forms.MaskedTextBox();
-            this.txtEmail = new System.Windows.Forms.MaskedTextBox();
+            this.txtPassword2 = new System.Windows.Forms.MaskedTextBox();
             this.txtStaffId = new System.Windows.Forms.MaskedTextBox();
             this.linkLogin = new System.Windows.Forms.LinkLabel();
             this.btnRegister = new System.Windows.Forms.Button();
             this.lblClick = new System.Windows.Forms.Label();
+            this.titleBar1 = new PatientScheduler.Components.TitleBar();
             this.SuspendLayout();
             // 
             // txtUsername
             // 
-            this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(45, 29);
+            this.txtUsername.BackColor = System.Drawing.Color.White;
+            this.txtUsername.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(44, 69);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(292, 33);
+            this.txtUsername.Size = new System.Drawing.Size(292, 31);
             this.txtUsername.TabIndex = 1;
             this.txtUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUsername_KeyDown);
             this.txtUsername.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtUsername_KeyUp);
             // 
             // txtPassword
             // 
-            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(45, 77);
+            this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(44, 115);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(292, 33);
+            this.txtPassword.Size = new System.Drawing.Size(292, 31);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             this.txtPassword.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyUp);
             // 
-            // txtEmail
+            // txtPassword2
             // 
-            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(45, 124);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(292, 33);
-            this.txtEmail.TabIndex = 3;
-            this.txtEmail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtEmail_KeyDown);
-            this.txtEmail.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtEmail_KeyUp);
+            this.txtPassword2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword2.Location = new System.Drawing.Point(44, 161);
+            this.txtPassword2.Name = "txtPassword2";
+            this.txtPassword2.Size = new System.Drawing.Size(292, 31);
+            this.txtPassword2.TabIndex = 3;
+            this.txtPassword2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtEmail_KeyDown);
+            this.txtPassword2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtEmail_KeyUp);
             // 
             // txtStaffId
             // 
-            this.txtStaffId.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStaffId.Location = new System.Drawing.Point(45, 174);
+            this.txtStaffId.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStaffId.Location = new System.Drawing.Point(44, 207);
             this.txtStaffId.Name = "txtStaffId";
-            this.txtStaffId.Size = new System.Drawing.Size(292, 33);
+            this.txtStaffId.Size = new System.Drawing.Size(292, 31);
             this.txtStaffId.TabIndex = 4;
             this.txtStaffId.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtStaffId_KeyDown);
             this.txtStaffId.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtStaffId_KeyUp);
             // 
             // linkLogin
             // 
+            this.linkLogin.ActiveLinkColor = System.Drawing.Color.Teal;
             this.linkLogin.AutoSize = true;
-            this.linkLogin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLogin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLogin.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLogin.Location = new System.Drawing.Point(119, 269);
+            this.linkLogin.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.linkLogin.Location = new System.Drawing.Point(110, 283);
             this.linkLogin.Name = "linkLogin";
-            this.linkLogin.Size = new System.Drawing.Size(138, 21);
+            this.linkLogin.Size = new System.Drawing.Size(152, 21);
             this.linkLogin.TabIndex = 5;
             this.linkLogin.TabStop = true;
             this.linkLogin.Text = "Click here to login.";
+            this.linkLogin.VisitedLinkColor = System.Drawing.Color.Aqua;
             this.linkLogin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLogin_LinkClicked);
             // 
             // btnRegister
             // 
-            this.btnRegister.BackColor = System.Drawing.Color.DarkBlue;
+            this.btnRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnRegister.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegister.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegister.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRegister.Location = new System.Drawing.Point(123, 309);
+            this.btnRegister.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegister.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnRegister.Location = new System.Drawing.Point(132, 329);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(107, 38);
+            this.btnRegister.Size = new System.Drawing.Size(103, 38);
             this.btnRegister.TabIndex = 6;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = false;
@@ -107,27 +113,38 @@
             // lblClick
             // 
             this.lblClick.AutoSize = true;
-            this.lblClick.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClick.Location = new System.Drawing.Point(90, 236);
+            this.lblClick.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClick.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblClick.Location = new System.Drawing.Point(81, 258);
             this.lblClick.Name = "lblClick";
-            this.lblClick.Size = new System.Drawing.Size(193, 21);
+            this.lblClick.Size = new System.Drawing.Size(218, 19);
             this.lblClick.TabIndex = 7;
             this.lblClick.Text = "Already have an account?";
+            // 
+            // titleBar1
+            // 
+            this.titleBar1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.titleBar1.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.titleBar1.Location = new System.Drawing.Point(0, 0);
+            this.titleBar1.Name = "titleBar1";
+            this.titleBar1.Size = new System.Drawing.Size(381, 35);
+            this.titleBar1.TabIndex = 8;
             // 
             // RegistrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(381, 362);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(41)))), ((int)(((byte)(51)))));
+            this.ClientSize = new System.Drawing.Size(381, 394);
+            this.Controls.Add(this.titleBar1);
             this.Controls.Add(this.lblClick);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.linkLogin);
             this.Controls.Add(this.txtStaffId);
-            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.txtPassword2);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "RegistrationForm";
@@ -143,10 +160,11 @@
         #endregion
         private System.Windows.Forms.MaskedTextBox txtUsername;
         private System.Windows.Forms.MaskedTextBox txtPassword;
-        private System.Windows.Forms.MaskedTextBox txtEmail;
+        private System.Windows.Forms.MaskedTextBox txtPassword2;
         private System.Windows.Forms.MaskedTextBox txtStaffId;
         private System.Windows.Forms.LinkLabel linkLogin;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Label lblClick;
+        private TitleBar titleBar1;
     }
 }
