@@ -1,0 +1,14 @@
+C:\Users\jghar\source\repos\PatientScheduler\PatientScheduler\bin\Debug\PatientScheduler.exe.config
+C:\Users\jghar\source\repos\PatientScheduler\PatientScheduler\bin\Debug\PatientScheduler.exe
+C:\Users\jghar\source\repos\PatientScheduler\PatientScheduler\bin\Debug\PatientScheduler.pdb
+C:\Users\jghar\source\repos\PatientScheduler\PatientScheduler\obj\Debug\PatientScheduler.csprojAssemblyReference.cache
+C:\Users\jghar\source\repos\PatientScheduler\PatientScheduler\obj\Debug\PatientScheduler.LoginForm.resources
+C:\Users\jghar\source\repos\PatientScheduler\PatientScheduler\obj\Debug\PatientScheduler.Properties.Resources.resources
+C:\Users\jghar\source\repos\PatientScheduler\PatientScheduler\obj\Debug\PatientScheduler.csproj.GenerateResource.cache
+C:\Users\jghar\source\repos\PatientScheduler\PatientScheduler\obj\Debug\PatientScheduler.csproj.CoreCompileInputs.cache
+C:\Users\jghar\source\repos\PatientScheduler\PatientScheduler\obj\Debug\PatientScheduler.exe
+C:\Users\jghar\source\repos\PatientScheduler\PatientScheduler\obj\Debug\PatientScheduler.pdb
+C:\Users\jghar\source\repos\PatientScheduler\PatientScheduler\bin\Debug\PatientSchedulerData.mdf
+C:\Users\jghar\source\repos\PatientScheduler\PatientScheduler\bin\Debug\PatientSchedulerData_log.ldf
+C:\Users\jghar\source\repos\PatientScheduler\PatientScheduler\obj\Debug\PatientScheduler.Components.RegistrationForm.resources
+C:\Users\jghar\source\repos\PatientScheduler\PatientScheduler\obj\Debug\PatientScheduler.Components.TitleBar.resources
