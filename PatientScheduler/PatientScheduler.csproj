@@ -62,12 +62,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Accounts\AccountBase.cs" />
+    <Compile Include="Classes\Accounts\Administrator.cs" />
     <Compile Include="Classes\Accounts\Doctor.cs" />
     <Compile Include="Classes\Accounts\Receptionist.cs" />
     <Compile Include="Classes\Database\AccountsData.cs" />
     <Compile Include="Classes\Database\Connection.cs" />
     <Compile Include="Classes\Styling\TitleBarStyle.cs" />
     <Compile Include="Classes\Styling\TextBoxStyle.cs" />
+    <Compile Include="Classes\Validation\AccountValidation.cs" />
     <Compile Include="Classes\Validation\HashPasswords.cs" />
     <Compile Include="Components\Accounts\LoginForm.cs">
       <SubType>Form</SubType>
@@ -87,6 +89,12 @@
     <Compile Include="Components\Custom\TitleBar.Designer.cs">
       <DependentUpon>TitleBar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\Custom\UserMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Custom\UserMessage.Designer.cs">
+      <DependentUpon>UserMessage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Components\Accounts\LoginForm.resx">
@@ -97,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Components\Custom\TitleBar.resx">
       <DependentUpon>TitleBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Custom\UserMessage.resx">
+      <DependentUpon>UserMessage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -119,15 +130,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="PatientSchedulerData.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PatientSchedulerData_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>PatientSchedulerData.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">

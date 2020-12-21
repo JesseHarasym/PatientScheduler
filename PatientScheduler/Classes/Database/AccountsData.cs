@@ -19,17 +19,14 @@ namespace PatientScheduler.Classes.Database
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand(
-                    $"INSERT INTO Accounts (Name, Username, Password, Email, StaffId, AccessLevel) " +
-                    $"VALUES (@name, @username, @password, @email, @staffid, @accessLevel)", connection))
+                    $"INSERT INTO Accounts (Username, Password, StaffId)" +
+                    $"VALUES (@username, @password, @staffid)", connection))
                 {
                     try
                     {
-                        cmd.Parameters.AddWithValue("@name", account.Name);
                         cmd.Parameters.AddWithValue("@username", account.Username);
                         cmd.Parameters.AddWithValue("@password", hashedPassword);
-                        cmd.Parameters.AddWithValue("@email", account.Email);
                         cmd.Parameters.AddWithValue("@staffid", account.StaffId);
-                        cmd.Parameters.AddWithValue("@accessLevel", account.AccessLevel);
                         connection.Open();
                         cmd.ExecuteNonQuery();
                         connection.Close();
@@ -43,6 +40,190 @@ namespace PatientScheduler.Classes.Database
             }
 
             return success;
+        }
+
+        public Tuple<bool, string> GetAccountPassword(string username, string enteredPassword)
+        {
+            string savedPassword = "";
+            string staffId = "";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand($"SELECT * FROM Accounts WHERE Username = @username", connection))
+                {
+                    connection.Open();
+                    cmd.Parameters.AddWithValue("@username", username);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            try
+                            {
+                                savedPassword = reader["Password"].ToString();
+                                staffId = reader["StaffId"].ToString();
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine("There was an issue retrieving the users password to unhash." + ex);
+                            }
+                        }
+                    }
+                    connection.Close();
+                }
+            }
+            //check currently stored hash password with the password the user entered, see if it's a match and return the results
+            var hp = new HashPasswords();
+            bool match = hp.UnHashAccountPassword(enteredPassword, savedPassword);
+
+            return Tuple.Create(match, staffId);
+        }
+
+        public Administrator GetStaffInformation(int staffId, string username, string password)
+        {
+            string firstName = "";
+            string lastName = "";
+            string email = "";
+            string position = "";
+            string accessLevel = "";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand($"SELECT * FROM Staff WHERE StaffId = @staffId", connection))
+                {
+                    connection.Open();
+                    cmd.Parameters.AddWithValue("@staffId", staffId);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            try
+                            {
+                                firstName = reader["FirstName"].ToString();
+                                lastName = reader["LastName"].ToString();
+                                email = reader["Email"].ToString();
+                                position = reader["Position"].ToString();
+                                accessLevel = reader["AccessLevel"].ToString();
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine("There was an issue retrieving the users staff information." + ex);
+                            }
+                        }
+                    }
+                    connection.Close();
+                }
+            }
+
+            //need to check type according to pos then return object accordingly..
+            var admin = new Administrator(firstName, lastName, username, password, email, staffId, Convert.ToInt32(accessLevel));
+            return admin;
+        }
+
+        public void AdministratorInfo()
+        {
+
+        }
+
+        public bool CheckForValidStaffId(int staffId)
+        {
+            bool valid = false;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(
+                    $"SELECT COUNT(*) from Staff WHERE StaffId = @staffId", connection))
+                {
+                    connection.Open();
+
+                    try
+                    {
+                        cmd.Parameters.AddWithValue("@staffId", staffId);
+                        int userCount = (int)cmd.ExecuteScalar();
+
+                        if (userCount == 1)
+                        {
+                            valid = true;
+                        }
+                        connection.Close();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("There was an issue looking for this staff Id" + ex);
+                    }
+                }
+            }
+
+            return valid;
+        }
+
+        public bool CheckForExistingUsername(string username)
+        {
+            bool validUsername = false;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(
+                    $"SELECT COUNT(*) from Accounts WHERE Username = @username", connection))
+                {
+                    connection.Open();
+
+                    try
+                    {
+                        cmd.Parameters.AddWithValue("@username", username);
+                        int userCount = (int)cmd.ExecuteScalar();
+
+                        if (userCount == 0)
+                        {
+                            validUsername = true;
+                        }
+                        connection.Close();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("There was an issue looking for this username" + ex);
+                    }
+                }
+            }
+
+            return validUsername;
+        }
+
+
+        public bool CheckIfStaffIdHasAccount(int staffId)
+        {
+            bool validStaffId = false;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(
+                    $"SELECT COUNT(*) from Accounts WHERE StaffId = @staffId", connection))
+                {
+                    connection.Open();
+
+                    try
+                    {
+                        cmd.Parameters.AddWithValue("@staffId", staffId);
+                        int userCount = (int)cmd.ExecuteScalar();
+
+                        if (userCount == 0)
+                        {
+                            validStaffId = true;
+                        }
+                        connection.Close();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("There was an issue looking for this staff id" + ex);
+                    }
+                }
+            }
+
+            return validStaffId;
         }
     }
 }

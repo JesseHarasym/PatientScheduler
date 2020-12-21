@@ -2,16 +2,20 @@
 {
     class Receptionist : AccountBase
     {
-
-        public Receptionist(string name, string username, string password, string email, int staffId) :
-            base(name, username, password, email, staffId)
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
+        public int AccessLevel { get; set; }
+        public Receptionist(string firstName, string lastName, string username, string password, string email, int staffId, int accessLevel) :
+            base(username, password, staffId)
         {
-            Name = name;
+            FirstName = firstName;
+            LastName = lastName;
             Username = username;
             Password = password;
             Email = email;
             StaffId = staffId;
-            AccessLevel = 0;
+            AccessLevel = accessLevel;
         }
     }
 }
