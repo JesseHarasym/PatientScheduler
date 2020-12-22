@@ -1,6 +1,6 @@
 ﻿namespace PatientScheduler.Classes.Accounts
 {
-    class AccountBase
+    public class AccountBase
     {
         public string Username { get; set; }
         public string Password { get; set; }

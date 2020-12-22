@@ -42,7 +42,7 @@ namespace PatientScheduler
             // txtUsername
             // 
             this.txtUsername.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(40, 71);
+            this.txtUsername.Location = new System.Drawing.Point(40, 60);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(288, 31);
             this.txtUsername.TabIndex = 0;
@@ -52,7 +52,7 @@ namespace PatientScheduler
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(40, 117);
+            this.txtPassword.Location = new System.Drawing.Point(40, 106);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(288, 31);
             this.txtPassword.TabIndex = 1;
@@ -61,12 +61,12 @@ namespace PatientScheduler
             // 
             // btnLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnLogin.BackColor = System.Drawing.Color.SteelBlue;
             this.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnLogin.Location = new System.Drawing.Point(122, 238);
+            this.btnLogin.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnLogin.Location = new System.Drawing.Point(122, 233);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(107, 38);
             this.btnLogin.TabIndex = 2;
@@ -76,12 +76,13 @@ namespace PatientScheduler
             // 
             // linkRegister
             // 
-            this.linkRegister.ActiveLinkColor = System.Drawing.Color.Teal;
+            this.linkRegister.ActiveLinkColor = System.Drawing.Color.SteelBlue;
             this.linkRegister.AutoSize = true;
+            this.linkRegister.DisabledLinkColor = System.Drawing.Color.SteelBlue;
             this.linkRegister.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkRegister.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkRegister.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.linkRegister.Location = new System.Drawing.Point(90, 195);
+            this.linkRegister.LinkColor = System.Drawing.Color.SteelBlue;
+            this.linkRegister.Location = new System.Drawing.Point(90, 186);
             this.linkRegister.Name = "linkRegister";
             this.linkRegister.Size = new System.Drawing.Size(172, 21);
             this.linkRegister.TabIndex = 3;
@@ -95,7 +96,7 @@ namespace PatientScheduler
             this.lblClick.AutoSize = true;
             this.lblClick.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClick.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblClick.Location = new System.Drawing.Point(75, 172);
+            this.lblClick.Location = new System.Drawing.Point(75, 163);
             this.lblClick.Name = "lblClick";
             this.lblClick.Size = new System.Drawing.Size(222, 19);
             this.lblClick.TabIndex = 8;
@@ -106,7 +107,7 @@ namespace PatientScheduler
             this.titleBar1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.titleBar1.Location = new System.Drawing.Point(0, 0);
             this.titleBar1.Name = "titleBar1";
-            this.titleBar1.Size = new System.Drawing.Size(354, 37);
+            this.titleBar1.Size = new System.Drawing.Size(354, 28);
             this.titleBar1.TabIndex = 9;
             // 
             // LoginForm

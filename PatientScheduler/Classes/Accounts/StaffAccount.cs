@@ -1,12 +1,13 @@
 ﻿namespace PatientScheduler.Classes.Accounts
 {
-    class Doctor : AccountBase
+    public class StaffAccount : AccountBase
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
+        public string Position { get; set; }
         public int AccessLevel { get; set; }
-        public Doctor(string firstName, string lastName, string username, string password, string email, int staffId, int accessLevel) :
+        public StaffAccount(string firstName, string lastName, string username, string password, string email, string position, int staffId, int accessLevel) :
             base(username, password, staffId)
         {
             FirstName = firstName;
@@ -14,9 +15,9 @@
             Username = username;
             Password = password;
             Email = email;
+            Position = position;
             StaffId = staffId;
             AccessLevel = accessLevel;
         }
     }
 }
-

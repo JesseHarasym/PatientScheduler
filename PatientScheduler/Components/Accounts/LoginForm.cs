@@ -3,6 +3,7 @@ using PatientScheduler.Classes.Styling;
 using PatientScheduler.Classes.Validation;
 using PatientScheduler.Components;
 using PatientScheduler.Components.Custom;
+using PatientScheduler.Components.Main;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -76,11 +77,11 @@ namespace PatientScheduler
 
             if (allInputsValid && passwordMatch)
             {
-                var account = ad.GetStaffInformation(staffId, username, password);
-
-                //Hide();
-
-                message.Show($"You have logged in successfully. \n Welcome {account.FirstName}!");
+                var staff = ad.GetStaffInformation(staffId, username, password);
+                Hide();
+                var home = new CentralScreen(staff);
+                home.ShowDialog();
+                message.Show($"You have logged in successfully. \n Welcome {staff.FirstName}!");
             }
             else if (allInputsValid)
             {

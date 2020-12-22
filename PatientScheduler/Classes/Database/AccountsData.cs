@@ -8,7 +8,6 @@ namespace PatientScheduler.Classes.Database
     class AccountsData
     {
         readonly string connectionString = Connection.ConnectionString;
-
         public bool AddAccount<T>(T account) where T : AccountBase
         {
             bool success = false;
@@ -79,7 +78,7 @@ namespace PatientScheduler.Classes.Database
             return Tuple.Create(match, staffId);
         }
 
-        public Administrator GetStaffInformation(int staffId, string username, string password)
+        public StaffAccount GetStaffInformation(int staffId, string username, string password)
         {
             string firstName = "";
             string lastName = "";
@@ -116,14 +115,8 @@ namespace PatientScheduler.Classes.Database
                 }
             }
 
-            //need to check type according to pos then return object accordingly..
-            var admin = new Administrator(firstName, lastName, username, password, email, staffId, Convert.ToInt32(accessLevel));
-            return admin;
-        }
-
-        public void AdministratorInfo()
-        {
-
+            var staff = new StaffAccount(firstName, lastName, username, password, email, position, staffId, Convert.ToInt32(accessLevel));
+            return staff;
         }
 
         public bool CheckForValidStaffId(int staffId)

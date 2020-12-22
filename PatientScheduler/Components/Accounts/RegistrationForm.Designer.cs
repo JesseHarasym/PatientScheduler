@@ -42,7 +42,7 @@
             // 
             this.txtUsername.BackColor = System.Drawing.Color.White;
             this.txtUsername.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(44, 69);
+            this.txtUsername.Location = new System.Drawing.Point(49, 63);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(292, 31);
             this.txtUsername.TabIndex = 1;
@@ -52,7 +52,7 @@
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(44, 115);
+            this.txtPassword.Location = new System.Drawing.Point(49, 109);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(292, 31);
             this.txtPassword.TabIndex = 2;
@@ -62,7 +62,7 @@
             // txtPassword2
             // 
             this.txtPassword2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword2.Location = new System.Drawing.Point(44, 161);
+            this.txtPassword2.Location = new System.Drawing.Point(49, 155);
             this.txtPassword2.Name = "txtPassword2";
             this.txtPassword2.Size = new System.Drawing.Size(292, 31);
             this.txtPassword2.TabIndex = 3;
@@ -72,7 +72,7 @@
             // txtStaffId
             // 
             this.txtStaffId.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStaffId.Location = new System.Drawing.Point(44, 207);
+            this.txtStaffId.Location = new System.Drawing.Point(49, 201);
             this.txtStaffId.Name = "txtStaffId";
             this.txtStaffId.Size = new System.Drawing.Size(292, 31);
             this.txtStaffId.TabIndex = 4;
@@ -81,27 +81,28 @@
             // 
             // linkLogin
             // 
-            this.linkLogin.ActiveLinkColor = System.Drawing.Color.Teal;
+            this.linkLogin.ActiveLinkColor = System.Drawing.Color.SteelBlue;
             this.linkLogin.AutoSize = true;
+            this.linkLogin.DisabledLinkColor = System.Drawing.Color.SteelBlue;
             this.linkLogin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLogin.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLogin.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.linkLogin.Location = new System.Drawing.Point(110, 283);
+            this.linkLogin.LinkColor = System.Drawing.Color.SteelBlue;
+            this.linkLogin.Location = new System.Drawing.Point(115, 282);
             this.linkLogin.Name = "linkLogin";
             this.linkLogin.Size = new System.Drawing.Size(152, 21);
             this.linkLogin.TabIndex = 5;
             this.linkLogin.TabStop = true;
             this.linkLogin.Text = "Click here to login.";
-            this.linkLogin.VisitedLinkColor = System.Drawing.Color.Aqua;
+            this.linkLogin.VisitedLinkColor = System.Drawing.Color.MediumSlateBlue;
             this.linkLogin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLogin_LinkClicked);
             // 
             // btnRegister
             // 
-            this.btnRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnRegister.BackColor = System.Drawing.Color.SteelBlue;
             this.btnRegister.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegister.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegister.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnRegister.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegister.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnRegister.Location = new System.Drawing.Point(132, 329);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(103, 38);
@@ -115,7 +116,7 @@
             this.lblClick.AutoSize = true;
             this.lblClick.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClick.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblClick.Location = new System.Drawing.Point(81, 258);
+            this.lblClick.Location = new System.Drawing.Point(86, 257);
             this.lblClick.Name = "lblClick";
             this.lblClick.Size = new System.Drawing.Size(218, 19);
             this.lblClick.TabIndex = 7;
@@ -127,7 +128,7 @@
             this.titleBar1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.titleBar1.Location = new System.Drawing.Point(0, 0);
             this.titleBar1.Name = "titleBar1";
-            this.titleBar1.Size = new System.Drawing.Size(381, 35);
+            this.titleBar1.Size = new System.Drawing.Size(381, 28);
             this.titleBar1.TabIndex = 8;
             // 
             // RegistrationForm

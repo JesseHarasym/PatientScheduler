@@ -28,23 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnOkay = new System.Windows.Forms.Button();
+            this.btnDimiss = new System.Windows.Forms.Button();
             this.lblMessage = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // btnOkay
+            // btnDimiss
             // 
-            this.btnOkay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnOkay.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.btnOkay.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnOkay.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnOkay.Location = new System.Drawing.Point(150, 79);
-            this.btnOkay.Name = "btnOkay";
-            this.btnOkay.Size = new System.Drawing.Size(93, 32);
-            this.btnOkay.TabIndex = 0;
-            this.btnOkay.Text = "Okay";
-            this.btnOkay.UseVisualStyleBackColor = false;
-            this.btnOkay.Click += new System.EventHandler(this.btnOkay_Click);
+            this.btnDimiss.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnDimiss.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.btnDimiss.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDimiss.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDimiss.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnDimiss.Location = new System.Drawing.Point(150, 79);
+            this.btnDimiss.Name = "btnDimiss";
+            this.btnDimiss.Size = new System.Drawing.Size(93, 32);
+            this.btnDimiss.TabIndex = 0;
+            this.btnDimiss.Text = "Dismiss";
+            this.btnDimiss.UseVisualStyleBackColor = false;
+            this.btnDimiss.Click += new System.EventHandler(this.btnOkay_Click);
             // 
             // lblMessage
             // 
@@ -60,9 +61,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
-            this.ClientSize = new System.Drawing.Size(404, 123);
+            this.ClientSize = new System.Drawing.Size(404, 128);
             this.Controls.Add(this.lblMessage);
-            this.Controls.Add(this.btnOkay);
+            this.Controls.Add(this.btnDimiss);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(5);
@@ -75,7 +76,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnOkay;
+        private System.Windows.Forms.Button btnDimiss;
         private System.Windows.Forms.Label lblMessage;
     }
 }
