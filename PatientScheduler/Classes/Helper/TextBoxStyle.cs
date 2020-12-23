@@ -53,6 +53,15 @@ namespace PatientScheduler.Classes.Styling
                 case "staffId":
                     phrase = "enter your staff Id..";
                     break;
+                case "month":
+                    phrase = "month..";
+                    break;
+                case "day":
+                    phrase = "day..";
+                    break;
+                case "year":
+                    phrase = "year..";
+                    break;
             }
 
             return phrase;
