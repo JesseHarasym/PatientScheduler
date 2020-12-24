@@ -24,6 +24,7 @@ namespace PatientScheduler.Components.Main
         {
             lblWelcome.Text = $"{Staff.FirstName} {Staff.LastName} \n\n Username: {Staff.Username}";
             lblPosition.Text = $"{Staff.Position} \n\n Access Level: {Staff.AccessLevel}";
+            btnLogo.Enabled = false;
             var home = new Home();
             pnlMain.Controls.Add(home);
         }

@@ -81,7 +81,6 @@ namespace PatientScheduler
                 Hide();
                 var home = new CentralScreen(staff);
                 home.ShowDialog();
-                message.Show($"You have logged in successfully. \n Welcome {staff.FirstName}!");
             }
             else if (allInputsValid)
             {

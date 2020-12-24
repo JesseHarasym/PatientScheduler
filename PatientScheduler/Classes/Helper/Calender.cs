@@ -37,7 +37,7 @@ namespace PatientScheduler.Classes.Helper
             for (int i = 0; i < 7; i++)
             {
                 var column = new DataGridViewTextBoxColumn();
-                column.DataPropertyName = $"{DateTime.Today.AddDays(+day):dddd\nMMM dd}";
+                column.DataPropertyName = DateTime.Today.AddDays(+day).ToLongDateString();
                 column.Name = $"{DateTime.Today.AddDays(+day):dddd\nMMM dd}";
                 DataSchedule.Columns.Add(column);
                 DataSchedule.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -116,6 +116,7 @@ namespace PatientScheduler.Classes.Helper
             DataSchedule.ColumnHeadersDefaultCellStyle.ForeColor = ForeColor;
             DataSchedule.EnableHeadersVisualStyles = false;
             DataSchedule.AllowUserToResizeColumns = false;
+            DataSchedule.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
 
         }
 
@@ -127,6 +128,7 @@ namespace PatientScheduler.Classes.Helper
             DataSchedule.RowHeadersDefaultCellStyle.ForeColor = ForeColor;
             DataSchedule.AllowUserToAddRows = false;
             DataSchedule.AllowUserToResizeRows = false;
+            DataSchedule.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
         }
     }
 }

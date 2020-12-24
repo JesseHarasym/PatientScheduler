@@ -5,6 +5,7 @@ using PatientScheduler.Classes.Styling;
 using PatientScheduler.Components.Custom;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace PatientScheduler.Components.Main
@@ -12,6 +13,7 @@ namespace PatientScheduler.Components.Main
     public partial class Schedule : UserControl
     {
         public List<Appointments> AppointmentList = new List<Appointments>();
+        public List<Doctors> DoctorList = new List<Doctors>();
         public int CurrentDayViewed;
 
         public Schedule()
@@ -32,49 +34,41 @@ namespace PatientScheduler.Components.Main
             calender.StartTime = new TimeSpan(9, 0, 0);
             calender.EndTime = new TimeSpan(16, 30, 0);
             dataSchedule = calender.CreateCalender();
-            SetDateLabel();
 
             var sd = new ScheduleData();
             AppointmentList = sd.GetDoctorsAppointments();
+
+            SetDateLabel();
+            SetupDoctorChoices();
         }
 
-        private void dataSchedule_SelectionChanged(object sender, EventArgs e)
+        public void SetupDoctorChoices()
         {
-            dataSchedule.ClearSelection();
+            var ad = new AccountsData();
+            DoctorList = ad.GetAllDoctors();
+
+            foreach (var d in DoctorList)
+            {
+                boxDoctorChoice.ValueMember = "StaffId";
+                boxDoctorChoice.DisplayMember = "LastName";
+                boxDoctorChoice.DataSource = DoctorList;
+            }
+            boxDoctorChoice.DropDownStyle = ComboBoxStyle.DropDownList;
+            boxDoctorChoice.SelectedIndex = 0;
+            boxDoctorChoice.Region = new Region(new Rectangle(3, 3, boxDoctorChoice.Width - 3, boxDoctorChoice.Height - 6));
+
+            DoctorScheduleSetup(boxDoctorChoice.SelectedValue.ToString());
         }
 
-        private void dataSchedule_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        private void btnChangeDoc_Click(object sender, EventArgs e)
         {
-            e.PaintBackground(e.CellBounds, false);
-            e.Paint(e.CellBounds, DataGridViewPaintParts.ContentForeground);
-            e.Handled = true;
+            DoctorScheduleSetup(boxDoctorChoice.SelectedValue.ToString());
         }
 
-        private void btnRight_Click(object sender, EventArgs e)
+        public void DoctorScheduleSetup(string selectedDoctor)
         {
-            CurrentDayViewed += 7;
-            GetScheduledAppointments();
-        }
-
-        private void btnLeft_Click(object sender, EventArgs e)
-        {
-            CurrentDayViewed -= 7;
-            GetScheduledAppointments();
-        }
-
-        private void btnThisWeek_Click(object sender, EventArgs e)
-        {
-            CurrentDayViewed = 0;
-            GetScheduledAppointments();
-            ResetAfterSearch();
-            var message = new UserMessage();
-            message.Show($"Your view has returned to this week.");
-        }
-
-        public void SetDateLabel()
-        {
-            lblThisWeek.Text = $"{DateTime.Today.AddDays(+CurrentDayViewed):MMM dd} - " +
-                               $"{DateTime.Today.AddDays(+CurrentDayViewed + 7):MMM dd, yyyy}";
+            var ss = new ScheduleSetup(dataSchedule, AppointmentList);
+            dataSchedule = ss.GetDoctorsSchedule(selectedDoctor);
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -85,7 +79,8 @@ namespace PatientScheduler.Components.Main
             string day = txtDay.Text;
             string year = txtYear.Text;
 
-            string dateString = FixDateInput(month, day, year);
+            var ss = new ScheduleSearch();
+            string dateString = ss.FixDateInput(month, day, year);
 
             if (DateTime.TryParse(dateString, out var dateTime))
             {
@@ -104,53 +99,19 @@ namespace PatientScheduler.Components.Main
             }
         }
 
-        public string FixDateInput(string month, string day, string year)
+        public void SetDateLabel()
         {
-            if (month == "month..")
-            {
-                month = DateTime.Today.Month.ToString();
-            }
-            if (day == "day..")
-            {
-                day = DateTime.Today.Day.ToString();
-            }
-            if (year == "year..")
-            {
-                year = DateTime.Today.Year.ToString();
-            }
-
-            Dictionary<string, string> monthCheck = CreateMonthChecker();
-
-            foreach (var m in monthCheck)
-            {
-                if (month.ToLower().Contains(m.Key))
-                {
-                    month = m.Value;
-                }
-            }
-
-            return string.Format("{0}-{1}-{2}", month, day, year);
+            lblThisWeek.Text = $"{DateTime.Today.AddDays(+CurrentDayViewed):MMM dd} - " +
+                               $"{DateTime.Today.AddDays(+CurrentDayViewed + 6):MMM dd, yyyy}";
         }
 
-        public Dictionary<string, string> CreateMonthChecker()
+        private void btnThisWeek_Click(object sender, EventArgs e)
         {
-            Dictionary<string, string> monthCheck = new Dictionary<string, string>()
-            {
-                { "january", "01"},
-                { "february", "02"},
-                { "march", "03"},
-                { "april", "04"},
-                { "may", "05"},
-                { "june", "06"},
-                { "july", "07"},
-                { "august", "08"},
-                { "september", "09"},
-                { "october", "10"},
-                { "november", "11"},
-                { "december", "12"},
-            };
-
-            return monthCheck;
+            CurrentDayViewed = 0;
+            GetScheduledAppointments();
+            ResetAfterSearch();
+            var message = new UserMessage();
+            message.Show($"Your view has returned to this week.");
         }
 
         public void ResetAfterSearch()
@@ -162,6 +123,32 @@ namespace PatientScheduler.Components.Main
             TextBoxStyle.TextBoxEmpty(txtMonth, "month");
             TextBoxStyle.TextBoxEmpty(txtDay, "day");
             TextBoxStyle.TextBoxEmpty(txtYear, "year");
+        }
+
+        private void dataSchedule_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            //gets rid of selection arrow on grid
+            e.PaintBackground(e.CellBounds, false);
+            e.Paint(e.CellBounds, DataGridViewPaintParts.ContentForeground);
+            e.Handled = true;
+        }
+
+        private void dataSchedule_SelectionChanged(object sender, EventArgs e)
+        {
+            dataSchedule.ClearSelection();
+        }
+
+
+        private void btnRight_Click(object sender, EventArgs e)
+        {
+            CurrentDayViewed += 7;
+            GetScheduledAppointments();
+        }
+
+        private void btnLeft_Click(object sender, EventArgs e)
+        {
+            CurrentDayViewed -= 7;
+            GetScheduledAppointments();
         }
 
         private void txtMonth_KeyUp(object sender, KeyEventArgs e)
@@ -192,6 +179,11 @@ namespace PatientScheduler.Components.Main
         private void txtYear_KeyDown(object sender, KeyEventArgs e)
         {
             TextBoxStyle.TextBoxNotEmpty(txtYear, "year", e);
+        }
+
+        private void btnCombo_Click(object sender, EventArgs e)
+        {
+            boxDoctorChoice.DroppedDown = true;
         }
     }
 }

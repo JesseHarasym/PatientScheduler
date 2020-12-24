@@ -48,8 +48,30 @@
             this.txtDay = new System.Windows.Forms.MaskedTextBox();
             this.txtMonth = new System.Windows.Forms.MaskedTextBox();
             this.pnlControls = new System.Windows.Forms.Panel();
-            this.dataSchedule = new System.Windows.Forms.DataGridView();
             this.lblThisWeek = new System.Windows.Forms.Label();
+            this.dataSchedule = new System.Windows.Forms.DataGridView();
+            this.pnlLegend = new System.Windows.Forms.Panel();
+            this.pnlChangeDr = new System.Windows.Forms.Panel();
+            this.pnlCombo = new System.Windows.Forms.Panel();
+            this.btnCombo = new System.Windows.Forms.Button();
+            this.boxDoctorChoice = new System.Windows.Forms.ComboBox();
+            this.btnChangeDoc = new System.Windows.Forms.Button();
+            this.pnlLegend3 = new System.Windows.Forms.Panel();
+            this.pnlOther = new System.Windows.Forms.Panel();
+            this.lblOther = new System.Windows.Forms.Label();
+            this.pnlNewPatient = new System.Windows.Forms.Panel();
+            this.lblNewPatient = new System.Windows.Forms.Label();
+            this.pnlLegend2 = new System.Windows.Forms.Panel();
+            this.pnlLabWork = new System.Windows.Forms.Panel();
+            this.lblLabWork = new System.Windows.Forms.Label();
+            this.pnlDiagnoses = new System.Windows.Forms.Panel();
+            this.lblDiagnoses = new System.Windows.Forms.Label();
+            this.pnlLegend1 = new System.Windows.Forms.Panel();
+            this.pnlIllness = new System.Windows.Forms.Panel();
+            this.lblIllness = new System.Windows.Forms.Label();
+            this.pnlFollowUp = new System.Windows.Forms.Panel();
+            this.lblFollowUp = new System.Windows.Forms.Label();
+            this.pnlDataGrid = new System.Windows.Forms.Panel();
             this.pnlEditAppt.SuspendLayout();
             this.pnlCancelAppt.SuspendLayout();
             this.pnlLookupAppt.SuspendLayout();
@@ -58,6 +80,19 @@
             this.pnlHome.SuspendLayout();
             this.pnlControls.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSchedule)).BeginInit();
+            this.pnlLegend.SuspendLayout();
+            this.pnlChangeDr.SuspendLayout();
+            this.pnlCombo.SuspendLayout();
+            this.pnlLegend3.SuspendLayout();
+            this.pnlOther.SuspendLayout();
+            this.pnlNewPatient.SuspendLayout();
+            this.pnlLegend2.SuspendLayout();
+            this.pnlLabWork.SuspendLayout();
+            this.pnlDiagnoses.SuspendLayout();
+            this.pnlLegend1.SuspendLayout();
+            this.pnlIllness.SuspendLayout();
+            this.pnlFollowUp.SuspendLayout();
+            this.pnlDataGrid.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlEditAppt
@@ -67,7 +102,7 @@
             this.pnlEditAppt.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlEditAppt.Location = new System.Drawing.Point(186, 0);
             this.pnlEditAppt.Name = "pnlEditAppt";
-            this.pnlEditAppt.Size = new System.Drawing.Size(178, 63);
+            this.pnlEditAppt.Size = new System.Drawing.Size(178, 62);
             this.pnlEditAppt.TabIndex = 7;
             // 
             // btnEditAppt
@@ -81,7 +116,7 @@
             this.btnEditAppt.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnEditAppt.Location = new System.Drawing.Point(0, 0);
             this.btnEditAppt.Name = "btnEditAppt";
-            this.btnEditAppt.Size = new System.Drawing.Size(177, 61);
+            this.btnEditAppt.Size = new System.Drawing.Size(177, 60);
             this.btnEditAppt.TabIndex = 0;
             this.btnEditAppt.Text = "Edit Appointment";
             this.btnEditAppt.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -94,7 +129,7 @@
             this.pnlCancelAppt.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlCancelAppt.Location = new System.Drawing.Point(364, 0);
             this.pnlCancelAppt.Name = "pnlCancelAppt";
-            this.pnlCancelAppt.Size = new System.Drawing.Size(187, 63);
+            this.pnlCancelAppt.Size = new System.Drawing.Size(187, 62);
             this.pnlCancelAppt.TabIndex = 8;
             // 
             // btnCancelAppt
@@ -108,7 +143,7 @@
             this.btnCancelAppt.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnCancelAppt.Location = new System.Drawing.Point(0, 0);
             this.btnCancelAppt.Name = "btnCancelAppt";
-            this.btnCancelAppt.Size = new System.Drawing.Size(186, 61);
+            this.btnCancelAppt.Size = new System.Drawing.Size(186, 60);
             this.btnCancelAppt.TabIndex = 0;
             this.btnCancelAppt.Text = "Cancel Appointment";
             this.btnCancelAppt.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -121,7 +156,7 @@
             this.pnlLookupAppt.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlLookupAppt.Location = new System.Drawing.Point(551, 0);
             this.pnlLookupAppt.Name = "pnlLookupAppt";
-            this.pnlLookupAppt.Size = new System.Drawing.Size(189, 63);
+            this.pnlLookupAppt.Size = new System.Drawing.Size(189, 62);
             this.pnlLookupAppt.TabIndex = 8;
             // 
             // btnLookupAppt
@@ -135,7 +170,7 @@
             this.btnLookupAppt.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnLookupAppt.Location = new System.Drawing.Point(0, 0);
             this.btnLookupAppt.Name = "btnLookupAppt";
-            this.btnLookupAppt.Size = new System.Drawing.Size(188, 61);
+            this.btnLookupAppt.Size = new System.Drawing.Size(188, 60);
             this.btnLookupAppt.TabIndex = 0;
             this.btnLookupAppt.Text = "Lookup Appointment";
             this.btnLookupAppt.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -148,7 +183,7 @@
             this.pnlChangeDoctor.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlChangeDoctor.Location = new System.Drawing.Point(740, 0);
             this.pnlChangeDoctor.Name = "pnlChangeDoctor";
-            this.pnlChangeDoctor.Size = new System.Drawing.Size(181, 63);
+            this.pnlChangeDoctor.Size = new System.Drawing.Size(181, 62);
             this.pnlChangeDoctor.TabIndex = 8;
             // 
             // btnChangeDr
@@ -162,9 +197,9 @@
             this.btnChangeDr.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnChangeDr.Location = new System.Drawing.Point(0, 0);
             this.btnChangeDr.Name = "btnChangeDr";
-            this.btnChangeDr.Size = new System.Drawing.Size(180, 61);
+            this.btnChangeDr.Size = new System.Drawing.Size(180, 60);
             this.btnChangeDr.TabIndex = 0;
-            this.btnChangeDr.Text = "Change Doctor";
+            this.btnChangeDr.Text = "Doctors Schedule";
             this.btnChangeDr.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnChangeDr.UseVisualStyleBackColor = true;
             // 
@@ -175,7 +210,7 @@
             this.pnlNewAppt.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlNewAppt.Location = new System.Drawing.Point(0, 0);
             this.pnlNewAppt.Name = "pnlNewAppt";
-            this.pnlNewAppt.Size = new System.Drawing.Size(186, 63);
+            this.pnlNewAppt.Size = new System.Drawing.Size(186, 62);
             this.pnlNewAppt.TabIndex = 6;
             // 
             // btnNewAppt
@@ -189,7 +224,7 @@
             this.btnNewAppt.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnNewAppt.Location = new System.Drawing.Point(0, 0);
             this.btnNewAppt.Name = "btnNewAppt";
-            this.btnNewAppt.Size = new System.Drawing.Size(185, 61);
+            this.btnNewAppt.Size = new System.Drawing.Size(185, 60);
             this.btnNewAppt.TabIndex = 0;
             this.btnNewAppt.Text = "New Appointment";
             this.btnNewAppt.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -197,6 +232,7 @@
             // 
             // pnlHome
             // 
+            this.pnlHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
             this.pnlHome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlHome.Controls.Add(this.pnlChangeDoctor);
             this.pnlHome.Controls.Add(this.pnlLookupAppt);
@@ -204,9 +240,9 @@
             this.pnlHome.Controls.Add(this.pnlEditAppt);
             this.pnlHome.Controls.Add(this.pnlNewAppt);
             this.pnlHome.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlHome.Location = new System.Drawing.Point(0, 512);
+            this.pnlHome.Location = new System.Drawing.Point(0, 619);
             this.pnlHome.Name = "pnlHome";
-            this.pnlHome.Size = new System.Drawing.Size(922, 65);
+            this.pnlHome.Size = new System.Drawing.Size(922, 64);
             this.pnlHome.TabIndex = 5;
             // 
             // btnLeft
@@ -302,6 +338,7 @@
             // 
             // pnlControls
             // 
+            this.pnlControls.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(45)))), ((int)(((byte)(54)))));
             this.pnlControls.Controls.Add(this.lblThisWeek);
             this.pnlControls.Controls.Add(this.txtMonth);
             this.pnlControls.Controls.Add(this.txtDay);
@@ -316,19 +353,6 @@
             this.pnlControls.Size = new System.Drawing.Size(922, 49);
             this.pnlControls.TabIndex = 6;
             // 
-            // dataSchedule
-            // 
-            this.dataSchedule.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(41)))), ((int)(((byte)(51)))));
-            this.dataSchedule.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataSchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataSchedule.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dataSchedule.Location = new System.Drawing.Point(0, 49);
-            this.dataSchedule.Name = "dataSchedule";
-            this.dataSchedule.Size = new System.Drawing.Size(922, 463);
-            this.dataSchedule.TabIndex = 7;
-            this.dataSchedule.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataSchedule_CellPainting);
-            this.dataSchedule.SelectionChanged += new System.EventHandler(this.dataSchedule_SelectionChanged);
-            // 
             // lblThisWeek
             // 
             this.lblThisWeek.AutoSize = true;
@@ -340,16 +364,278 @@
             this.lblThisWeek.TabIndex = 8;
             this.lblThisWeek.Text = "This Week";
             // 
+            // dataSchedule
+            // 
+            this.dataSchedule.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(41)))), ((int)(((byte)(51)))));
+            this.dataSchedule.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataSchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataSchedule.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataSchedule.GridColor = System.Drawing.Color.DimGray;
+            this.dataSchedule.Location = new System.Drawing.Point(0, 0);
+            this.dataSchedule.Name = "dataSchedule";
+            this.dataSchedule.Size = new System.Drawing.Size(920, 507);
+            this.dataSchedule.TabIndex = 7;
+            this.dataSchedule.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataSchedule_CellPainting);
+            this.dataSchedule.SelectionChanged += new System.EventHandler(this.dataSchedule_SelectionChanged);
+            // 
+            // pnlLegend
+            // 
+            this.pnlLegend.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(45)))), ((int)(((byte)(54)))));
+            this.pnlLegend.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlLegend.Controls.Add(this.pnlChangeDr);
+            this.pnlLegend.Controls.Add(this.pnlLegend3);
+            this.pnlLegend.Controls.Add(this.pnlLegend2);
+            this.pnlLegend.Controls.Add(this.pnlLegend1);
+            this.pnlLegend.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlLegend.Location = new System.Drawing.Point(0, 558);
+            this.pnlLegend.Name = "pnlLegend";
+            this.pnlLegend.Size = new System.Drawing.Size(922, 61);
+            this.pnlLegend.TabIndex = 8;
+            // 
+            // pnlChangeDr
+            // 
+            this.pnlChangeDr.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlChangeDr.Controls.Add(this.pnlCombo);
+            this.pnlChangeDr.Controls.Add(this.btnChangeDoc);
+            this.pnlChangeDr.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlChangeDr.Location = new System.Drawing.Point(551, 0);
+            this.pnlChangeDr.Name = "pnlChangeDr";
+            this.pnlChangeDr.Size = new System.Drawing.Size(370, 59);
+            this.pnlChangeDr.TabIndex = 11;
+            // 
+            // pnlCombo
+            // 
+            this.pnlCombo.BackColor = System.Drawing.Color.DimGray;
+            this.pnlCombo.Controls.Add(this.btnCombo);
+            this.pnlCombo.Controls.Add(this.boxDoctorChoice);
+            this.pnlCombo.Location = new System.Drawing.Point(13, 13);
+            this.pnlCombo.Name = "pnlCombo";
+            this.pnlCombo.Size = new System.Drawing.Size(194, 27);
+            this.pnlCombo.TabIndex = 12;
+            // 
+            // btnCombo
+            // 
+            this.btnCombo.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnCombo.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.btnCombo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCombo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCombo.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnCombo.Image = ((System.Drawing.Image)(resources.GetObject("btnCombo.Image")));
+            this.btnCombo.Location = new System.Drawing.Point(175, 0);
+            this.btnCombo.Name = "btnCombo";
+            this.btnCombo.Size = new System.Drawing.Size(19, 27);
+            this.btnCombo.TabIndex = 11;
+            this.btnCombo.UseVisualStyleBackColor = false;
+            this.btnCombo.Click += new System.EventHandler(this.btnCombo_Click);
+            // 
+            // boxDoctorChoice
+            // 
+            this.boxDoctorChoice.BackColor = System.Drawing.Color.LightSlateGray;
+            this.boxDoctorChoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.boxDoctorChoice.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.boxDoctorChoice.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.boxDoctorChoice.FormattingEnabled = true;
+            this.boxDoctorChoice.Location = new System.Drawing.Point(0, 0);
+            this.boxDoctorChoice.Name = "boxDoctorChoice";
+            this.boxDoctorChoice.Size = new System.Drawing.Size(193, 27);
+            this.boxDoctorChoice.TabIndex = 10;
+            // 
+            // btnChangeDoc
+            // 
+            this.btnChangeDoc.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnChangeDoc.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.btnChangeDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangeDoc.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangeDoc.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnChangeDoc.Location = new System.Drawing.Point(221, 13);
+            this.btnChangeDoc.Name = "btnChangeDoc";
+            this.btnChangeDoc.Size = new System.Drawing.Size(138, 29);
+            this.btnChangeDoc.TabIndex = 9;
+            this.btnChangeDoc.Text = "Change Doctor";
+            this.btnChangeDoc.UseVisualStyleBackColor = false;
+            this.btnChangeDoc.Click += new System.EventHandler(this.btnChangeDoc_Click);
+            // 
+            // pnlLegend3
+            // 
+            this.pnlLegend3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlLegend3.Controls.Add(this.pnlOther);
+            this.pnlLegend3.Controls.Add(this.pnlNewPatient);
+            this.pnlLegend3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlLegend3.Location = new System.Drawing.Point(364, 0);
+            this.pnlLegend3.Name = "pnlLegend3";
+            this.pnlLegend3.Size = new System.Drawing.Size(187, 59);
+            this.pnlLegend3.TabIndex = 10;
+            // 
+            // pnlOther
+            // 
+            this.pnlOther.BackColor = System.Drawing.Color.IndianRed;
+            this.pnlOther.Controls.Add(this.lblOther);
+            this.pnlOther.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlOther.Location = new System.Drawing.Point(0, 30);
+            this.pnlOther.Name = "pnlOther";
+            this.pnlOther.Size = new System.Drawing.Size(185, 28);
+            this.pnlOther.TabIndex = 10;
+            // 
+            // lblOther
+            // 
+            this.lblOther.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOther.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblOther.Location = new System.Drawing.Point(1, 1);
+            this.lblOther.Name = "lblOther";
+            this.lblOther.Size = new System.Drawing.Size(181, 26);
+            this.lblOther.TabIndex = 10;
+            this.lblOther.Text = "Other";
+            this.lblOther.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlNewPatient
+            // 
+            this.pnlNewPatient.BackColor = System.Drawing.Color.LightSalmon;
+            this.pnlNewPatient.Controls.Add(this.lblNewPatient);
+            this.pnlNewPatient.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlNewPatient.Location = new System.Drawing.Point(0, 0);
+            this.pnlNewPatient.Name = "pnlNewPatient";
+            this.pnlNewPatient.Size = new System.Drawing.Size(185, 30);
+            this.pnlNewPatient.TabIndex = 9;
+            // 
+            // lblNewPatient
+            // 
+            this.lblNewPatient.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNewPatient.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblNewPatient.Location = new System.Drawing.Point(1, 1);
+            this.lblNewPatient.Name = "lblNewPatient";
+            this.lblNewPatient.Size = new System.Drawing.Size(181, 26);
+            this.lblNewPatient.TabIndex = 9;
+            this.lblNewPatient.Text = "New Patient";
+            this.lblNewPatient.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlLegend2
+            // 
+            this.pnlLegend2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlLegend2.Controls.Add(this.pnlLabWork);
+            this.pnlLegend2.Controls.Add(this.pnlDiagnoses);
+            this.pnlLegend2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlLegend2.Location = new System.Drawing.Point(185, 0);
+            this.pnlLegend2.Name = "pnlLegend2";
+            this.pnlLegend2.Size = new System.Drawing.Size(179, 59);
+            this.pnlLegend2.TabIndex = 9;
+            // 
+            // pnlLabWork
+            // 
+            this.pnlLabWork.BackColor = System.Drawing.Color.LimeGreen;
+            this.pnlLabWork.Controls.Add(this.lblLabWork);
+            this.pnlLabWork.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlLabWork.Location = new System.Drawing.Point(0, 30);
+            this.pnlLabWork.Name = "pnlLabWork";
+            this.pnlLabWork.Size = new System.Drawing.Size(177, 28);
+            this.pnlLabWork.TabIndex = 10;
+            // 
+            // lblLabWork
+            // 
+            this.lblLabWork.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLabWork.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblLabWork.Location = new System.Drawing.Point(-3, 0);
+            this.lblLabWork.Name = "lblLabWork";
+            this.lblLabWork.Size = new System.Drawing.Size(181, 26);
+            this.lblLabWork.TabIndex = 9;
+            this.lblLabWork.Text = "Lab Work";
+            this.lblLabWork.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlDiagnoses
+            // 
+            this.pnlDiagnoses.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.pnlDiagnoses.Controls.Add(this.lblDiagnoses);
+            this.pnlDiagnoses.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlDiagnoses.Location = new System.Drawing.Point(0, 0);
+            this.pnlDiagnoses.Name = "pnlDiagnoses";
+            this.pnlDiagnoses.Size = new System.Drawing.Size(177, 30);
+            this.pnlDiagnoses.TabIndex = 9;
+            // 
+            // lblDiagnoses
+            // 
+            this.lblDiagnoses.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDiagnoses.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblDiagnoses.Location = new System.Drawing.Point(-3, 1);
+            this.lblDiagnoses.Name = "lblDiagnoses";
+            this.lblDiagnoses.Size = new System.Drawing.Size(181, 26);
+            this.lblDiagnoses.TabIndex = 10;
+            this.lblDiagnoses.Text = "Diagnoses";
+            this.lblDiagnoses.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlLegend1
+            // 
+            this.pnlLegend1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlLegend1.Controls.Add(this.pnlIllness);
+            this.pnlLegend1.Controls.Add(this.pnlFollowUp);
+            this.pnlLegend1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlLegend1.Location = new System.Drawing.Point(0, 0);
+            this.pnlLegend1.Name = "pnlLegend1";
+            this.pnlLegend1.Size = new System.Drawing.Size(185, 59);
+            this.pnlLegend1.TabIndex = 8;
+            // 
+            // pnlIllness
+            // 
+            this.pnlIllness.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.pnlIllness.Controls.Add(this.lblIllness);
+            this.pnlIllness.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlIllness.Location = new System.Drawing.Point(0, 30);
+            this.pnlIllness.Name = "pnlIllness";
+            this.pnlIllness.Size = new System.Drawing.Size(183, 28);
+            this.pnlIllness.TabIndex = 9;
+            // 
+            // lblIllness
+            // 
+            this.lblIllness.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIllness.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblIllness.Location = new System.Drawing.Point(1, 1);
+            this.lblIllness.Name = "lblIllness";
+            this.lblIllness.Size = new System.Drawing.Size(181, 26);
+            this.lblIllness.TabIndex = 9;
+            this.lblIllness.Text = "Illness";
+            this.lblIllness.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlFollowUp
+            // 
+            this.pnlFollowUp.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.pnlFollowUp.Controls.Add(this.lblFollowUp);
+            this.pnlFollowUp.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlFollowUp.Location = new System.Drawing.Point(0, 0);
+            this.pnlFollowUp.Name = "pnlFollowUp";
+            this.pnlFollowUp.Size = new System.Drawing.Size(183, 30);
+            this.pnlFollowUp.TabIndex = 8;
+            // 
+            // lblFollowUp
+            // 
+            this.lblFollowUp.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFollowUp.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblFollowUp.Location = new System.Drawing.Point(3, -2);
+            this.lblFollowUp.Name = "lblFollowUp";
+            this.lblFollowUp.Size = new System.Drawing.Size(181, 26);
+            this.lblFollowUp.TabIndex = 8;
+            this.lblFollowUp.Text = "Follow up";
+            this.lblFollowUp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlDataGrid
+            // 
+            this.pnlDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlDataGrid.Controls.Add(this.dataSchedule);
+            this.pnlDataGrid.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlDataGrid.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.pnlDataGrid.Location = new System.Drawing.Point(0, 49);
+            this.pnlDataGrid.Name = "pnlDataGrid";
+            this.pnlDataGrid.Size = new System.Drawing.Size(922, 509);
+            this.pnlDataGrid.TabIndex = 9;
+            // 
             // Schedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(41)))), ((int)(((byte)(51)))));
             this.Controls.Add(this.pnlHome);
-            this.Controls.Add(this.dataSchedule);
+            this.Controls.Add(this.pnlLegend);
+            this.Controls.Add(this.pnlDataGrid);
             this.Controls.Add(this.pnlControls);
             this.Name = "Schedule";
-            this.Size = new System.Drawing.Size(922, 579);
+            this.Size = new System.Drawing.Size(922, 682);
             this.Load += new System.EventHandler(this.Schedule_Load);
             this.pnlEditAppt.ResumeLayout(false);
             this.pnlCancelAppt.ResumeLayout(false);
@@ -360,6 +646,19 @@
             this.pnlControls.ResumeLayout(false);
             this.pnlControls.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSchedule)).EndInit();
+            this.pnlLegend.ResumeLayout(false);
+            this.pnlChangeDr.ResumeLayout(false);
+            this.pnlCombo.ResumeLayout(false);
+            this.pnlLegend3.ResumeLayout(false);
+            this.pnlOther.ResumeLayout(false);
+            this.pnlNewPatient.ResumeLayout(false);
+            this.pnlLegend2.ResumeLayout(false);
+            this.pnlLabWork.ResumeLayout(false);
+            this.pnlDiagnoses.ResumeLayout(false);
+            this.pnlLegend1.ResumeLayout(false);
+            this.pnlIllness.ResumeLayout(false);
+            this.pnlFollowUp.ResumeLayout(false);
+            this.pnlDataGrid.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -386,5 +685,27 @@
         private System.Windows.Forms.Panel pnlControls;
         private System.Windows.Forms.DataGridView dataSchedule;
         private System.Windows.Forms.Label lblThisWeek;
+        private System.Windows.Forms.Panel pnlLegend;
+        private System.Windows.Forms.Panel pnlDataGrid;
+        private System.Windows.Forms.Panel pnlChangeDr;
+        private System.Windows.Forms.Panel pnlLegend3;
+        private System.Windows.Forms.Panel pnlLegend2;
+        private System.Windows.Forms.Panel pnlLegend1;
+        private System.Windows.Forms.Panel pnlOther;
+        private System.Windows.Forms.Panel pnlNewPatient;
+        private System.Windows.Forms.Panel pnlLabWork;
+        private System.Windows.Forms.Panel pnlDiagnoses;
+        private System.Windows.Forms.Panel pnlIllness;
+        private System.Windows.Forms.Panel pnlFollowUp;
+        private System.Windows.Forms.Label lblOther;
+        private System.Windows.Forms.Label lblNewPatient;
+        private System.Windows.Forms.Label lblLabWork;
+        private System.Windows.Forms.Label lblDiagnoses;
+        private System.Windows.Forms.Label lblIllness;
+        private System.Windows.Forms.Label lblFollowUp;
+        private System.Windows.Forms.ComboBox boxDoctorChoice;
+        private System.Windows.Forms.Button btnChangeDoc;
+        private System.Windows.Forms.Button btnCombo;
+        private System.Windows.Forms.Panel pnlCombo;
     }
 }

@@ -29,8 +29,10 @@ namespace PatientScheduler.Classes.Database
                                 string reasonForVisit = reader["ReasonForVisit"].ToString();
                                 string appointmentDate = reader["AppointmentDate"].ToString();
                                 string scheduledById = reader["ScheduledById"].ToString();
+                                string classification = reader["Classification"].ToString();
+                                string appointmentLength = reader["AppointmentLength"].ToString();
 
-                                var appointment = new Appointments(Convert.ToInt32(appointmentId), Convert.ToInt32(doctorId), Convert.ToInt32(patientId), reasonForVisit, Convert.ToDateTime(appointmentDate), Convert.ToInt32(scheduledById));
+                                var appointment = new Appointments(Convert.ToInt32(appointmentId), Convert.ToInt32(doctorId), Convert.ToInt32(patientId), reasonForVisit, Convert.ToDateTime(appointmentDate), Convert.ToInt32(scheduledById), classification, Convert.ToInt32(appointmentLength));
                                 appointmentList.Add(appointment);
                             }
                             catch (Exception ex)

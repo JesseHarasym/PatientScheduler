@@ -30,10 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CentralScreen));
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.titleBar = new PatientScheduler.Components.TitleBar();
             this.pnlWelcome = new System.Windows.Forms.Panel();
-            this.lblPosition = new System.Windows.Forms.Label();
             this.lblWelcome = new System.Windows.Forms.Label();
+            this.lblPosition = new System.Windows.Forms.Label();
             this.pnlSettings = new System.Windows.Forms.Panel();
             this.btnSettings = new System.Windows.Forms.Button();
             this.pnlReports = new System.Windows.Forms.Panel();
@@ -48,6 +47,10 @@
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.pnlStaff = new System.Windows.Forms.Panel();
             this.btnStaff = new System.Windows.Forms.Button();
+            this.pnlLogo = new System.Windows.Forms.Panel();
+            this.btnLogo = new System.Windows.Forms.Button();
+            this.titleBar = new PatientScheduler.Components.TitleBar();
+            this.lblLogo = new System.Windows.Forms.Label();
             this.pnlWelcome.SuspendLayout();
             this.pnlSettings.SuspendLayout();
             this.pnlReports.SuspendLayout();
@@ -56,6 +59,7 @@
             this.pnlHome.SuspendLayout();
             this.pnlLeft.SuspendLayout();
             this.pnlStaff.SuspendLayout();
+            this.pnlLogo.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMain
@@ -64,17 +68,8 @@
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlMain.Location = new System.Drawing.Point(191, 28);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(922, 577);
+            this.pnlMain.Size = new System.Drawing.Size(922, 682);
             this.pnlMain.TabIndex = 4;
-            // 
-            // titleBar
-            // 
-            this.titleBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.titleBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.titleBar.Location = new System.Drawing.Point(0, 0);
-            this.titleBar.Name = "titleBar";
-            this.titleBar.Size = new System.Drawing.Size(1113, 28);
-            this.titleBar.TabIndex = 3;
             // 
             // pnlWelcome
             // 
@@ -83,22 +78,10 @@
             this.pnlWelcome.Controls.Add(this.lblWelcome);
             this.pnlWelcome.Controls.Add(this.lblPosition);
             this.pnlWelcome.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlWelcome.Location = new System.Drawing.Point(0, 0);
+            this.pnlWelcome.Location = new System.Drawing.Point(0, 105);
             this.pnlWelcome.Name = "pnlWelcome";
             this.pnlWelcome.Size = new System.Drawing.Size(191, 209);
             this.pnlWelcome.TabIndex = 3;
-            // 
-            // lblPosition
-            // 
-            this.lblPosition.BackColor = System.Drawing.Color.Transparent;
-            this.lblPosition.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblPosition.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPosition.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblPosition.Location = new System.Drawing.Point(0, 83);
-            this.lblPosition.Name = "lblPosition";
-            this.lblPosition.Size = new System.Drawing.Size(189, 124);
-            this.lblPosition.TabIndex = 0;
-            this.lblPosition.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblWelcome
             // 
@@ -112,12 +95,24 @@
             this.lblWelcome.TabIndex = 1;
             this.lblWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lblPosition
+            // 
+            this.lblPosition.BackColor = System.Drawing.Color.Transparent;
+            this.lblPosition.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblPosition.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPosition.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblPosition.Location = new System.Drawing.Point(0, 83);
+            this.lblPosition.Name = "lblPosition";
+            this.lblPosition.Size = new System.Drawing.Size(189, 124);
+            this.lblPosition.TabIndex = 0;
+            this.lblPosition.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // pnlSettings
             // 
             this.pnlSettings.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlSettings.Controls.Add(this.btnSettings);
             this.pnlSettings.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSettings.Location = new System.Drawing.Point(0, 516);
+            this.pnlSettings.Location = new System.Drawing.Point(0, 621);
             this.pnlSettings.Name = "pnlSettings";
             this.pnlSettings.Size = new System.Drawing.Size(191, 61);
             this.pnlSettings.TabIndex = 5;
@@ -144,7 +139,7 @@
             this.pnlReports.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlReports.Controls.Add(this.btnReports);
             this.pnlReports.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlReports.Location = new System.Drawing.Point(0, 455);
+            this.pnlReports.Location = new System.Drawing.Point(0, 560);
             this.pnlReports.Name = "pnlReports";
             this.pnlReports.Size = new System.Drawing.Size(191, 61);
             this.pnlReports.TabIndex = 5;
@@ -171,7 +166,7 @@
             this.pnlPatients.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlPatients.Controls.Add(this.btnPatients);
             this.pnlPatients.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlPatients.Location = new System.Drawing.Point(0, 333);
+            this.pnlPatients.Location = new System.Drawing.Point(0, 438);
             this.pnlPatients.Name = "pnlPatients";
             this.pnlPatients.Size = new System.Drawing.Size(191, 61);
             this.pnlPatients.TabIndex = 5;
@@ -198,7 +193,7 @@
             this.pnlSchedule.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlSchedule.Controls.Add(this.btnSchedule);
             this.pnlSchedule.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSchedule.Location = new System.Drawing.Point(0, 272);
+            this.pnlSchedule.Location = new System.Drawing.Point(0, 377);
             this.pnlSchedule.Name = "pnlSchedule";
             this.pnlSchedule.Size = new System.Drawing.Size(191, 61);
             this.pnlSchedule.TabIndex = 4;
@@ -225,7 +220,7 @@
             this.pnlHome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlHome.Controls.Add(this.btnHome);
             this.pnlHome.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlHome.Location = new System.Drawing.Point(0, 209);
+            this.pnlHome.Location = new System.Drawing.Point(0, 314);
             this.pnlHome.Name = "pnlHome";
             this.pnlHome.Size = new System.Drawing.Size(191, 63);
             this.pnlHome.TabIndex = 4;
@@ -250,14 +245,14 @@
             // pnlChoice
             // 
             this.pnlChoice.BackColor = System.Drawing.Color.SteelBlue;
-            this.pnlChoice.Location = new System.Drawing.Point(180, 237);
+            this.pnlChoice.Location = new System.Drawing.Point(180, 343);
             this.pnlChoice.Name = "pnlChoice";
             this.pnlChoice.Size = new System.Drawing.Size(10, 62);
             this.pnlChoice.TabIndex = 1;
             // 
             // pnlLeft
             // 
-            this.pnlLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(41)))), ((int)(((byte)(51)))));
+            this.pnlLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
             this.pnlLeft.Controls.Add(this.pnlSettings);
             this.pnlLeft.Controls.Add(this.pnlReports);
             this.pnlLeft.Controls.Add(this.pnlStaff);
@@ -265,10 +260,11 @@
             this.pnlLeft.Controls.Add(this.pnlSchedule);
             this.pnlLeft.Controls.Add(this.pnlHome);
             this.pnlLeft.Controls.Add(this.pnlWelcome);
+            this.pnlLeft.Controls.Add(this.pnlLogo);
             this.pnlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlLeft.Location = new System.Drawing.Point(0, 28);
             this.pnlLeft.Name = "pnlLeft";
-            this.pnlLeft.Size = new System.Drawing.Size(191, 577);
+            this.pnlLeft.Size = new System.Drawing.Size(191, 682);
             this.pnlLeft.TabIndex = 2;
             // 
             // pnlStaff
@@ -276,7 +272,7 @@
             this.pnlStaff.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlStaff.Controls.Add(this.btnStaff);
             this.pnlStaff.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlStaff.Location = new System.Drawing.Point(0, 394);
+            this.pnlStaff.Location = new System.Drawing.Point(0, 499);
             this.pnlStaff.Name = "pnlStaff";
             this.pnlStaff.Size = new System.Drawing.Size(191, 61);
             this.pnlStaff.TabIndex = 6;
@@ -298,12 +294,60 @@
             this.btnStaff.UseVisualStyleBackColor = true;
             this.btnStaff.Click += new System.EventHandler(this.btnStaff_Click);
             // 
+            // pnlLogo
+            // 
+            this.pnlLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
+            this.pnlLogo.Controls.Add(this.lblLogo);
+            this.pnlLogo.Controls.Add(this.btnLogo);
+            this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlLogo.Location = new System.Drawing.Point(0, 0);
+            this.pnlLogo.Name = "pnlLogo";
+            this.pnlLogo.Size = new System.Drawing.Size(191, 105);
+            this.pnlLogo.TabIndex = 7;
+            // 
+            // btnLogo
+            // 
+            this.btnLogo.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnLogo.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.btnLogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogo.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnLogo.Image = ((System.Drawing.Image)(resources.GetObject("btnLogo.Image")));
+            this.btnLogo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogo.Location = new System.Drawing.Point(0, 0);
+            this.btnLogo.Name = "btnLogo";
+            this.btnLogo.Size = new System.Drawing.Size(192, 105);
+            this.btnLogo.TabIndex = 1;
+            this.btnLogo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLogo.UseVisualStyleBackColor = false;
+            // 
+            // titleBar
+            // 
+            this.titleBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.titleBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.titleBar.Location = new System.Drawing.Point(0, 0);
+            this.titleBar.Name = "titleBar";
+            this.titleBar.Size = new System.Drawing.Size(1113, 28);
+            this.titleBar.TabIndex = 3;
+            // 
+            // lblLogo
+            // 
+            this.lblLogo.BackColor = System.Drawing.Color.SteelBlue;
+            this.lblLogo.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogo.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblLogo.Location = new System.Drawing.Point(56, 15);
+            this.lblLogo.Name = "lblLogo";
+            this.lblLogo.Size = new System.Drawing.Size(129, 70);
+            this.lblLogo.TabIndex = 2;
+            this.lblLogo.Text = "Patient Scheduler";
+            this.lblLogo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // CentralScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(41)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(1113, 605);
+            this.ClientSize = new System.Drawing.Size(1113, 710);
             this.Controls.Add(this.pnlChoice);
             this.Controls.Add(this.pnlLeft);
             this.Controls.Add(this.pnlMain);
@@ -321,6 +365,7 @@
             this.pnlHome.ResumeLayout(false);
             this.pnlLeft.ResumeLayout(false);
             this.pnlStaff.ResumeLayout(false);
+            this.pnlLogo.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -345,5 +390,8 @@
         private System.Windows.Forms.Panel pnlLeft;
         private System.Windows.Forms.Panel pnlStaff;
         private System.Windows.Forms.Button btnStaff;
+        private System.Windows.Forms.Panel pnlLogo;
+        private System.Windows.Forms.Button btnLogo;
+        private System.Windows.Forms.Label lblLogo;
     }
 }

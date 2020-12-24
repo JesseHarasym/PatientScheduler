@@ -1,6 +1,7 @@
 ﻿using PatientScheduler.Classes.Accounts;
 using PatientScheduler.Classes.Validation;
 using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 
 namespace PatientScheduler.Classes.Database
@@ -217,6 +218,46 @@ namespace PatientScheduler.Classes.Database
             }
 
             return validStaffId;
+        }
+
+        public List<Doctors> GetAllDoctors()
+        {
+            List<Doctors> doctorList = new List<Doctors>();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand($"SELECT * FROM Staff WHERE Position = @doctor", connection))
+                {
+                    connection.Open();
+                    cmd.Parameters.AddWithValue("@doctor", "Doctor");
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            try
+                            {
+                                string staffId = reader["StaffId"].ToString();
+                                string firstName = reader["FirstName"].ToString();
+                                string lastName = reader["LastName"].ToString();
+                                string email = reader["Email"].ToString();
+                                string position = reader["Position"].ToString();
+                                string accessLevel = reader["AccessLevel"].ToString();
+
+                                var doctor = new Doctors(firstName, lastName, email, position, Convert.ToInt32(staffId), Convert.ToInt32(accessLevel));
+                                doctorList.Add(doctor);
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine("There was an issue retrieving the users staff information." + ex);
+                            }
+                        }
+                    }
+                    connection.Close();
+                }
+            }
+
+            return doctorList;
         }
     }
 }
