@@ -68,6 +68,7 @@ namespace PatientScheduler
             string password = txtPassword.Text;
 
             var ad = new AccountsData();
+            var sd = new StaffData();
             var message = new UserMessage();
 
             bool allInputsValid = ValidateInputs(username, password);
@@ -77,7 +78,7 @@ namespace PatientScheduler
 
             if (allInputsValid && passwordMatch)
             {
-                var staff = ad.GetStaffInformation(staffId, username, password);
+                var staff = sd.GetStaffInformation(staffId, username, password);
                 Hide();
                 var home = new CentralScreen(staff);
                 home.ShowDialog();

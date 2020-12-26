@@ -20,6 +20,7 @@ namespace PatientScheduler.Classes.Helper
         public DataGridView GetDoctorsSchedule(string selectedDoctor)
         {
             List<Appointments> doctorsAppointments = new List<Appointments>();
+            ResetDatGrid();
 
             foreach (var a in AppointmentList)
             {
@@ -28,6 +29,7 @@ namespace PatientScheduler.Classes.Helper
                     doctorsAppointments.Add(a);
                 }
             }
+
             SetupDoctorsSchedule(doctorsAppointments);
             return DataSchedule;
         }
@@ -50,10 +52,17 @@ namespace PatientScheduler.Classes.Helper
                 {
                     for (int i = 0; i < length; i++)
                     {
-                        DataSchedule.Rows[row + i].Cells[col].Style.BackColor = AppointmentColorSetup(a.Classification);
+                        try
+                        {
+                            DataSchedule.Rows[row + i].Cells[col].Style.BackColor = AppointmentColorSetup(a.Classification);
+                            //need to create patient tables and then retrieve name val
+                            DataSchedule[col, row].Value = a.PatientId;
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine("There was an issue while loading doctors appointments " + e);
+                        }
 
-                        //need to create patient tables and then retrieve name val
-                        DataSchedule.Rows[row].SetValues(a.PatientId);
                     }
                 }
             }
@@ -85,7 +94,6 @@ namespace PatientScheduler.Classes.Helper
             return 0;
         }
 
-
         public Color AppointmentColorSetup(string classification)
         {
             Color apptColor = Color.LightSlateGray;
@@ -113,6 +121,19 @@ namespace PatientScheduler.Classes.Helper
             }
 
             return apptColor;
+        }
+
+        //this function allows the default back color to return before each doctor selection so that we have a fresh background to work with
+        public void ResetDatGrid()
+        {
+            for (int i = 0; i < DataSchedule.ColumnCount; i++)
+            {
+                for (int j = 0; j < DataSchedule.RowCount; j++)
+                {
+                    DataSchedule.Rows[j].Cells[i].Style.BackColor = Color.FromArgb(44, 41, 51);
+                    DataSchedule[i, j].Value = "";
+                }
+            }
         }
     }
 }

@@ -55,7 +55,6 @@
             this.pnlCombo = new System.Windows.Forms.Panel();
             this.btnCombo = new System.Windows.Forms.Button();
             this.boxDoctorChoice = new System.Windows.Forms.ComboBox();
-            this.btnChangeDoc = new System.Windows.Forms.Button();
             this.pnlLegend3 = new System.Windows.Forms.Panel();
             this.pnlOther = new System.Windows.Forms.Panel();
             this.lblOther = new System.Windows.Forms.Label();
@@ -72,6 +71,7 @@
             this.pnlFollowUp = new System.Windows.Forms.Panel();
             this.lblFollowUp = new System.Windows.Forms.Label();
             this.pnlDataGrid = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnlEditAppt.SuspendLayout();
             this.pnlCancelAppt.SuspendLayout();
             this.pnlLookupAppt.SuspendLayout();
@@ -395,8 +395,8 @@
             // pnlChangeDr
             // 
             this.pnlChangeDr.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlChangeDr.Controls.Add(this.label1);
             this.pnlChangeDr.Controls.Add(this.pnlCombo);
-            this.pnlChangeDr.Controls.Add(this.btnChangeDoc);
             this.pnlChangeDr.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlChangeDr.Location = new System.Drawing.Point(551, 0);
             this.pnlChangeDr.Name = "pnlChangeDr";
@@ -408,7 +408,7 @@
             this.pnlCombo.BackColor = System.Drawing.Color.DimGray;
             this.pnlCombo.Controls.Add(this.btnCombo);
             this.pnlCombo.Controls.Add(this.boxDoctorChoice);
-            this.pnlCombo.Location = new System.Drawing.Point(13, 13);
+            this.pnlCombo.Location = new System.Drawing.Point(156, 15);
             this.pnlCombo.Name = "pnlCombo";
             this.pnlCombo.Size = new System.Drawing.Size(194, 27);
             this.pnlCombo.TabIndex = 12;
@@ -439,21 +439,7 @@
             this.boxDoctorChoice.Name = "boxDoctorChoice";
             this.boxDoctorChoice.Size = new System.Drawing.Size(193, 27);
             this.boxDoctorChoice.TabIndex = 10;
-            // 
-            // btnChangeDoc
-            // 
-            this.btnChangeDoc.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnChangeDoc.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.btnChangeDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChangeDoc.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChangeDoc.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnChangeDoc.Location = new System.Drawing.Point(221, 13);
-            this.btnChangeDoc.Name = "btnChangeDoc";
-            this.btnChangeDoc.Size = new System.Drawing.Size(138, 29);
-            this.btnChangeDoc.TabIndex = 9;
-            this.btnChangeDoc.Text = "Change Doctor";
-            this.btnChangeDoc.UseVisualStyleBackColor = false;
-            this.btnChangeDoc.Click += new System.EventHandler(this.btnChangeDoc_Click);
+            this.boxDoctorChoice.SelectionChangeCommitted += new System.EventHandler(this.boxDoctorChoice_SelectionChangeCommitted);
             // 
             // pnlLegend3
             // 
@@ -625,6 +611,17 @@
             this.pnlDataGrid.Size = new System.Drawing.Size(922, 509);
             this.pnlDataGrid.TabIndex = 9;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(17, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(133, 21);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Doctor viewing:";
+            // 
             // Schedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -648,6 +645,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataSchedule)).EndInit();
             this.pnlLegend.ResumeLayout(false);
             this.pnlChangeDr.ResumeLayout(false);
+            this.pnlChangeDr.PerformLayout();
             this.pnlCombo.ResumeLayout(false);
             this.pnlLegend3.ResumeLayout(false);
             this.pnlOther.ResumeLayout(false);
@@ -704,8 +702,8 @@
         private System.Windows.Forms.Label lblIllness;
         private System.Windows.Forms.Label lblFollowUp;
         private System.Windows.Forms.ComboBox boxDoctorChoice;
-        private System.Windows.Forms.Button btnChangeDoc;
         private System.Windows.Forms.Button btnCombo;
         private System.Windows.Forms.Panel pnlCombo;
+        private System.Windows.Forms.Label label1;
     }
 }

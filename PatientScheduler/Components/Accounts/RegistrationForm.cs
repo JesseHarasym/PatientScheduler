@@ -104,6 +104,7 @@ namespace PatientScheduler.Components
         public bool ValidateInputs(string username, string password, string password2, int staffId)
         {
             var ad = new AccountsData();
+            var sd = new StaffData();
             var av = new AccountValidation();
             var message = new UserMessage();
             var passwordValidation = av.ValidatePassword(password, password2);
@@ -112,8 +113,8 @@ namespace PatientScheduler.Components
             bool validUsername = av.ValidateUsername(username);
             bool passwordsEqual = passwordValidation.Item1;
             bool validPassword = passwordValidation.Item2;
-            bool validStaffId = ad.CheckForValidStaffId(staffId);
-            bool staffIdHasAccount = ad.CheckIfStaffIdHasAccount(staffId);
+            bool validStaffId = sd.CheckForValidStaffId(staffId);
+            bool staffIdHasAccount = sd.CheckIfStaffIdHasAccount(staffId);
 
             if (!validUsername)
             {

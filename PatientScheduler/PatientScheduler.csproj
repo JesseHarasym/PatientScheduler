@@ -68,6 +68,7 @@
     <Compile Include="Classes\Database\AccountsData.cs" />
     <Compile Include="Classes\Database\Connection.cs" />
     <Compile Include="Classes\Database\ScheduleData.cs" />
+    <Compile Include="Classes\Database\StaffData.cs" />
     <Compile Include="Classes\Helper\Calender.cs" />
     <Compile Include="Classes\Helper\ScheduleSearch.cs" />
     <Compile Include="Classes\Helper\ScheduleSetup.cs" />

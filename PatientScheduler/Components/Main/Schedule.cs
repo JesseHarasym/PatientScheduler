@@ -15,6 +15,7 @@ namespace PatientScheduler.Components.Main
         public List<Appointments> AppointmentList = new List<Appointments>();
         public List<Doctors> DoctorList = new List<Doctors>();
         public int CurrentDayViewed;
+        public string CurrentDoctor;
 
         public Schedule()
         {
@@ -24,6 +25,7 @@ namespace PatientScheduler.Components.Main
         private void Schedule_Load(object sender, EventArgs e)
         {
             ResetAfterSearch();
+            SetupDoctorInitial();
             GetScheduledAppointments();
         }
 
@@ -38,37 +40,42 @@ namespace PatientScheduler.Components.Main
             var sd = new ScheduleData();
             AppointmentList = sd.GetDoctorsAppointments();
 
+            SampleData();
             SetDateLabel();
-            SetupDoctorChoices();
+            DoctorScheduleSetup();
+
         }
 
-        public void SetupDoctorChoices()
+        public void SetupDoctorInitial()
         {
-            var ad = new AccountsData();
-            DoctorList = ad.GetAllDoctors();
+            var sd = new StaffData();
+            DoctorList = sd.GetAllDoctors();
 
-            foreach (var d in DoctorList)
-            {
-                boxDoctorChoice.ValueMember = "StaffId";
-                boxDoctorChoice.DisplayMember = "LastName";
-                boxDoctorChoice.DataSource = DoctorList;
-            }
+            //setup doctor information into combo box
+            boxDoctorChoice.ValueMember = "StaffId";
+            boxDoctorChoice.DisplayMember = "LastName";
+            boxDoctorChoice.DataSource = DoctorList;
+
+            //basic combo box styling
             boxDoctorChoice.DropDownStyle = ComboBoxStyle.DropDownList;
-            boxDoctorChoice.SelectedIndex = 0;
             boxDoctorChoice.Region = new Region(new Rectangle(3, 3, boxDoctorChoice.Width - 3, boxDoctorChoice.Height - 6));
 
-            DoctorScheduleSetup(boxDoctorChoice.SelectedValue.ToString());
+            //ensure first doctors schedule is displayed on load
+            boxDoctorChoice.SelectedIndex = 0;
         }
 
-        private void btnChangeDoc_Click(object sender, EventArgs e)
+        private void boxDoctorChoice_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            DoctorScheduleSetup(boxDoctorChoice.SelectedValue.ToString());
+            DoctorScheduleSetup();
+            var message = new UserMessage();
+            message.Show($"You are now viewing {CurrentDoctor} schedule");
         }
 
-        public void DoctorScheduleSetup(string selectedDoctor)
+        public void DoctorScheduleSetup()
         {
+            CurrentDoctor = boxDoctorChoice.SelectedValue.ToString();
             var ss = new ScheduleSetup(dataSchedule, AppointmentList);
-            dataSchedule = ss.GetDoctorsSchedule(selectedDoctor);
+            dataSchedule = ss.GetDoctorsSchedule(CurrentDoctor);
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -184,6 +191,33 @@ namespace PatientScheduler.Components.Main
         private void btnCombo_Click(object sender, EventArgs e)
         {
             boxDoctorChoice.DroppedDown = true;
+        }
+
+        //temp function for data to test with
+        public void SampleData()
+        {
+            var rand = new Random();
+            //Follow up, diagnoses, new patient, illness, lab work, other
+            List<string> legend = new List<string>();
+            legend.Add("Follow up");
+            legend.Add("Diagnoses");
+            legend.Add("New Patient");
+            legend.Add("Illness");
+            legend.Add("Lab Work");
+            legend.Add("Other");
+
+
+            for (int days = -365; days < 365; days++)
+            {
+                for (int i = 0; i < 7; i++)
+                {
+                    int classification = rand.Next(legend.Count);
+                    int r = rand.Next(-15, 15);
+                    int rt = rand.Next(0, 2);
+                    int pid = rand.Next(15, 255);
+                    AppointmentList.Add(new Appointments(100 + i + days, 2, pid, "", DateTime.Today.AddDays(days) + new TimeSpan(9 + i, 15 + (rt * 15), 0), 1, legend[classification], 45 + r));
+                }
+            }
         }
     }
 }
