@@ -6,10 +6,10 @@ namespace PatientScheduler.Components.Main
 {
     public partial class CentralScreen : Form
     {
-        public StaffAccount Staff;
+        public StaffAccounts Staff;
         public int OffSet = 28;
 
-        public CentralScreen(StaffAccount staff)
+        public CentralScreen(StaffAccounts staff)
         {
             InitializeComponent();
             Staff = staff;

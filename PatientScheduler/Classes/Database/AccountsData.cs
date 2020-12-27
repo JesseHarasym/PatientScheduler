@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace PatientScheduler.Classes.Database
 {
-    class AccountsData
+    public class AccountsData
     {
         readonly string connectionString = Connection.ConnectionString;
 

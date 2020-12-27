@@ -61,9 +61,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Accounts\AccountBase.cs" />
+    <Compile Include="Classes\Accounts\Accounts.cs" />
     <Compile Include="Classes\Accounts\Doctors.cs" />
-    <Compile Include="Classes\Accounts\StaffAccount.cs" />
+    <Compile Include="Classes\Accounts\StaffAccounts.cs" />
     <Compile Include="Classes\Accounts\Appointments.cs" />
     <Compile Include="Classes\Database\AccountsData.cs" />
     <Compile Include="Classes\Database\Connection.cs" />

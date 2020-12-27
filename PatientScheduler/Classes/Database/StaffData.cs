@@ -41,7 +41,7 @@ namespace PatientScheduler.Classes.Database
             return valid;
         }
 
-        public StaffAccount GetStaffInformation(int staffId, string username, string password)
+        public StaffAccounts GetStaffInformation(int staffId, string username, string password)
         {
             string firstName = "";
             string lastName = "";
@@ -78,7 +78,7 @@ namespace PatientScheduler.Classes.Database
                 }
             }
 
-            var staff = new StaffAccount(firstName, lastName, username, password, email, position, staffId, Convert.ToInt32(accessLevel));
+            var staff = new StaffAccounts(firstName, lastName, username, password, email, position, staffId, Convert.ToInt32(accessLevel));
             return staff;
         }
 

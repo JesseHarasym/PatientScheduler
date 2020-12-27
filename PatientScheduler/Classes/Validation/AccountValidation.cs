@@ -4,16 +4,16 @@ using System.Text.RegularExpressions;
 
 namespace PatientScheduler.Classes.Validation
 {
-    class AccountValidation
+    public class AccountValidation
     {
         public bool ValidateUsername(string username)
         {
             bool valid = false;
-            Regex reg = new Regex(@"^[a-zA-Z0-9]{2}");
+            Regex reg = new Regex(@"^[a-zA-Z0-9]*$");
 
             string phrase = TextBoxStyle.CheckWhichTextBox("username");
 
-            if (reg.IsMatch(username) && username != phrase)
+            if (reg.IsMatch(username) && username != phrase && username.Length >= 3)
             {
                 valid = true;
             }

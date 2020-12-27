@@ -118,7 +118,6 @@ namespace PatientScheduler
                 return false;
             }
 
-
             return true;
         }
     }
