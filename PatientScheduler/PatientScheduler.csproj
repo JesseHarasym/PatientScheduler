@@ -46,6 +46,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -61,119 +65,119 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Accounts\Accounts.cs" />
-    <Compile Include="Classes\Accounts\Doctors.cs" />
-    <Compile Include="Classes\Accounts\StaffAccounts.cs" />
-    <Compile Include="Classes\Accounts\Appointments.cs" />
-    <Compile Include="Classes\Database\AccountsData.cs" />
-    <Compile Include="Classes\Database\Connection.cs" />
-    <Compile Include="Classes\Database\ScheduleData.cs" />
-    <Compile Include="Classes\Database\StaffData.cs" />
-    <Compile Include="Classes\Helper\Calender.cs" />
-    <Compile Include="Classes\Helper\ScheduleSearch.cs" />
-    <Compile Include="Classes\Helper\ScheduleSetup.cs" />
-    <Compile Include="Classes\Helper\TextBoxStyle.cs" />
-    <Compile Include="Classes\Validation\AccountValidation.cs" />
-    <Compile Include="Classes\Validation\HashPasswords.cs" />
-    <Compile Include="Components\Accounts\LoginForm.cs">
+    <Compile Include="Main\Controller\Accounts\Accounts.cs" />
+    <Compile Include="Main\Controller\Accounts\Doctors.cs" />
+    <Compile Include="Main\Controller\Accounts\StaffAccounts.cs" />
+    <Compile Include="Main\Controller\Accounts\Appointments.cs" />
+    <Compile Include="Main\Model\AccountsData.cs" />
+    <Compile Include="Main\Model\Connection.cs" />
+    <Compile Include="Main\Model\ScheduleData.cs" />
+    <Compile Include="Main\Model\StaffData.cs" />
+    <Compile Include="Main\Controller\Helper\Calender.cs" />
+    <Compile Include="Main\Controller\Helper\ScheduleSearch.cs" />
+    <Compile Include="Main\Controller\Helper\ScheduleSetup.cs" />
+    <Compile Include="Main\Controller\Helper\TextBoxStyle.cs" />
+    <Compile Include="Main\Controller\Validation\AccountValidation.cs" />
+    <Compile Include="Main\Controller\Validation\HashPasswords.cs" />
+    <Compile Include="Main\View\Accounts\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Components\Accounts\LoginForm.Designer.cs">
+    <Compile Include="Main\View\Accounts\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Components\Accounts\RegistrationForm.cs">
+    <Compile Include="Main\View\Accounts\RegistrationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Components\Accounts\RegistrationForm.Designer.cs">
+    <Compile Include="Main\View\Accounts\RegistrationForm.Designer.cs">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Components\Custom\TitleBar.cs">
+    <Compile Include="Main\View\Custom\TitleBar.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Components\Custom\TitleBar.Designer.cs">
+    <Compile Include="Main\View\Custom\TitleBar.Designer.cs">
       <DependentUpon>TitleBar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Components\Custom\UserMessage.cs">
+    <Compile Include="Main\View\Custom\UserMessage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Components\Custom\UserMessage.Designer.cs">
+    <Compile Include="Main\View\Custom\UserMessage.Designer.cs">
       <DependentUpon>UserMessage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Components\Main\CentralScreen.cs">
+    <Compile Include="Main\View\Main\CentralScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Components\Main\CentralScreen.Designer.cs">
+    <Compile Include="Main\View\Main\CentralScreen.Designer.cs">
       <DependentUpon>CentralScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Components\Main\Home.cs">
+    <Compile Include="Main\View\Main\Home.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Components\Main\Home.Designer.cs">
+    <Compile Include="Main\View\Main\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="Components\Main\Patients.cs">
+    <Compile Include="Main\View\Main\Patients.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Components\Main\Patients.Designer.cs">
+    <Compile Include="Main\View\Main\Patients.Designer.cs">
       <DependentUpon>Patients.cs</DependentUpon>
     </Compile>
-    <Compile Include="Components\Main\Reports.cs">
+    <Compile Include="Main\View\Main\Reports.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Components\Main\Reports.Designer.cs">
+    <Compile Include="Main\View\Main\Reports.Designer.cs">
       <DependentUpon>Reports.cs</DependentUpon>
     </Compile>
-    <Compile Include="Components\Main\Schedule.cs">
+    <Compile Include="Main\View\Main\Schedule.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Components\Main\Schedule.Designer.cs">
+    <Compile Include="Main\View\Main\Schedule.Designer.cs">
       <DependentUpon>Schedule.cs</DependentUpon>
     </Compile>
-    <Compile Include="Components\Main\Settings.cs">
+    <Compile Include="Main\View\Main\Settings.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Components\Main\Settings.Designer.cs">
+    <Compile Include="Main\View\Main\Settings.Designer.cs">
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
-    <Compile Include="Components\Main\Staff.cs">
+    <Compile Include="Main\View\Main\Staff.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Components\Main\Staff.Designer.cs">
+    <Compile Include="Main\View\Main\Staff.Designer.cs">
       <DependentUpon>Staff.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Components\Accounts\LoginForm.resx">
+    <EmbeddedResource Include="Main\View\Accounts\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Components\Accounts\RegistrationForm.resx">
+    <EmbeddedResource Include="Main\View\Accounts\RegistrationForm.resx">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Components\Custom\TitleBar.resx">
+    <EmbeddedResource Include="Main\View\Custom\TitleBar.resx">
       <DependentUpon>TitleBar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Components\Custom\UserMessage.resx">
+    <EmbeddedResource Include="Main\View\Custom\UserMessage.resx">
       <DependentUpon>UserMessage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Components\Main\CentralScreen.resx">
+    <EmbeddedResource Include="Main\View\Main\CentralScreen.resx">
       <DependentUpon>CentralScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Components\Main\Home.resx">
+    <EmbeddedResource Include="Main\View\Main\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Components\Main\Patients.resx">
+    <EmbeddedResource Include="Main\View\Main\Patients.resx">
       <DependentUpon>Patients.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Components\Main\Reports.resx">
+    <EmbeddedResource Include="Main\View\Main\Reports.resx">
       <DependentUpon>Reports.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Components\Main\Schedule.resx">
+    <EmbeddedResource Include="Main\View\Main\Schedule.resx">
       <DependentUpon>Schedule.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Components\Main\Settings.resx">
+    <EmbeddedResource Include="Main\View\Main\Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Components\Main\Staff.resx">
+    <EmbeddedResource Include="Main\View\Main\Staff.resx">
       <DependentUpon>Staff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -184,6 +188,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -204,6 +209,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StartupIcon.ico" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -54,5 +54,111 @@ namespace PatientScheduler.UnitTests
             bool uniqueUsername = ad.CheckForExistingUsername("admin");
             Assert.IsFalse(uniqueUsername);
         }
+
+        [TestMethod]
+        public void ValidatePassword_PasswordsAreEqual_ReturnsTrue()
+        {
+            var av = new AccountValidation();
+            var passwordValidation = av.ValidatePassword("abc123", "abc123");
+            bool passwordsEqual = passwordValidation.Item1;
+            Assert.IsTrue(passwordsEqual);
+        }
+
+        [TestMethod]
+        public void ValidatePassword_PasswordsAreNotEqual_ReturnsFalse()
+        {
+            var av = new AccountValidation();
+            var passwordValidation = av.ValidatePassword("abc123", "cde456");
+            bool passwordsEqual = passwordValidation.Item1;
+            Assert.IsFalse(passwordsEqual);
+        }
+
+        [TestMethod]
+        public void ValidatePassword_Valid_ReturnsTrue()
+        {
+            var av = new AccountValidation();
+            var passwordValidation = av.ValidatePassword("abc123", "abc123");
+            bool validPassword = passwordValidation.Item2;
+            Assert.IsTrue(validPassword);
+        }
+
+        [TestMethod]
+        public void ValidatePassword_InvalidTooShort_ReturnsFalse()
+        {
+            var av = new AccountValidation();
+            var passwordValidation = av.ValidatePassword("abc12", "abc12");
+            bool validPassword = passwordValidation.Item2;
+            Assert.IsFalse(validPassword);
+        }
+
+        [TestMethod]
+        public void ValidatePassword_PasswordLogIn_ReturnsTrue()
+        {
+
+            var ad = new AccountsData();
+            var accountInfo = ad.GetAccountPassword("admin", "admin123");
+            bool passwordMatch = accountInfo.Item1;
+            Assert.IsTrue(passwordMatch);
+        }
+
+        [TestMethod]
+        public void ValidatePassword_PasswordDoesNotLogIn_ReturnsFalse()
+        {
+
+            var ad = new AccountsData();
+            var accountInfo = ad.GetAccountPassword("admin", "admin123456");
+            bool passwordMatch = accountInfo.Item1;
+            Assert.IsFalse(passwordMatch);
+        }
+
+        [TestMethod]
+        public void ValidatePassword_ValidPasswordUnHashed_ReturnsTrue()
+        {
+            var hp = new HashPasswords();
+            bool unHashed = hp.UnHashAccountPassword("admin123", "id5Js+i6vmHSk+l8sIuplu/85HdPCY6IrPSMf/cNJidF9uGM");
+            Assert.IsTrue(unHashed);
+
+        }
+
+        [TestMethod]
+        public void ValidatePassword_InvalidPasswordUnHashed_ReturnsFalse()
+        {
+            var hp = new HashPasswords();
+            bool unHashed = hp.UnHashAccountPassword("abc123", "id5Js+i6vmHSk+l8sIuplu/85HdPCY6IrPSMf/cNJidF9uGM");
+            Assert.IsFalse(unHashed);
+
+        }
+
+        [TestMethod]
+        public void ValidateStaffId_ValidExists_ReturnsTrue()
+        {
+            var sd = new StaffData();
+            bool validStaffId = sd.CheckForValidStaffId(1);
+            Assert.IsTrue(validStaffId);
+        }
+
+        [TestMethod]
+        public void ValidateStaffId_InvalidDoesNotExist_ReturnsFalse()
+        {
+            var sd = new StaffData();
+            bool validStaffId = sd.CheckForValidStaffId(100000);
+            Assert.IsFalse(validStaffId);
+        }
+
+        [TestMethod]
+        public void ValidateStaffId_ValidDoesNotHaveAccount_ReturnsTrue()
+        {
+            var sd = new StaffData();
+            bool staffIdHasAccount = sd.CheckIfStaffIdHasAccount(1000000);
+            Assert.IsTrue(staffIdHasAccount);
+        }
+
+        [TestMethod]
+        public void ValidateStaffId_InvalidDoesHaveAccount_ReturnsFalse()
+        {
+            var sd = new StaffData();
+            bool staffIdHasAccount = sd.CheckIfStaffIdHasAccount(1);
+            Assert.IsFalse(staffIdHasAccount);
+        }
     }
 }

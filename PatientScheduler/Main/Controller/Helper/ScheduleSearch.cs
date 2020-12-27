@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace PatientScheduler.Classes.Helper
 {
-    class ScheduleSearch
+    public class ScheduleSearch
     {
         public string FixDateInput(string month, string day, string year)
         {
@@ -22,13 +22,7 @@ namespace PatientScheduler.Classes.Helper
 
             Dictionary<string, string> monthCheck = CreateMonthChecker();
 
-            foreach (var m in monthCheck)
-            {
-                if (month.ToLower().Contains(m.Key))
-                {
-                    month = m.Value;
-                }
-            }
+            monthCheck.TryGetValue(month, out month);
 
             return string.Format("{0}-{1}-{2}", month, day, year);
         }
@@ -52,6 +46,20 @@ namespace PatientScheduler.Classes.Helper
             };
 
             return monthCheck;
+        }
+
+        public Tuple<bool, int, DateTime> CheckIfValidDate(string dateString)
+        {
+            bool validDate = false;
+            int daysDifference = 0;
+
+            if (DateTime.TryParse(dateString, out var dateTime))
+            {
+                daysDifference = (dateTime - DateTime.Today).Days;
+                validDate = true;
+            }
+
+            return Tuple.Create(validDate, daysDifference, dateTime);
         }
     }
 }

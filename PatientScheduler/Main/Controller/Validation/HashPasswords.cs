@@ -3,7 +3,7 @@ using System.Security.Cryptography;
 
 namespace PatientScheduler.Classes.Validation
 {
-    class HashPasswords
+    public class HashPasswords
     {
         //used to hash passwords before inserting a new account into the database
         public string HashAccountPassword(string password)

@@ -4,6 +4,7 @@ using PatientScheduler.Classes.Validation;
 using PatientScheduler.Components;
 using PatientScheduler.Components.Custom;
 using PatientScheduler.Components.Main;
+using PatientScheduler.Properties;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -16,6 +17,7 @@ namespace PatientScheduler
         public LoginForm()
         {
             InitializeComponent();
+            Icon = Resources.StartupIcon;
         }
 
         private void LoginForm_Load(object sender, EventArgs e)

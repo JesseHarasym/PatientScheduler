@@ -88,11 +88,13 @@ namespace PatientScheduler.Components.Main
 
             var ss = new ScheduleSearch();
             string dateString = ss.FixDateInput(month, day, year);
+            var validReturns = ss.CheckIfValidDate(dateString);
+            bool validDate = validReturns.Item1;
+            int daysDifference = validReturns.Item2;
+            DateTime dateTime = validReturns.Item3;
 
-            if (DateTime.TryParse(dateString, out var dateTime))
+            if (validDate)
             {
-                int daysDifference = (dateTime - DateTime.Today).Days;
-
                 CurrentDayViewed = daysDifference;
                 GetScheduledAppointments();
 

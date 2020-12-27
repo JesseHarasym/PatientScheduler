@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace PatientScheduler.Classes.Database
 {
-    class StaffData
+    public class StaffData
     {
         readonly string connectionString = Connection.ConnectionString;
         public bool CheckForValidStaffId(int staffId)

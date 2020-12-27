@@ -1,6 +1,7 @@
 ﻿using PatientScheduler.Classes.Accounts;
 using System.Drawing;
 using System.Windows.Forms;
+using PatientScheduler.Properties;
 
 namespace PatientScheduler.Components.Main
 {
@@ -12,6 +13,7 @@ namespace PatientScheduler.Components.Main
         public CentralScreen(StaffAccounts staff)
         {
             InitializeComponent();
+            Icon = Resources.StartupIcon;
             Staff = staff;
         }
 
