@@ -1,4 +1,5 @@
-﻿using PatientScheduler.Classes.Database;
+﻿using PatientScheduler.Classes.Accounts;
+using PatientScheduler.Classes.Database;
 using PatientScheduler.Classes.Styling;
 using PatientScheduler.Classes.Validation;
 using PatientScheduler.Components;
@@ -17,11 +18,12 @@ namespace PatientScheduler
         public LoginForm()
         {
             InitializeComponent();
-            Icon = Resources.StartupIcon;
+            TempStaffSetupFastLogin();
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
+            Icon = Resources.StartupIcon;
             TextBoxStyle.TextBoxEmpty(txtUsername, "username");
             TextBoxStyle.TextBoxEmpty(txtPassword, "password");
         }
@@ -121,6 +123,14 @@ namespace PatientScheduler
             }
 
             return true;
+        }
+
+        public void TempStaffSetupFastLogin()
+        {
+            var staff = new StaffAccounts("Jesse", "Harasym", "admin", "admin123", "admin@med.ca", "Administrator", 1,
+                10);
+            var cs = new CentralScreen(staff);
+            cs.ShowDialog();
         }
     }
 }

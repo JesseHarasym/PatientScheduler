@@ -1,4 +1,7 @@
-﻿using System;
+﻿using PatientScheduler.Main.Controller.DataStructures.Schedule;
+using PatientScheduler.Main.Controller.Helper;
+using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Reflection;
 using System.Windows.Forms;
@@ -18,6 +21,7 @@ namespace PatientScheduler.Classes.Helper
         {
             DataSchedule = dataSchedule;
             DataSchedule.MouseWheel += MouseWheel;
+            GetOfficeSchedule();
         }
 
         public DataGridView CreateCalender()
@@ -27,6 +31,16 @@ namespace PatientScheduler.Classes.Helper
             CalenderRowSetup();
 
             return DataSchedule;
+        }
+
+        public void GetOfficeSchedule()
+        {
+            var os = new OfficeSchedule();
+            List<WeeklySchedule> weeklySchedule = os.GetScheduleData();
+            StartTime = os.GetEarliestStartTime(weeklySchedule);
+            EndTime = os.GetLatestEndTime(weeklySchedule);
+            //StartTime = new TimeSpan(9, 30, 0);
+            //EndTime = new TimeSpan(16, 30, 0);
         }
 
         public void CalenderColumnSetup(int day)

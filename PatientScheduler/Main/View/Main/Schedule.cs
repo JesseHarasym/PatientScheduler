@@ -3,6 +3,7 @@ using PatientScheduler.Classes.Database;
 using PatientScheduler.Classes.Helper;
 using PatientScheduler.Classes.Styling;
 using PatientScheduler.Components.Custom;
+using PatientScheduler.Main.View.ScheduleHelper;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -33,8 +34,6 @@ namespace PatientScheduler.Components.Main
         {
             var calender = new Calender(dataSchedule);
             calender.Day = CurrentDayViewed;
-            calender.StartTime = new TimeSpan(9, 0, 0);
-            calender.EndTime = new TimeSpan(16, 30, 0);
             dataSchedule = calender.CreateCalender();
 
             var sd = new ScheduleData();
@@ -43,7 +42,6 @@ namespace PatientScheduler.Components.Main
             SampleData();
             SetDateLabel();
             DoctorScheduleSetup();
-
         }
 
         public void SetupDoctorInitial()
@@ -74,7 +72,7 @@ namespace PatientScheduler.Components.Main
         public void DoctorScheduleSetup()
         {
             CurrentDoctor = boxDoctorChoice.SelectedValue.ToString();
-            var ss = new ScheduleSetup(dataSchedule, AppointmentList);
+            var ss = new SetupSchedule(dataSchedule, AppointmentList);
             dataSchedule = ss.GetDoctorsSchedule(CurrentDoctor);
         }
 
@@ -86,7 +84,7 @@ namespace PatientScheduler.Components.Main
             string day = txtDay.Text;
             string year = txtYear.Text;
 
-            var ss = new ScheduleSearch();
+            var ss = new SearchSchedule();
             string dateString = ss.FixDateInput(month, day, year);
             var validReturns = ss.CheckIfValidDate(dateString);
             bool validDate = validReturns.Item1;
@@ -132,6 +130,12 @@ namespace PatientScheduler.Components.Main
             TextBoxStyle.TextBoxEmpty(txtMonth, "month");
             TextBoxStyle.TextBoxEmpty(txtDay, "day");
             TextBoxStyle.TextBoxEmpty(txtYear, "year");
+        }
+
+        private void btnDoctorSchedule_Click(object sender, EventArgs e)
+        {
+            var ds = new DoctorSchedule(DoctorList);
+            ds.ShowDialog();
         }
 
         private void dataSchedule_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)

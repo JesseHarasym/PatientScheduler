@@ -1,4 +1,5 @@
 ﻿using PatientScheduler.Classes.Accounts;
+using PatientScheduler.Main.Controller.DataStructures.Schedule;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -45,6 +46,39 @@ namespace PatientScheduler.Classes.Database
                 }
             }
             return appointmentList;
+        }
+
+        public List<WeeklySchedule> GetOfficeSchedule()
+        {
+            List<WeeklySchedule> weeklySchedule = new List<WeeklySchedule>();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand($"SELECT * FROM WeeklySchedule", connection))
+                {
+                    connection.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            try
+                            {
+                                string day = reader["Day"].ToString();
+                                string open = reader["OpenTime"].ToString();
+                                string close = reader["CloseTime"].ToString();
+
+                                weeklySchedule.Add(new WeeklySchedule(day, TimeSpan.Parse(open), TimeSpan.Parse(close)));
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine("There was an issue retrieving the weekly schedule." + ex);
+                            }
+                        }
+                    }
+                    connection.Close();
+                }
+            }
+            return weeklySchedule;
         }
     }
 }

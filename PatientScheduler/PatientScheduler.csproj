@@ -65,17 +65,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Main\Controller\Accounts\Accounts.cs" />
-    <Compile Include="Main\Controller\Accounts\Doctors.cs" />
-    <Compile Include="Main\Controller\Accounts\StaffAccounts.cs" />
-    <Compile Include="Main\Controller\Accounts\Appointments.cs" />
-    <Compile Include="Main\Model\AccountsData.cs" />
-    <Compile Include="Main\Model\Connection.cs" />
-    <Compile Include="Main\Model\ScheduleData.cs" />
-    <Compile Include="Main\Model\StaffData.cs" />
+    <Compile Include="Main\Controller\DataStructures\Schedule\WeeklySchedule.cs" />
+    <Compile Include="Main\Controller\DataStructures\Users\Accounts.cs" />
+    <Compile Include="Main\Controller\DataStructures\Users\Doctors.cs" />
+    <Compile Include="Main\Controller\DataStructures\Users\StaffAccounts.cs" />
+    <Compile Include="Main\Controller\DataStructures\Schedule\Appointments.cs" />
+    <Compile Include="Main\Controller\Schedule\OfficeSchedule.cs" />
+    <Compile Include="Main\Model\Users\AccountsData.cs" />
+    <Compile Include="Main\Model\ConnectionString\Connection.cs" />
+    <Compile Include="Main\Model\Schedule\ScheduleData.cs" />
+    <Compile Include="Main\Model\Users\StaffData.cs" />
     <Compile Include="Main\Controller\Helper\Calender.cs" />
-    <Compile Include="Main\Controller\Helper\ScheduleSearch.cs" />
-    <Compile Include="Main\Controller\Helper\ScheduleSetup.cs" />
+    <Compile Include="Main\Controller\Schedule\SearchSchedule.cs" />
+    <Compile Include="Main\Controller\Schedule\SetupSchedule.cs" />
     <Compile Include="Main\Controller\Helper\TextBoxStyle.cs" />
     <Compile Include="Main\Controller\Validation\AccountValidation.cs" />
     <Compile Include="Main\Controller\Validation\HashPasswords.cs" />
@@ -145,6 +147,12 @@
     <Compile Include="Main\View\Main\Staff.Designer.cs">
       <DependentUpon>Staff.cs</DependentUpon>
     </Compile>
+    <Compile Include="Main\View\ScheduleHelper\DoctorSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\View\ScheduleHelper\DoctorSchedule.Designer.cs">
+      <DependentUpon>DoctorSchedule.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Main\View\Accounts\LoginForm.resx">
@@ -179,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main\View\Main\Staff.resx">
       <DependentUpon>Staff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\View\ScheduleHelper\DoctorSchedule.resx">
+      <DependentUpon>DoctorSchedule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

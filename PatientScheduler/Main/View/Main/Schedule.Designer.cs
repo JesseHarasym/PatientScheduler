@@ -36,7 +36,7 @@
             this.pnlLookupAppt = new System.Windows.Forms.Panel();
             this.btnLookupAppt = new System.Windows.Forms.Button();
             this.pnlChangeDoctor = new System.Windows.Forms.Panel();
-            this.btnChangeDr = new System.Windows.Forms.Button();
+            this.btnDoctorSchedule = new System.Windows.Forms.Button();
             this.pnlNewAppt = new System.Windows.Forms.Panel();
             this.btnNewAppt = new System.Windows.Forms.Button();
             this.pnlHome = new System.Windows.Forms.Panel();
@@ -52,6 +52,7 @@
             this.dataSchedule = new System.Windows.Forms.DataGridView();
             this.pnlLegend = new System.Windows.Forms.Panel();
             this.pnlChangeDr = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnlCombo = new System.Windows.Forms.Panel();
             this.btnCombo = new System.Windows.Forms.Button();
             this.boxDoctorChoice = new System.Windows.Forms.ComboBox();
@@ -71,7 +72,6 @@
             this.pnlFollowUp = new System.Windows.Forms.Panel();
             this.lblFollowUp = new System.Windows.Forms.Label();
             this.pnlDataGrid = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.pnlEditAppt.SuspendLayout();
             this.pnlCancelAppt.SuspendLayout();
             this.pnlLookupAppt.SuspendLayout();
@@ -179,29 +179,30 @@
             // pnlChangeDoctor
             // 
             this.pnlChangeDoctor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlChangeDoctor.Controls.Add(this.btnChangeDr);
+            this.pnlChangeDoctor.Controls.Add(this.btnDoctorSchedule);
             this.pnlChangeDoctor.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlChangeDoctor.Location = new System.Drawing.Point(740, 0);
             this.pnlChangeDoctor.Name = "pnlChangeDoctor";
             this.pnlChangeDoctor.Size = new System.Drawing.Size(181, 62);
             this.pnlChangeDoctor.TabIndex = 8;
             // 
-            // btnChangeDr
+            // btnDoctorSchedule
             // 
-            this.btnChangeDr.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnChangeDr.FlatAppearance.BorderSize = 0;
-            this.btnChangeDr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChangeDr.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChangeDr.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnChangeDr.Image = ((System.Drawing.Image)(resources.GetObject("btnChangeDr.Image")));
-            this.btnChangeDr.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnChangeDr.Location = new System.Drawing.Point(0, 0);
-            this.btnChangeDr.Name = "btnChangeDr";
-            this.btnChangeDr.Size = new System.Drawing.Size(180, 60);
-            this.btnChangeDr.TabIndex = 0;
-            this.btnChangeDr.Text = "Doctors Schedule";
-            this.btnChangeDr.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnChangeDr.UseVisualStyleBackColor = true;
+            this.btnDoctorSchedule.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnDoctorSchedule.FlatAppearance.BorderSize = 0;
+            this.btnDoctorSchedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDoctorSchedule.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDoctorSchedule.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDoctorSchedule.Image = ((System.Drawing.Image)(resources.GetObject("btnDoctorSchedule.Image")));
+            this.btnDoctorSchedule.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnDoctorSchedule.Location = new System.Drawing.Point(0, 0);
+            this.btnDoctorSchedule.Name = "btnDoctorSchedule";
+            this.btnDoctorSchedule.Size = new System.Drawing.Size(180, 60);
+            this.btnDoctorSchedule.TabIndex = 0;
+            this.btnDoctorSchedule.Text = "Doctors Schedule";
+            this.btnDoctorSchedule.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDoctorSchedule.UseVisualStyleBackColor = true;
+            this.btnDoctorSchedule.Click += new System.EventHandler(this.btnDoctorSchedule_Click);
             // 
             // pnlNewAppt
             // 
@@ -402,6 +403,17 @@
             this.pnlChangeDr.Name = "pnlChangeDr";
             this.pnlChangeDr.Size = new System.Drawing.Size(370, 59);
             this.pnlChangeDr.TabIndex = 11;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(17, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(133, 21);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Doctor viewing:";
             // 
             // pnlCombo
             // 
@@ -611,17 +623,6 @@
             this.pnlDataGrid.Size = new System.Drawing.Size(922, 509);
             this.pnlDataGrid.TabIndex = 9;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(17, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 21);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Doctor viewing:";
-            // 
             // Schedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -669,7 +670,7 @@
         private System.Windows.Forms.Panel pnlLookupAppt;
         private System.Windows.Forms.Button btnLookupAppt;
         private System.Windows.Forms.Panel pnlChangeDoctor;
-        private System.Windows.Forms.Button btnChangeDr;
+        private System.Windows.Forms.Button btnDoctorSchedule;
         private System.Windows.Forms.Panel pnlNewAppt;
         private System.Windows.Forms.Button btnNewAppt;
         private System.Windows.Forms.Panel pnlHome;

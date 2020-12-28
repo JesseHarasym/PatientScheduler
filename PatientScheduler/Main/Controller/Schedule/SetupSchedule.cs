@@ -6,12 +6,12 @@ using System.Windows.Forms;
 
 namespace PatientScheduler.Classes.Helper
 {
-    public class ScheduleSetup
+    public class SetupSchedule
     {
         private DataGridView DataSchedule;
         private List<Appointments> AppointmentList;
 
-        public ScheduleSetup(DataGridView dataSchedule, List<Appointments> appointmentList)
+        public SetupSchedule(DataGridView dataSchedule, List<Appointments> appointmentList)
         {
             AppointmentList = appointmentList;
             DataSchedule = dataSchedule;
@@ -34,7 +34,7 @@ namespace PatientScheduler.Classes.Helper
             return DataSchedule;
         }
 
-        public bool SetupDoctorsSchedule(List<Appointments> doctorsAppointments)
+        public void SetupDoctorsSchedule(List<Appointments> doctorsAppointments)
         {
             foreach (var a in doctorsAppointments)
             {
@@ -54,8 +54,9 @@ namespace PatientScheduler.Classes.Helper
                     {
                         try
                         {
-                            AddAppointmentToSchedule(col, row, i, a);
-                            return true;
+                            DataSchedule.Rows[row + i].Cells[col].Style.BackColor = AppointmentColorSetup(a.Classification);
+                            //need to create patient tables and then retrieve name val
+                            DataSchedule[col, row].Value = a.PatientId;
                         }
                         catch (Exception e)
                         {
@@ -65,15 +66,6 @@ namespace PatientScheduler.Classes.Helper
                     }
                 }
             }
-
-            return false;
-        }
-
-        public void AddAppointmentToSchedule(int col, int row, int i, Appointments a)
-        {
-            DataSchedule.Rows[row + i].Cells[col].Style.BackColor = AppointmentColorSetup(a.Classification);
-            //need to create patient tables and then retrieve name val
-            DataSchedule[col, row].Value = a.PatientId;
         }
 
         public Tuple<int, bool> GetColumnIndex(string date)
