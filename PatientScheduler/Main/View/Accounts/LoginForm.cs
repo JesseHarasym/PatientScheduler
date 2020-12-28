@@ -127,10 +127,19 @@ namespace PatientScheduler
 
         public void TempStaffSetupFastLogin()
         {
-            var staff = new StaffAccounts("Jesse", "Harasym", "admin", "admin123", "admin@med.ca", "Administrator", 1,
-                10);
-            var cs = new CentralScreen(staff);
-            cs.ShowDialog();
+            try
+            {
+                var staff = new StaffAccounts("Jesse", "Harasym", "admin", "admin123", "admin@med.ca", "Administrator",
+                    1,
+                    10);
+                var cs = new CentralScreen(staff);
+                cs.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Something went wrong with fast login " + ex);
+            }
+
         }
     }
 }

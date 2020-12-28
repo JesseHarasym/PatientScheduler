@@ -6,12 +6,12 @@ using System.Windows.Forms;
 
 namespace PatientScheduler.Classes.Helper
 {
-    public class SetupSchedule
+    public class SetupDoctorsSchedule
     {
         private DataGridView DataSchedule;
         private List<Appointments> AppointmentList;
 
-        public SetupSchedule(DataGridView dataSchedule, List<Appointments> appointmentList)
+        public SetupDoctorsSchedule(DataGridView dataSchedule, List<Appointments> appointmentList)
         {
             AppointmentList = appointmentList;
             DataSchedule = dataSchedule;
@@ -20,7 +20,6 @@ namespace PatientScheduler.Classes.Helper
         public DataGridView GetDoctorsSchedule(string selectedDoctor)
         {
             List<Appointments> doctorsAppointments = new List<Appointments>();
-            ResetDatGrid();
 
             foreach (var a in AppointmentList)
             {
@@ -30,11 +29,11 @@ namespace PatientScheduler.Classes.Helper
                 }
             }
 
-            SetupDoctorsSchedule(doctorsAppointments);
+            SetupDocSchedule(doctorsAppointments);
             return DataSchedule;
         }
 
-        public void SetupDoctorsSchedule(List<Appointments> doctorsAppointments)
+        public void SetupDocSchedule(List<Appointments> doctorsAppointments)
         {
             foreach (var a in doctorsAppointments)
             {
@@ -54,7 +53,7 @@ namespace PatientScheduler.Classes.Helper
                     {
                         try
                         {
-                            DataSchedule.Rows[row + i].Cells[col].Style.BackColor = AppointmentColorSetup(a.Classification);
+                            DataSchedule.Rows[row + i].Cells[col].Style.BackColor = ScheduleColorSetup(a.Classification);
                             //need to create patient tables and then retrieve name val
                             DataSchedule[col, row].Value = a.PatientId;
                         }
@@ -94,7 +93,7 @@ namespace PatientScheduler.Classes.Helper
             return 0;
         }
 
-        public Color AppointmentColorSetup(string classification)
+        public Color ScheduleColorSetup(string classification)
         {
             Color apptColor = Color.LightSlateGray;
 

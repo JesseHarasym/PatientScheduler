@@ -39,8 +39,6 @@ namespace PatientScheduler.Classes.Helper
             List<WeeklySchedule> weeklySchedule = os.GetScheduleData();
             StartTime = os.GetEarliestStartTime(weeklySchedule);
             EndTime = os.GetLatestEndTime(weeklySchedule);
-            //StartTime = new TimeSpan(9, 30, 0);
-            //EndTime = new TimeSpan(16, 30, 0);
         }
 
         public void CalenderColumnSetup(int day)

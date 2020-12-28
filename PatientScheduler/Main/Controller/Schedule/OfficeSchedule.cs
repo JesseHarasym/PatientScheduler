@@ -10,7 +10,7 @@ namespace PatientScheduler.Main.Controller.Helper
         public List<WeeklySchedule> GetScheduleData()
         {
             var sd = new ScheduleData();
-            List<WeeklySchedule> weeklySchedule = sd.GetOfficeSchedule();
+            List<WeeklySchedule> weeklySchedule = sd.GetOfficeWeeklySchedule();
             return weeklySchedule;
         }
 

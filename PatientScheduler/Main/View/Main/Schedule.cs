@@ -3,6 +3,9 @@ using PatientScheduler.Classes.Database;
 using PatientScheduler.Classes.Helper;
 using PatientScheduler.Classes.Styling;
 using PatientScheduler.Components.Custom;
+using PatientScheduler.Main.Controller.DataStructures.Schedule;
+using PatientScheduler.Main.Controller.Helper;
+using PatientScheduler.Main.Controller.Schedule;
 using PatientScheduler.Main.View.ScheduleHelper;
 using System;
 using System.Collections.Generic;
@@ -32,16 +35,38 @@ namespace PatientScheduler.Components.Main
 
         public void GetScheduledAppointments()
         {
+            //reset so that we can ensure we have a fresh slate on data grid with each week view or doctor view
+            var sds = new SetupDoctorsSchedule(dataSchedule, AppointmentList);
+            sds.ResetDatGrid();
+            //weekly calender view
+            CreateCalenderView();
+            SetDateLabel();
+            //weekly schedule view
+            GetWeeklySchedule();
+            //doctor appointments
+            GetDoctorsAppointments();
+            SampleData();
+            DoctorScheduleSetup();
+
+        }
+
+        public void GetWeeklySchedule()
+        {
+            var sos = new SetupOfficeSchedule(dataSchedule);
+            dataSchedule = sos.GetOfficesWeeklySchedule();
+        }
+
+        public void CreateCalenderView()
+        {
             var calender = new Calender(dataSchedule);
             calender.Day = CurrentDayViewed;
             dataSchedule = calender.CreateCalender();
+        }
 
+        public void GetDoctorsAppointments()
+        {
             var sd = new ScheduleData();
             AppointmentList = sd.GetDoctorsAppointments();
-
-            SampleData();
-            SetDateLabel();
-            DoctorScheduleSetup();
         }
 
         public void SetupDoctorInitial()
@@ -72,8 +97,8 @@ namespace PatientScheduler.Components.Main
         public void DoctorScheduleSetup()
         {
             CurrentDoctor = boxDoctorChoice.SelectedValue.ToString();
-            var ss = new SetupSchedule(dataSchedule, AppointmentList);
-            dataSchedule = ss.GetDoctorsSchedule(CurrentDoctor);
+            var sds = new SetupDoctorsSchedule(dataSchedule, AppointmentList);
+            dataSchedule = sds.GetDoctorsSchedule(CurrentDoctor);
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -212,18 +237,49 @@ namespace PatientScheduler.Components.Main
             legend.Add("Lab Work");
             legend.Add("Other");
 
-
             for (int days = -365; days < 365; days++)
             {
-                for (int i = 0; i < 7; i++)
+                for (int i = 0; i < 10; i++)
                 {
                     int classification = rand.Next(legend.Count);
                     int r = rand.Next(-15, 15);
                     int rt = rand.Next(0, 2);
-                    int pid = rand.Next(15, 255);
-                    AppointmentList.Add(new Appointments(100 + i + days, 2, pid, "", DateTime.Today.AddDays(days) + new TimeSpan(9 + i, 15 + (rt * 15), 0), 1, legend[classification], 45 + r));
+                    int pid = rand.Next(1, 50);
+
+                    DayOfWeek dayOfWeek = DateTime.Today.AddDays(days).DayOfWeek;
+                    var times = SampleDataWeeklySchedule(dayOfWeek);
+                    bool dayFound = times.Item1;
+                    TimeSpan startTime = times.Item2;
+                    TimeSpan endTime = times.Item3;
+
+                    if (dayFound)
+                    {
+                        TimeSpan time = new TimeSpan(startTime.Hours + i, startTime.Minutes + (rt * 15), 0);
+
+                        if (time.Hours <= endTime.Hours && time.Minutes <= endTime.Minutes)
+                        {
+                            AppointmentList.Add(new Appointments(100 + i + days, 2, pid, "", DateTime.Today.AddDays(days) + time, 1, legend[classification], 45 + r));
+                        }
+                    }
                 }
             }
+        }
+
+        public Tuple<bool, TimeSpan, TimeSpan> SampleDataWeeklySchedule(DayOfWeek dayOfWeek)
+        {
+            var os = new OfficeSchedule();
+            List<WeeklySchedule> weeklySchedule = os.GetScheduleData();
+            TimeSpan temp = new TimeSpan(0, 0, 0);
+
+            foreach (var d in weeklySchedule)
+            {
+                if (d.Day == dayOfWeek.ToString())
+                {
+                    return Tuple.Create(true, d.OpenTime, d.CloseTime);
+                }
+            }
+
+            return Tuple.Create(false, temp, temp);
         }
     }
 }

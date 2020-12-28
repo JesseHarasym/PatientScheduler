@@ -15,7 +15,7 @@ namespace PatientScheduler.Classes.Database
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand(
-                    $"SELECT COUNT(*) from Staff WHERE StaffId = @staffId", connection))
+                    $"SELECT COUNT(*) from StaffInformation WHERE StaffId = @staffId", connection))
                 {
                     connection.Open();
 
@@ -51,7 +51,7 @@ namespace PatientScheduler.Classes.Database
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand($"SELECT * FROM Staff WHERE StaffId = @staffId", connection))
+                using (SqlCommand cmd = new SqlCommand($"SELECT * FROM StaffInformation WHERE StaffId = @staffId", connection))
                 {
                     connection.Open();
                     cmd.Parameters.AddWithValue("@staffId", staffId);
@@ -121,7 +121,7 @@ namespace PatientScheduler.Classes.Database
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand($"SELECT * FROM Staff WHERE Position = @doctor", connection))
+                using (SqlCommand cmd = new SqlCommand($"SELECT * FROM StaffInformation WHERE Position = @doctor", connection))
                 {
                     connection.Open();
                     cmd.Parameters.AddWithValue("@doctor", "Doctor");
@@ -144,7 +144,7 @@ namespace PatientScheduler.Classes.Database
                             }
                             catch (Exception ex)
                             {
-                                Console.WriteLine("There was an issue retrieving the users staff information." + ex);
+                                Console.WriteLine("There was an issue retrieving the doctors staff information." + ex);
                             }
                         }
                     }

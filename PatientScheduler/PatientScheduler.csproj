@@ -71,13 +71,14 @@
     <Compile Include="Main\Controller\DataStructures\Users\StaffAccounts.cs" />
     <Compile Include="Main\Controller\DataStructures\Schedule\Appointments.cs" />
     <Compile Include="Main\Controller\Schedule\OfficeSchedule.cs" />
+    <Compile Include="Main\Controller\Schedule\SetupOfficeSchedule.cs" />
     <Compile Include="Main\Model\Users\AccountsData.cs" />
     <Compile Include="Main\Model\ConnectionString\Connection.cs" />
     <Compile Include="Main\Model\Schedule\ScheduleData.cs" />
     <Compile Include="Main\Model\Users\StaffData.cs" />
     <Compile Include="Main\Controller\Helper\Calender.cs" />
     <Compile Include="Main\Controller\Schedule\SearchSchedule.cs" />
-    <Compile Include="Main\Controller\Schedule\SetupSchedule.cs" />
+    <Compile Include="Main\Controller\Schedule\SetupDoctorsSchedule.cs" />
     <Compile Include="Main\Controller\Helper\TextBoxStyle.cs" />
     <Compile Include="Main\Controller\Validation\AccountValidation.cs" />
     <Compile Include="Main\Controller\Validation\HashPasswords.cs" />

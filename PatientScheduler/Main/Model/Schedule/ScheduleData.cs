@@ -48,13 +48,13 @@ namespace PatientScheduler.Classes.Database
             return appointmentList;
         }
 
-        public List<WeeklySchedule> GetOfficeSchedule()
+        public List<WeeklySchedule> GetOfficeWeeklySchedule()
         {
             List<WeeklySchedule> weeklySchedule = new List<WeeklySchedule>();
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand($"SELECT * FROM WeeklySchedule", connection))
+                using (SqlCommand cmd = new SqlCommand($"SELECT * FROM OfficesWeeklySchedule WHERE OpenTime IS NOT NULL AND CloseTime IS NOT NULL", connection))
                 {
                     connection.Open();
                     using (SqlDataReader reader = cmd.ExecuteReader())
@@ -72,6 +72,76 @@ namespace PatientScheduler.Classes.Database
                             catch (Exception ex)
                             {
                                 Console.WriteLine("There was an issue retrieving the weekly schedule." + ex);
+                            }
+                        }
+                    }
+                    connection.Close();
+                }
+            }
+            return weeklySchedule;
+        }
+
+        public List<WeeklySchedule> GetDoctorsWeeklySchedule()
+        {
+            List<WeeklySchedule> weeklySchedule = new List<WeeklySchedule>();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand($"SELECT * FROM DoctorsWeeklySchedule", connection))
+                {
+                    connection.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            try
+                            {
+                                string day = reader["Day"].ToString();
+                                string open = reader["OpenTime"].ToString();
+                                string close = reader["CloseTime"].ToString();
+
+                                weeklySchedule.Add(new WeeklySchedule(day, TimeSpan.Parse(open), TimeSpan.Parse(close)));
+
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine("There was an issue retrieving the doctors weekly schedule." + ex);
+                            }
+                        }
+                    }
+                    connection.Close();
+                }
+            }
+            return weeklySchedule;
+        }
+
+        public List<WeeklySchedule> GetDoctorsDetailedSchedule()
+        {
+            List<WeeklySchedule> weeklySchedule = new List<WeeklySchedule>();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand($"SELECT * FROM DoctorsDetailedSchedule", connection))
+                {
+                    connection.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            try
+                            {
+                                string doctorId = reader["DoctorId"].ToString();
+                                string date = reader["Date"].ToString();
+                                string startTime = reader["StartTime"].ToString();
+                                string endTime = reader["EndTime"].ToString();
+                                string isBreak = reader["Break"].ToString();
+
+
+
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine("There was an issue retrieving the doctors detailed schedule." + ex);
                             }
                         }
                     }
