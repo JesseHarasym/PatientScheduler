@@ -117,27 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnComboDoctor.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAATVJREFUOE+l
-        lDtKxUAYRuOjtlB81G7BQlAQLu7BPWgp2qqN3s4F2Nm7AAUbF6BY2STmQeKFq4WlFuJ4fvgCcYjijB+c
-        4ub75zDMJDdpU5blKYzhriiKc9hO03RedVzqup5FuA+v4ODd5FVVLWskLkiWkN1KarzBjuq4NE0zh+Sh
-        I3Xs9EB1XNjpKqIPT7qlOi5IzrpCGHNZM6rDw45WPKGxpzo8zrkJBE+e8F51XBBceMJPe8VUhwfBsSd0
-        eZ5vqA4Pgl1fGHTbDK+zKINH8WISj2doe5td0/L+IB0y5Et6YfZEy34OtzvN4E2fwOOa2Skt+z0c/CIL
-        Rp6gy8hmNP63sGgA3z4/Yc8GGgsL3/SRJ7NzO1QdHs5oEsFVR3Zpz1THJcuyBWSN8e9/8jbsbNPQz54k
-        yRcBg94QuFiizwAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="btnComboWeek.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAATVJREFUOE+l
-        lDtKxUAYRuOjtlB81G7BQlAQLu7BPWgp2qqN3s4F2Nm7AAUbF6BY2STmQeKFq4WlFuJ4fvgCcYjijB+c
-        4ub75zDMJDdpU5blKYzhriiKc9hO03RedVzqup5FuA+v4ODd5FVVLWskLkiWkN1KarzBjuq4NE0zh+Sh
-        I3Xs9EB1XNjpKqIPT7qlOi5IzrpCGHNZM6rDw45WPKGxpzo8zrkJBE+e8F51XBBceMJPe8VUhwfBsSd0
-        eZ5vqA4Pgl1fGHTbDK+zKINH8WISj2doe5td0/L+IB0y5Et6YfZEy34OtzvN4E2fwOOa2Skt+z0c/CIL
-        Rp6gy8hmNP63sGgA3z4/Yc8GGgsL3/SRJ7NzO1QdHs5oEsFVR3Zpz1THJcuyBWSN8e9/8jbsbNPQz54k
-        yRcBg94QuFiizwAAAABJRU5ErkJggg==
-</value>
-  </data>
 </root>

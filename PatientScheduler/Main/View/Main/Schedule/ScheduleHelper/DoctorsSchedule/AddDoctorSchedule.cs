@@ -1,5 +1,7 @@
 ﻿using PatientScheduler.Classes.Accounts;
 using PatientScheduler.Classes.Database;
+using PatientScheduler.Main.View.Main.Schedule.ScheduleHelper;
+using PatientScheduler.Main.View.Main.Schedule.ScheduleHelper.DoctorsSchedule;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
@@ -16,6 +18,11 @@ namespace PatientScheduler.Main.View.ScheduleHelper
             SetupCombos();
         }
 
+        private void DoctorSchedule_Load(object sender, System.EventArgs e)
+        {
+            radioWeeklySchedule.Checked = true;
+        }
+
         public void SetupCombos()
         {
             var sd = new StaffData();
@@ -29,9 +36,6 @@ namespace PatientScheduler.Main.View.ScheduleHelper
             //basic combo box styling
             boxDoctorChoice.DropDownStyle = ComboBoxStyle.DropDownList;
             boxDoctorChoice.Region = new Region(new Rectangle(3, 3, boxDoctorChoice.Width - 3, boxDoctorChoice.Height - 6));
-
-            boxWeekChoice.DropDownStyle = ComboBoxStyle.DropDownList;
-            boxWeekChoice.Region = new Region(new Rectangle(3, 3, boxDoctorChoice.Width - 3, boxDoctorChoice.Height - 6));
 
             //ensure first doctors schedule is displayed on load
             boxDoctorChoice.SelectedIndex = 0;
@@ -52,9 +56,12 @@ namespace PatientScheduler.Main.View.ScheduleHelper
             boxDoctorChoice.DroppedDown = true;
         }
 
-        private void btnComboWeek_Click(object sender, System.EventArgs e)
+        private void radioWeeklySchedule_CheckedChanged(object sender, System.EventArgs e)
         {
-            boxWeekChoice.DroppedDown = true;
+            var dwsv = new DoctorWeeklyScheduleView();
+            pnlSchedule.Controls.Add(dwsv);
+            var dabv = new DoctorAddedBreaksView();
+            pnlSeeBreaks.Controls.Add(dabv);
         }
     }
 }

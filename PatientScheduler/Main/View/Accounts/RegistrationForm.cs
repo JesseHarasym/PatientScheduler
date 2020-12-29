@@ -96,11 +96,11 @@ namespace PatientScheduler.Components
                 message.Show("This staff Id is not valid, please ensure it was entered correctly.");
                 return false;
             }
-            if (!staffIdHasAccount)
-            {
-                message.Show("This staff Id already has an account associated with it, please talk to an administrator.");
-                return false;
-            }
+            //if (!staffIdHasAccount)
+            //{
+            //    message.Show("This staff Id already has an account associated with it, please talk to an administrator.");
+            //    return false;
+            //}
 
             return true;
         }

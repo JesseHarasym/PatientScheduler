@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace PatientScheduler.Classes.Helper
 {
-    public class SearchSchedule
+    public class SearchScheduleDate
     {
         public string FixDateInput(string month, string day, string year)
         {

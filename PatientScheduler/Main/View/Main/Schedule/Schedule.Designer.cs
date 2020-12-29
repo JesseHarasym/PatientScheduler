@@ -309,6 +309,7 @@
             // 
             // txtYear
             // 
+            this.txtYear.BackColor = System.Drawing.Color.LightSlateGray;
             this.txtYear.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtYear.Location = new System.Drawing.Point(491, 11);
             this.txtYear.Name = "txtYear";
@@ -319,6 +320,7 @@
             // 
             // txtDay
             // 
+            this.txtDay.BackColor = System.Drawing.Color.LightSlateGray;
             this.txtDay.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDay.Location = new System.Drawing.Point(385, 12);
             this.txtDay.Name = "txtDay";
@@ -329,6 +331,7 @@
             // 
             // txtMonth
             // 
+            this.txtMonth.BackColor = System.Drawing.Color.LightSlateGray;
             this.txtMonth.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMonth.Location = new System.Drawing.Point(279, 12);
             this.txtMonth.Name = "txtMonth";
@@ -417,10 +420,10 @@
             // 
             // pnlCombo
             // 
-            this.pnlCombo.BackColor = System.Drawing.Color.DimGray;
+            this.pnlCombo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(45)))), ((int)(((byte)(54)))));
             this.pnlCombo.Controls.Add(this.btnCombo);
             this.pnlCombo.Controls.Add(this.boxDoctorChoice);
-            this.pnlCombo.Location = new System.Drawing.Point(156, 15);
+            this.pnlCombo.Location = new System.Drawing.Point(156, 17);
             this.pnlCombo.Name = "pnlCombo";
             this.pnlCombo.Size = new System.Drawing.Size(194, 27);
             this.pnlCombo.TabIndex = 12;
@@ -433,9 +436,9 @@
             this.btnCombo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCombo.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnCombo.Image = ((System.Drawing.Image)(resources.GetObject("btnCombo.Image")));
-            this.btnCombo.Location = new System.Drawing.Point(175, 0);
+            this.btnCombo.Location = new System.Drawing.Point(175, 3);
             this.btnCombo.Name = "btnCombo";
-            this.btnCombo.Size = new System.Drawing.Size(19, 27);
+            this.btnCombo.Size = new System.Drawing.Size(19, 21);
             this.btnCombo.TabIndex = 11;
             this.btnCombo.UseVisualStyleBackColor = false;
             this.btnCombo.Click += new System.EventHandler(this.btnCombo_Click);

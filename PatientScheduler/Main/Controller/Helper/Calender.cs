@@ -35,7 +35,7 @@ namespace PatientScheduler.Classes.Helper
 
         public void GetOfficeSchedule()
         {
-            var os = new OfficeSchedule();
+            var os = new OfficeScheduleHelper();
             List<WeeklySchedule> weeklySchedule = os.GetScheduleData();
             StartTime = os.GetEarliestStartTime(weeklySchedule);
             EndTime = os.GetLatestEndTime(weeklySchedule);
@@ -53,6 +53,7 @@ namespace PatientScheduler.Classes.Helper
                 column.Name = $"{DateTime.Today.AddDays(+day):dddd\nMMM dd}";
                 DataSchedule.Columns.Add(column);
                 DataSchedule.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                DataSchedule.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
                 day += 1;
             }
 

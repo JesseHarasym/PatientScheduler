@@ -54,6 +54,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -70,15 +71,15 @@
     <Compile Include="Main\Controller\DataStructures\Users\Doctors.cs" />
     <Compile Include="Main\Controller\DataStructures\Users\StaffAccounts.cs" />
     <Compile Include="Main\Controller\DataStructures\Schedule\Appointments.cs" />
-    <Compile Include="Main\Controller\Schedule\OfficeSchedule.cs" />
-    <Compile Include="Main\Controller\Schedule\SetupOfficeSchedule.cs" />
+    <Compile Include="Main\Controller\Schedule\Helper\OfficeScheduleHelper.cs" />
+    <Compile Include="Main\Controller\Schedule\Main\SetupOfficeSchedule.cs" />
     <Compile Include="Main\Model\Users\AccountsData.cs" />
     <Compile Include="Main\Model\ConnectionString\Connection.cs" />
     <Compile Include="Main\Model\Schedule\ScheduleData.cs" />
     <Compile Include="Main\Model\Users\StaffData.cs" />
     <Compile Include="Main\Controller\Helper\Calender.cs" />
-    <Compile Include="Main\Controller\Schedule\SearchSchedule.cs" />
-    <Compile Include="Main\Controller\Schedule\SetupDoctorsSchedule.cs" />
+    <Compile Include="Main\Controller\Schedule\Helper\SearchScheduleDate.cs" />
+    <Compile Include="Main\Controller\Schedule\Appointments\SetupDoctorsAppointment.cs" />
     <Compile Include="Main\Controller\Helper\TextBoxStyle.cs" />
     <Compile Include="Main\Controller\Validation\AccountValidation.cs" />
     <Compile Include="Main\Controller\Validation\HashPasswords.cs" />
@@ -106,53 +107,71 @@
     <Compile Include="Main\View\Custom\UserMessage.Designer.cs">
       <DependentUpon>UserMessage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main\View\Main\CentralScreen.cs">
+    <Compile Include="Main\View\Main\MenuInterface.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main\View\Main\CentralScreen.Designer.cs">
-      <DependentUpon>CentralScreen.cs</DependentUpon>
+    <Compile Include="Main\View\Main\MenuInterface.Designer.cs">
+      <DependentUpon>MenuInterface.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main\View\Main\Home.cs">
+    <Compile Include="Main\View\Main\Home\Home.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Main\View\Main\Home.Designer.cs">
+    <Compile Include="Main\View\Main\Home\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main\View\Main\Patients.cs">
+    <Compile Include="Main\View\Main\Patients\Patients.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Main\View\Main\Patients.Designer.cs">
+    <Compile Include="Main\View\Main\Patients\Patients.Designer.cs">
       <DependentUpon>Patients.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main\View\Main\Reports.cs">
+    <Compile Include="Main\View\Main\Reports\Reports.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Main\View\Main\Reports.Designer.cs">
+    <Compile Include="Main\View\Main\Reports\Reports.Designer.cs">
       <DependentUpon>Reports.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main\View\Main\Schedule.cs">
+    <Compile Include="Main\View\Main\Schedule\Schedule.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Main\View\Main\Schedule.Designer.cs">
+    <Compile Include="Main\View\Main\Schedule\Schedule.Designer.cs">
       <DependentUpon>Schedule.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main\View\Main\Settings.cs">
+    <Compile Include="Main\View\Main\Schedule\ScheduleHelper\DoctorsSchedule\DoctorAddedBreaksView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Main\View\Main\Settings.Designer.cs">
+    <Compile Include="Main\View\Main\Schedule\ScheduleHelper\DoctorsSchedule\DoctorAddedBreaksView.Designer.cs">
+      <DependentUpon>DoctorAddedBreaksView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\View\Main\Schedule\ScheduleHelper\DoctorsSchedule\DoctorSpecialScheduleView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main\View\Main\Schedule\ScheduleHelper\DoctorsSchedule\DoctorSpecialScheduleView.Designer.cs">
+      <DependentUpon>DoctorSpecialScheduleView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\View\Main\Schedule\ScheduleHelper\DoctorsSchedule\DoctorWeeklyScheduleView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main\View\Main\Schedule\ScheduleHelper\DoctorsSchedule\DoctorWeeklyScheduleView.Designer.cs">
+      <DependentUpon>DoctorWeeklyScheduleView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\View\Main\Settings\Settings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main\View\Main\Settings\Settings.Designer.cs">
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main\View\Main\Staff.cs">
+    <Compile Include="Main\View\Main\Staff\Staff.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Main\View\Main\Staff.Designer.cs">
+    <Compile Include="Main\View\Main\Staff\Staff.Designer.cs">
       <DependentUpon>Staff.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main\View\ScheduleHelper\DoctorSchedule.cs">
+    <Compile Include="Main\View\Main\Schedule\ScheduleHelper\DoctorsSchedule\AddDoctorSchedule.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main\View\ScheduleHelper\DoctorSchedule.Designer.cs">
-      <DependentUpon>DoctorSchedule.cs</DependentUpon>
+    <Compile Include="Main\View\Main\Schedule\ScheduleHelper\DoctorsSchedule\AddDoctorSchedule.Designer.cs">
+      <DependentUpon>AddDoctorSchedule.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -168,29 +187,38 @@
     <EmbeddedResource Include="Main\View\Custom\UserMessage.resx">
       <DependentUpon>UserMessage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main\View\Main\CentralScreen.resx">
-      <DependentUpon>CentralScreen.cs</DependentUpon>
+    <EmbeddedResource Include="Main\View\Main\MenuInterface.resx">
+      <DependentUpon>MenuInterface.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main\View\Main\Home.resx">
+    <EmbeddedResource Include="Main\View\Main\Home\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main\View\Main\Patients.resx">
+    <EmbeddedResource Include="Main\View\Main\Patients\Patients.resx">
       <DependentUpon>Patients.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main\View\Main\Reports.resx">
+    <EmbeddedResource Include="Main\View\Main\Reports\Reports.resx">
       <DependentUpon>Reports.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main\View\Main\Schedule.resx">
+    <EmbeddedResource Include="Main\View\Main\Schedule\Schedule.resx">
       <DependentUpon>Schedule.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main\View\Main\Settings.resx">
+    <EmbeddedResource Include="Main\View\Main\Schedule\ScheduleHelper\DoctorsSchedule\DoctorAddedBreaksView.resx">
+      <DependentUpon>DoctorAddedBreaksView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\View\Main\Schedule\ScheduleHelper\DoctorsSchedule\DoctorSpecialScheduleView.resx">
+      <DependentUpon>DoctorSpecialScheduleView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\View\Main\Schedule\ScheduleHelper\DoctorsSchedule\DoctorWeeklyScheduleView.resx">
+      <DependentUpon>DoctorWeeklyScheduleView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\View\Main\Settings\Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main\View\Main\Staff.resx">
+    <EmbeddedResource Include="Main\View\Main\Staff\Staff.resx">
       <DependentUpon>Staff.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main\View\ScheduleHelper\DoctorSchedule.resx">
-      <DependentUpon>DoctorSchedule.cs</DependentUpon>
+    <EmbeddedResource Include="Main\View\Main\Schedule\ScheduleHelper\DoctorsSchedule\AddDoctorSchedule.resx">
+      <DependentUpon>AddDoctorSchedule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -225,6 +253,12 @@
   <ItemGroup>
     <None Include="Resources\StartupIcon.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Main\View\Main\Home\HomeHelper\" />
+    <Folder Include="Main\View\Main\Patients\PatientsHelper\" />
+    <Folder Include="Main\View\Main\Reports\ReportsHelper\" />
+    <Folder Include="Main\View\Main\Settings\SettingsHelper\" />
+    <Folder Include="Main\View\Main\Staff\StaffHelper\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

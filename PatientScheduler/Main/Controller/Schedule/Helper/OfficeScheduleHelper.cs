@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace PatientScheduler.Main.Controller.Helper
 {
-    public class OfficeSchedule
+    public class OfficeScheduleHelper
     {
         public List<WeeklySchedule> GetScheduleData()
         {

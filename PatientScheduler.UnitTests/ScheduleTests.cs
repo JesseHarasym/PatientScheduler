@@ -13,7 +13,7 @@ namespace PatientScheduler.UnitTests
         [TestMethod]
         public void ScheduleSearch_ValidFixDateInput_ReturnsAreEqual()
         {
-            var ss = new SearchSchedule();
+            var ss = new SearchScheduleDate();
             string dateString = ss.FixDateInput("april", "26", "2020");
             Assert.AreEqual(dateString, "04-26-2020");
         }
@@ -21,7 +21,7 @@ namespace PatientScheduler.UnitTests
         [TestMethod]
         public void ScheduleSearch_InvalidFixDateInput_ReturnsAreNotEqual()
         {
-            var ss = new SearchSchedule();
+            var ss = new SearchScheduleDate();
             string dateString = ss.FixDateInput("april", "26", "2020");
             Assert.AreNotEqual(dateString, "april-26-2020");
         }
@@ -29,7 +29,7 @@ namespace PatientScheduler.UnitTests
         [TestMethod]
         public void ScheduleSearch_ValidCheckIfValidDate_ReturnsTrue()
         {
-            var ss = new SearchSchedule();
+            var ss = new SearchScheduleDate();
             var checkResponse = ss.CheckIfValidDate("04-26-2020");
             bool validDate = checkResponse.Item1;
             Assert.IsTrue(validDate);
@@ -38,7 +38,7 @@ namespace PatientScheduler.UnitTests
         [TestMethod]
         public void ScheduleSearch_InvalidCheckIfValidDate_ReturnsFalse()
         {
-            var ss = new SearchSchedule();
+            var ss = new SearchScheduleDate();
             var checkResponse = ss.CheckIfValidDate("13-26-2020");
             bool validDate = checkResponse.Item1;
             Assert.IsFalse(validDate);
@@ -47,7 +47,7 @@ namespace PatientScheduler.UnitTests
         [TestMethod]
         public void ScheduleSearch_ValidMonthChecker_ReturnsAreEqual()
         {
-            var ss = new SearchSchedule();
+            var ss = new SearchScheduleDate();
             Dictionary<string, string> monthCheck = ss.CreateMonthChecker();
             monthCheck.TryGetValue("april", out string month);
             Assert.AreEqual("04", month);
@@ -56,7 +56,7 @@ namespace PatientScheduler.UnitTests
         [TestMethod]
         public void ScheduleSearch_InvalidMonthChecker_ReturnsAreNotEqual()
         {
-            var ss = new SearchSchedule();
+            var ss = new SearchScheduleDate();
             Dictionary<string, string> monthCheck = ss.CreateMonthChecker();
             monthCheck.TryGetValue("april", out string month);
             Assert.AreNotEqual("05", month);
@@ -78,7 +78,7 @@ namespace PatientScheduler.UnitTests
         {
             TimeSpan expectedEarliest = new TimeSpan(8, 0, 0);
             List<WeeklySchedule> weeklySchedule = ScheduleMockData();
-            var os = new OfficeSchedule();
+            var os = new OfficeScheduleHelper();
             TimeSpan earliestTime = os.GetEarliestStartTime(weeklySchedule);
             Assert.AreEqual(expectedEarliest, earliestTime);
         }
@@ -88,7 +88,7 @@ namespace PatientScheduler.UnitTests
         {
             TimeSpan expectedEarliest = new TimeSpan(9, 30, 0);
             List<WeeklySchedule> weeklySchedule = ScheduleMockData();
-            var os = new OfficeSchedule();
+            var os = new OfficeScheduleHelper();
             TimeSpan earliestTime = os.GetEarliestStartTime(weeklySchedule);
             Assert.AreNotEqual(expectedEarliest, earliestTime);
         }
@@ -98,7 +98,7 @@ namespace PatientScheduler.UnitTests
         {
             TimeSpan expectedLatest = new TimeSpan(17, 0, 0);
             List<WeeklySchedule> weeklySchedule = ScheduleMockData();
-            var os = new OfficeSchedule();
+            var os = new OfficeScheduleHelper();
             TimeSpan latestTime = os.GetLatestEndTime(weeklySchedule);
             Assert.AreEqual(expectedLatest, latestTime);
         }
@@ -107,7 +107,7 @@ namespace PatientScheduler.UnitTests
         {
             TimeSpan expectedLatest = new TimeSpan(16, 30, 0);
             List<WeeklySchedule> weeklySchedule = ScheduleMockData();
-            var os = new OfficeSchedule();
+            var os = new OfficeScheduleHelper();
             TimeSpan latestTime = os.GetLatestEndTime(weeklySchedule);
             Assert.AreNotEqual(expectedLatest, latestTime);
         }

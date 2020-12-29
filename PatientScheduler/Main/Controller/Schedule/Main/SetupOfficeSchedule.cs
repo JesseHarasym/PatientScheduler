@@ -18,7 +18,7 @@ namespace PatientScheduler.Main.Controller.Schedule
 
         public DataGridView GetOfficesWeeklySchedule()
         {
-            var os = new OfficeSchedule();
+            var os = new OfficeScheduleHelper();
             var weeklySchedule = os.GetScheduleData();
             SetupOfficesWeeklySchedule(weeklySchedule);
             return DataSchedule;

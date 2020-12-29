@@ -28,7 +28,7 @@ namespace PatientScheduler.Components.Main
 
         private void Schedule_Load(object sender, EventArgs e)
         {
-            ResetAfterSearch();
+            SetupTextBoxes();
             SetupDoctorInitial();
             GetScheduledAppointments();
         }
@@ -36,7 +36,7 @@ namespace PatientScheduler.Components.Main
         public void GetScheduledAppointments()
         {
             //reset so that we can ensure we have a fresh slate on data grid with each week view or doctor view
-            var sds = new SetupDoctorsSchedule(dataSchedule, AppointmentList);
+            var sds = new SetupDoctorsAppointment(dataSchedule, AppointmentList);
             sds.ResetDatGrid();
             //weekly calender view
             CreateCalenderView();
@@ -45,7 +45,7 @@ namespace PatientScheduler.Components.Main
             GetWeeklySchedule();
             //doctor appointments
             GetDoctorsAppointments();
-            SampleData();
+            //SampleData();
             DoctorScheduleSetup();
 
         }
@@ -97,8 +97,8 @@ namespace PatientScheduler.Components.Main
         public void DoctorScheduleSetup()
         {
             CurrentDoctor = boxDoctorChoice.SelectedValue.ToString();
-            var sds = new SetupDoctorsSchedule(dataSchedule, AppointmentList);
-            dataSchedule = sds.GetDoctorsSchedule(CurrentDoctor);
+            var sds = new SetupDoctorsAppointment(dataSchedule, AppointmentList);
+            dataSchedule = sds.GetDoctorsAppointments(CurrentDoctor);
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -109,7 +109,7 @@ namespace PatientScheduler.Components.Main
             string day = txtDay.Text;
             string year = txtYear.Text;
 
-            var ss = new SearchSchedule();
+            var ss = new SearchScheduleDate();
             string dateString = ss.FixDateInput(month, day, year);
             var validReturns = ss.CheckIfValidDate(dateString);
             bool validDate = validReturns.Item1;
@@ -121,7 +121,7 @@ namespace PatientScheduler.Components.Main
                 CurrentDayViewed = daysDifference;
                 GetScheduledAppointments();
 
-                ResetAfterSearch();
+                SetupTextBoxes();
 
                 message.Show($"Your {dateTime.ToShortDateString()} has been searched successfully.");
             }
@@ -141,12 +141,12 @@ namespace PatientScheduler.Components.Main
         {
             CurrentDayViewed = 0;
             GetScheduledAppointments();
-            ResetAfterSearch();
+            SetupTextBoxes();
             var message = new UserMessage();
             message.Show($"Your view has returned to this week.");
         }
 
-        public void ResetAfterSearch()
+        public void SetupTextBoxes()
         {
             txtMonth.Clear();
             txtDay.Clear();
@@ -267,7 +267,7 @@ namespace PatientScheduler.Components.Main
 
         public Tuple<bool, TimeSpan, TimeSpan> SampleDataWeeklySchedule(DayOfWeek dayOfWeek)
         {
-            var os = new OfficeSchedule();
+            var os = new OfficeScheduleHelper();
             List<WeeklySchedule> weeklySchedule = os.GetScheduleData();
             TimeSpan temp = new TimeSpan(0, 0, 0);
 
