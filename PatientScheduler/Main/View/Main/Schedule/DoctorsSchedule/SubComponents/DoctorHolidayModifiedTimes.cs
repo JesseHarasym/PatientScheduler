@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PatientScheduler.Main.View.Main.Schedule.ScheduleHelper
+namespace PatientScheduler.Main.View.Main.Schedule.ScheduleHelper.DoctorsSchedule
 {
-    public partial class DoctorSpecialScheduleChoice : UserControl
+    public partial class DoctorHolidayModifiedTimes : UserControl
     {
-        public DoctorSpecialScheduleChoice()
+        public DoctorHolidayModifiedTimes()
         {
             InitializeComponent();
         }

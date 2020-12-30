@@ -62,54 +62,13 @@ namespace PatientScheduler.Classes.Styling
                 case "year":
                     phrase = "year..";
                     break;
-                case "startMonday":
-                    phrase = "start time monday..";
+                case "startTime":
+                    phrase = "start time..";
                     break;
-                case "endMonday":
-                    phrase = "end time monday..";
+                case "endTime":
+                    phrase = "end time..";
                     break;
-                case "startTuesday":
-                    phrase = "start time tuesday..";
-                    break;
-                case "endTuesday":
-                    phrase = "end time tuesday..";
-                    break;
-                case "startWednesday":
-                    phrase = "start time wednesday..";
-                    break;
-                case "endWednesday":
-                    phrase = "end time wednesday..";
-                    break;
-                case "startThursday":
-                    phrase = "start time thursday..";
-                    break;
-                case "endThursday":
-                    phrase = "end time thursday..";
-                    break;
-                case "startFriday":
-                    phrase = "start time friday..";
-                    break;
-                case "endFriday":
-                    phrase = "end time friday..";
-                    break;
-                case "startSaturday":
-                    phrase = "start time saturday..";
-                    break;
-                case "endSaturday":
-                    phrase = "end time saturday..";
-                    break;
-                case "startSunday":
-                    phrase = "start time sunday..";
-                    break;
-                case "endSunday":
-                    phrase = "end time sunday..";
-                    break;
-                case "startBreak":
-                    phrase = "start of break time..";
-                    break;
-                case "endBreak":
-                    phrase = "end of break time..";
-                    break;
+
             }
 
             return phrase;
