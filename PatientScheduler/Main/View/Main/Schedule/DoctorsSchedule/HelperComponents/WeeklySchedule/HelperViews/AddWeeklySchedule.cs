@@ -1,12 +1,11 @@
 ﻿using PatientScheduler.Classes.Styling;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace PatientScheduler.Main.View.Main.Schedule.ScheduleHelper
 {
-    public partial class DoctorWeeklyScheduleView : UserControl
+    public partial class AddWeeklySchedule : UserControl
     {
-        public DoctorWeeklyScheduleView()
+        public AddWeeklySchedule()
         {
             InitializeComponent();
             SetupTextBoxes();
@@ -28,10 +27,8 @@ namespace PatientScheduler.Main.View.Main.Schedule.ScheduleHelper
             TextBoxStyle.TextBoxEmpty(txtSaturdayEnd, "endTime");
             TextBoxStyle.TextBoxEmpty(txtSundayStart, "startTime");
             TextBoxStyle.TextBoxEmpty(txtSundayEnd, "endTime");
-            TextBoxStyle.TextBoxEmpty(txtBreakStart, "startTime");
-            TextBoxStyle.TextBoxEmpty(txtBreakEnd, "endTime");
 
-            boxDayChoice.Region = new Region(new Rectangle(3, 3, boxDayChoice.Width - 3, boxDayChoice.Height - 6));
+
         }
 
         private void txtMondayStart_KeyUp(object sender, KeyEventArgs e)
@@ -172,26 +169,6 @@ namespace PatientScheduler.Main.View.Main.Schedule.ScheduleHelper
         private void txtSundayEnd_KeyDown(object sender, KeyEventArgs e)
         {
             TextBoxStyle.TextBoxNotEmpty(txtSundayEnd, "endTime", e);
-        }
-
-        private void txtBreakStart_KeyUp(object sender, KeyEventArgs e)
-        {
-            TextBoxStyle.TextBoxEmpty(txtBreakStart, "startBreak");
-        }
-
-        private void txtBreakEnd_KeyUp(object sender, KeyEventArgs e)
-        {
-            TextBoxStyle.TextBoxEmpty(txtBreakEnd, "endBreak");
-        }
-
-        private void txtBreakStart_KeyDown(object sender, KeyEventArgs e)
-        {
-            TextBoxStyle.TextBoxNotEmpty(txtBreakStart, "startBreak", e);
-        }
-
-        private void txtBreakEnd_KeyDown(object sender, KeyEventArgs e)
-        {
-            TextBoxStyle.TextBoxNotEmpty(txtBreakEnd, "endBreak", e);
         }
     }
 }

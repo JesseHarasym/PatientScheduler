@@ -1,8 +1,7 @@
 ﻿using PatientScheduler.Classes.Accounts;
 using PatientScheduler.Classes.Database;
-using PatientScheduler.Main.Controller.DataStructures.Schedule;
-using PatientScheduler.Main.View.Main.Schedule.ScheduleHelper;
-using PatientScheduler.Main.View.Main.Schedule.ScheduleHelper.DoctorsSchedule;
+using PatientScheduler.Main.View.Main.Schedule.DoctorsSchedule.Helpers.HelperViews.HolidaySchedule;
+using PatientScheduler.Main.View.Main.Schedule.DoctorsSchedule.Helpers.HelperViews.WeeklySchedule;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -49,11 +48,6 @@ namespace PatientScheduler.Main.View.ScheduleHelper
             ControlPaint.DrawBorder(e.Graphics, ClientRectangle, Color.DimGray, ButtonBorderStyle.Solid);
         }
 
-        private void btnCancel_Click(object sender, System.EventArgs e)
-        {
-            Dispose();
-        }
-
         private void btnComboDoctor_Click(object sender, System.EventArgs e)
         {
             boxDoctorChoice.DroppedDown = true;
@@ -62,33 +56,26 @@ namespace PatientScheduler.Main.View.ScheduleHelper
         private void radioWeeklySchedule_CheckedChanged(object sender, System.EventArgs e)
         {
             ClearPanels();
-            var dwsv = new DoctorWeeklyScheduleView();
-            pnlSchedule.Controls.Add(dwsv);
-            var dabv = new DoctorAddedBreaksView();
-            pnlSeeBreaks.Controls.Add(dabv);
-            pnlSchedule.Width = 696;
-            pnlSeeBreaks.Show();
+            var fws = new FullWeeklySchedule();
+            pnlBottom.Controls.Add(fws);
         }
 
         private void radioSpecialSchedule_CheckedChanged(object sender, System.EventArgs e)
         {
             ClearPanels();
-            var dssv = new DoctorHolidayScheduleView();
-            pnlSchedule.Controls.Add(dssv);
-            pnlSchedule.Width = 1030;
-            pnlSeeBreaks.Hide();
+            var fhs = new FullHolidaySchedule();
+            pnlBottom.Controls.Add(fhs);
         }
 
         public void ClearPanels()
         {
-            pnlSchedule.Controls.Clear();
-            pnlSeeBreaks.Controls.Clear();
+            pnlBottom.Controls.Clear();
         }
 
         public void LoadWeeklyOfficeSchedule()
         {
             var sd = new ScheduleData();
-            List<WeeklySchedule> weeklyOfficeSchedule = sd.GetOfficeWeeklySchedule();
+            List<Controller.DataStructures.Schedule.WeeklySchedule> weeklyOfficeSchedule = sd.GetOfficeWeeklySchedule();
 
             foreach (var day in weeklyOfficeSchedule)
             {
@@ -129,6 +116,11 @@ namespace PatientScheduler.Main.View.ScheduleHelper
         public void DisplayDaysSchedule(Label lblDay, string day, string openTime, string closeTime)
         {
             lblDay.Text = $"{day}: {openTime} to {closeTime}";
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }

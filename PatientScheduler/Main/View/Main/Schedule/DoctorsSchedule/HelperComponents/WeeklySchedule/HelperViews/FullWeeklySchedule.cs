@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PatientScheduler.Main.View.Main.Schedule.ScheduleHelper.DoctorsSchedule
+namespace PatientScheduler.Main.View.Main.Schedule.DoctorsSchedule.Helpers.HelperViews.WeeklySchedule
 {
-    public partial class DoctorHolidayModifiedDaysOff : UserControl
+    public partial class FullWeeklySchedule : UserControl
     {
-        public DoctorHolidayModifiedDaysOff()
+        public FullWeeklySchedule()
         {
             InitializeComponent();
         }

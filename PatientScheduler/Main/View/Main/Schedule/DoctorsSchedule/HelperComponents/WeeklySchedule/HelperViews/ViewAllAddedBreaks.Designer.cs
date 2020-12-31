@@ -1,6 +1,6 @@
 ﻿namespace PatientScheduler.Main.View.Main.Schedule.ScheduleHelper.DoctorsSchedule
 {
-    partial class DoctorAddedBreaksView
+    partial class ViewAllAddedBreaks
     {
         /// <summary> 
         /// Required designer variable.
@@ -36,7 +36,6 @@
             this.listBreakTimes = new System.Windows.Forms.ListView();
             this.btnRemove = new System.Windows.Forms.Button();
             this.pnlHeader.SuspendLayout();
-            this.pnlBreakList.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlHeader
@@ -60,12 +59,10 @@
             // 
             // pnlBreakList
             // 
-            this.pnlBreakList.Controls.Add(this.btnRemove);
-            this.pnlBreakList.Controls.Add(this.listBreakTimes);
             this.pnlBreakList.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBreakList.Location = new System.Drawing.Point(0, 59);
             this.pnlBreakList.Name = "pnlBreakList";
-            this.pnlBreakList.Size = new System.Drawing.Size(334, 272);
+            this.pnlBreakList.Size = new System.Drawing.Size(334, 0);
             this.pnlBreakList.TabIndex = 1;
             // 
             // listBreakTimes
@@ -79,9 +76,9 @@
             this.listBreakTimes.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1,
             listViewItem2});
-            this.listBreakTimes.Location = new System.Drawing.Point(51, 6);
+            this.listBreakTimes.Location = new System.Drawing.Point(50, 77);
             this.listBreakTimes.Name = "listBreakTimes";
-            this.listBreakTimes.Size = new System.Drawing.Size(271, 178);
+            this.listBreakTimes.Size = new System.Drawing.Size(271, 249);
             this.listBreakTimes.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listBreakTimes.TabIndex = 0;
             this.listBreakTimes.UseCompatibleStateImageBehavior = false;
@@ -94,29 +91,30 @@
             this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemove.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemove.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnRemove.Location = new System.Drawing.Point(96, 204);
+            this.btnRemove.Location = new System.Drawing.Point(101, 350);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(132, 29);
             this.btnRemove.TabIndex = 5;
             this.btnRemove.Text = "Remove Break";
             this.btnRemove.UseVisualStyleBackColor = false;
             // 
-            // DoctorAddedBreaksView
+            // ViewAllAddedBreaks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(41)))), ((int)(((byte)(51)))));
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.listBreakTimes);
+            this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.pnlBreakList);
             this.Controls.Add(this.pnlHeader);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Margin = new System.Windows.Forms.Padding(5);
-            this.Name = "DoctorAddedBreaksView";
-            this.Size = new System.Drawing.Size(334, 330);
+            this.Name = "ViewAllAddedBreaks";
+            this.Size = new System.Drawing.Size(334, 421);
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
-            this.pnlBreakList.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

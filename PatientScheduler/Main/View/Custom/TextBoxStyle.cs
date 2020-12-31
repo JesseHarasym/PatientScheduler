@@ -68,6 +68,16 @@ namespace PatientScheduler.Classes.Styling
                 case "endTime":
                     phrase = "end time..";
                     break;
+                case "startBreak":
+                    phrase = "start break time..";
+                    break;
+                case "endBreak":
+                    phrase = "end break time..";
+                    break;
+                case "daysOff":
+                    phrase = "number of days off..";
+                    break;
+
 
             }
 

@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DoctorSchedule));
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.pnlBottomMenu = new System.Windows.Forms.Panel();
             this.lblChange = new System.Windows.Forms.Label();
             this.lblDocToChange = new System.Windows.Forms.Label();
             this.pnlCombo = new System.Windows.Forms.Panel();
@@ -49,60 +46,19 @@
             this.lblTuesday = new System.Windows.Forms.Label();
             this.lblMonday = new System.Windows.Forms.Label();
             this.lblOfficeSchedule = new System.Windows.Forms.Label();
-            this.pnlSchedule = new System.Windows.Forms.Panel();
-            this.pnlSeeBreaks = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
             this.titleBar1 = new PatientScheduler.Components.TitleBar();
-            this.pnlBottomMenu.SuspendLayout();
+            this.pnlBottom = new System.Windows.Forms.Panel();
             this.pnlCombo.SuspendLayout();
             this.pnlDocAndType.SuspendLayout();
             this.pnlWeeklyOfficeSchedule.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnSave.Location = new System.Drawing.Point(332, 21);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(98, 29);
-            this.btnSave.TabIndex = 4;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = false;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnCancel.Location = new System.Drawing.Point(596, 21);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(98, 29);
-            this.btnCancel.TabIndex = 5;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // pnlBottomMenu
-            // 
-            this.pnlBottomMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlBottomMenu.Controls.Add(this.btnCancel);
-            this.pnlBottomMenu.Controls.Add(this.btnSave);
-            this.pnlBottomMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlBottomMenu.Location = new System.Drawing.Point(0, 594);
-            this.pnlBottomMenu.Name = "pnlBottomMenu";
-            this.pnlBottomMenu.Size = new System.Drawing.Size(1030, 78);
-            this.pnlBottomMenu.TabIndex = 6;
-            // 
             // lblChange
             // 
             this.lblChange.AutoSize = true;
             this.lblChange.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChange.Location = new System.Drawing.Point(80, 15);
+            this.lblChange.Location = new System.Drawing.Point(80, 30);
             this.lblChange.Name = "lblChange";
             this.lblChange.Size = new System.Drawing.Size(520, 19);
             this.lblChange.TabIndex = 7;
@@ -113,7 +69,7 @@
             this.lblDocToChange.AutoSize = true;
             this.lblDocToChange.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDocToChange.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblDocToChange.Location = new System.Drawing.Point(169, 86);
+            this.lblDocToChange.Location = new System.Drawing.Point(169, 101);
             this.lblDocToChange.Name = "lblDocToChange";
             this.lblDocToChange.Size = new System.Drawing.Size(146, 21);
             this.lblDocToChange.TabIndex = 13;
@@ -124,7 +80,7 @@
             this.pnlCombo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(41)))), ((int)(((byte)(51)))));
             this.pnlCombo.Controls.Add(this.btnComboDoctor);
             this.pnlCombo.Controls.Add(this.boxDoctorChoice);
-            this.pnlCombo.Location = new System.Drawing.Point(321, 83);
+            this.pnlCombo.Location = new System.Drawing.Point(321, 98);
             this.pnlCombo.Name = "pnlCombo";
             this.pnlCombo.Size = new System.Drawing.Size(204, 27);
             this.pnlCombo.TabIndex = 14;
@@ -159,7 +115,7 @@
             // radioWeeklySchedule
             // 
             this.radioWeeklySchedule.AutoSize = true;
-            this.radioWeeklySchedule.Location = new System.Drawing.Point(134, 151);
+            this.radioWeeklySchedule.Location = new System.Drawing.Point(134, 166);
             this.radioWeeklySchedule.Name = "radioWeeklySchedule";
             this.radioWeeklySchedule.Size = new System.Drawing.Size(222, 25);
             this.radioWeeklySchedule.TabIndex = 18;
@@ -171,7 +127,7 @@
             // radioHolidaySchedule
             // 
             this.radioHolidaySchedule.AutoSize = true;
-            this.radioHolidaySchedule.Location = new System.Drawing.Point(397, 151);
+            this.radioHolidaySchedule.Location = new System.Drawing.Point(397, 166);
             this.radioHolidaySchedule.Name = "radioHolidaySchedule";
             this.radioHolidaySchedule.Size = new System.Drawing.Size(175, 25);
             this.radioHolidaySchedule.TabIndex = 18;
@@ -182,6 +138,7 @@
             // 
             // pnlDocAndType
             // 
+            this.pnlDocAndType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(45)))), ((int)(((byte)(54)))));
             this.pnlDocAndType.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlDocAndType.Controls.Add(this.lblChange);
             this.pnlDocAndType.Controls.Add(this.radioHolidaySchedule);
@@ -190,11 +147,12 @@
             this.pnlDocAndType.Controls.Add(this.lblDocToChange);
             this.pnlDocAndType.Location = new System.Drawing.Point(0, 27);
             this.pnlDocAndType.Name = "pnlDocAndType";
-            this.pnlDocAndType.Size = new System.Drawing.Size(696, 240);
+            this.pnlDocAndType.Size = new System.Drawing.Size(696, 257);
             this.pnlDocAndType.TabIndex = 19;
             // 
             // pnlWeeklyOfficeSchedule
             // 
+            this.pnlWeeklyOfficeSchedule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
             this.pnlWeeklyOfficeSchedule.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlWeeklyOfficeSchedule.Controls.Add(this.lblSunday);
             this.pnlWeeklyOfficeSchedule.Controls.Add(this.lblSaturday);
@@ -204,15 +162,15 @@
             this.pnlWeeklyOfficeSchedule.Controls.Add(this.lblTuesday);
             this.pnlWeeklyOfficeSchedule.Controls.Add(this.lblMonday);
             this.pnlWeeklyOfficeSchedule.Controls.Add(this.lblOfficeSchedule);
-            this.pnlWeeklyOfficeSchedule.Location = new System.Drawing.Point(696, 26);
+            this.pnlWeeklyOfficeSchedule.Location = new System.Drawing.Point(696, 27);
             this.pnlWeeklyOfficeSchedule.Name = "pnlWeeklyOfficeSchedule";
-            this.pnlWeeklyOfficeSchedule.Size = new System.Drawing.Size(334, 240);
+            this.pnlWeeklyOfficeSchedule.Size = new System.Drawing.Size(334, 257);
             this.pnlWeeklyOfficeSchedule.TabIndex = 19;
             // 
             // lblSunday
             // 
-            this.lblSunday.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSunday.Location = new System.Drawing.Point(20, 195);
+            this.lblSunday.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSunday.Location = new System.Drawing.Point(20, 213);
             this.lblSunday.Name = "lblSunday";
             this.lblSunday.Size = new System.Drawing.Size(290, 21);
             this.lblSunday.TabIndex = 7;
@@ -221,8 +179,8 @@
             // 
             // lblSaturday
             // 
-            this.lblSaturday.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSaturday.Location = new System.Drawing.Point(20, 172);
+            this.lblSaturday.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSaturday.Location = new System.Drawing.Point(20, 188);
             this.lblSaturday.Name = "lblSaturday";
             this.lblSaturday.Size = new System.Drawing.Size(290, 21);
             this.lblSaturday.TabIndex = 6;
@@ -231,8 +189,8 @@
             // 
             // lblFriday
             // 
-            this.lblFriday.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFriday.Location = new System.Drawing.Point(20, 149);
+            this.lblFriday.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFriday.Location = new System.Drawing.Point(20, 164);
             this.lblFriday.Name = "lblFriday";
             this.lblFriday.Size = new System.Drawing.Size(290, 21);
             this.lblFriday.TabIndex = 5;
@@ -241,8 +199,8 @@
             // 
             // lblThursday
             // 
-            this.lblThursday.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblThursday.Location = new System.Drawing.Point(20, 126);
+            this.lblThursday.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblThursday.Location = new System.Drawing.Point(20, 139);
             this.lblThursday.Name = "lblThursday";
             this.lblThursday.Size = new System.Drawing.Size(290, 21);
             this.lblThursday.TabIndex = 4;
@@ -251,8 +209,8 @@
             // 
             // lblWednesday
             // 
-            this.lblWednesday.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWednesday.Location = new System.Drawing.Point(20, 102);
+            this.lblWednesday.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWednesday.Location = new System.Drawing.Point(20, 113);
             this.lblWednesday.Name = "lblWednesday";
             this.lblWednesday.Size = new System.Drawing.Size(290, 21);
             this.lblWednesday.TabIndex = 3;
@@ -261,8 +219,8 @@
             // 
             // lblTuesday
             // 
-            this.lblTuesday.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTuesday.Location = new System.Drawing.Point(20, 79);
+            this.lblTuesday.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTuesday.Location = new System.Drawing.Point(20, 88);
             this.lblTuesday.Name = "lblTuesday";
             this.lblTuesday.Size = new System.Drawing.Size(290, 21);
             this.lblTuesday.TabIndex = 2;
@@ -271,8 +229,8 @@
             // 
             // lblMonday
             // 
-            this.lblMonday.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMonday.Location = new System.Drawing.Point(20, 56);
+            this.lblMonday.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMonday.Location = new System.Drawing.Point(20, 63);
             this.lblMonday.Name = "lblMonday";
             this.lblMonday.Size = new System.Drawing.Size(290, 21);
             this.lblMonday.TabIndex = 1;
@@ -283,49 +241,56 @@
             // 
             this.lblOfficeSchedule.AutoSize = true;
             this.lblOfficeSchedule.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOfficeSchedule.Location = new System.Drawing.Point(76, 14);
+            this.lblOfficeSchedule.Location = new System.Drawing.Point(76, 27);
             this.lblOfficeSchedule.Name = "lblOfficeSchedule";
             this.lblOfficeSchedule.Size = new System.Drawing.Size(191, 19);
             this.lblOfficeSchedule.TabIndex = 0;
             this.lblOfficeSchedule.Text = "Weekly Office Schedule";
             // 
-            // pnlSchedule
+            // btnExit
             // 
-            this.pnlSchedule.Location = new System.Drawing.Point(0, 265);
-            this.pnlSchedule.Name = "pnlSchedule";
-            this.pnlSchedule.Size = new System.Drawing.Size(696, 330);
-            this.pnlSchedule.TabIndex = 21;
-            // 
-            // pnlSeeBreaks
-            // 
-            this.pnlSeeBreaks.Location = new System.Drawing.Point(696, 265);
-            this.pnlSeeBreaks.Name = "pnlSeeBreaks";
-            this.pnlSeeBreaks.Size = new System.Drawing.Size(334, 330);
-            this.pnlSeeBreaks.TabIndex = 22;
+            this.btnExit.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
+            this.btnExit.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Location = new System.Drawing.Point(965, 0);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(65, 28);
+            this.btnExit.TabIndex = 24;
+            this.btnExit.Text = "X";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // titleBar1
             // 
-            this.titleBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(45)))), ((int)(((byte)(54)))));
             this.titleBar1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.titleBar1.Dock = System.Windows.Forms.DockStyle.Top;
             this.titleBar1.Location = new System.Drawing.Point(0, 0);
-            this.titleBar1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.titleBar1.Margin = new System.Windows.Forms.Padding(5);
             this.titleBar1.Name = "titleBar1";
             this.titleBar1.Size = new System.Drawing.Size(1030, 28);
-            this.titleBar1.TabIndex = 17;
+            this.titleBar1.TabIndex = 0;
+            // 
+            // pnlBottom
+            // 
+            this.pnlBottom.Location = new System.Drawing.Point(0, 283);
+            this.pnlBottom.Name = "pnlBottom";
+            this.pnlBottom.Size = new System.Drawing.Size(1030, 418);
+            this.pnlBottom.TabIndex = 25;
             // 
             // DoctorSchedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(41)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(1030, 672);
-            this.Controls.Add(this.pnlWeeklyOfficeSchedule);
-            this.Controls.Add(this.pnlSeeBreaks);
-            this.Controls.Add(this.pnlSchedule);
-            this.Controls.Add(this.pnlDocAndType);
+            this.ClientSize = new System.Drawing.Size(1030, 702);
+            this.Controls.Add(this.pnlBottom);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.titleBar1);
-            this.Controls.Add(this.pnlBottomMenu);
+            this.Controls.Add(this.pnlWeeklyOfficeSchedule);
+            this.Controls.Add(this.pnlDocAndType);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -334,7 +299,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DoctorSchedule";
             this.Load += new System.EventHandler(this.DoctorSchedule_Load);
-            this.pnlBottomMenu.ResumeLayout(false);
             this.pnlCombo.ResumeLayout(false);
             this.pnlDocAndType.ResumeLayout(false);
             this.pnlDocAndType.PerformLayout();
@@ -345,10 +309,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Panel pnlBottomMenu;
         private System.Windows.Forms.Label lblChange;
         private System.Windows.Forms.Label lblDocToChange;
         private System.Windows.Forms.Panel pnlCombo;
@@ -357,9 +317,6 @@
         private System.Windows.Forms.RadioButton radioWeeklySchedule;
         private System.Windows.Forms.RadioButton radioHolidaySchedule;
         private System.Windows.Forms.Panel pnlDocAndType;
-        private System.Windows.Forms.Panel pnlSchedule;
-        private System.Windows.Forms.Panel pnlSeeBreaks;
-        private Components.TitleBar titleBar1;
         private System.Windows.Forms.Panel pnlWeeklyOfficeSchedule;
         private System.Windows.Forms.Label lblOfficeSchedule;
         private System.Windows.Forms.Label lblMonday;
@@ -369,5 +326,8 @@
         private System.Windows.Forms.Label lblFriday;
         private System.Windows.Forms.Label lblThursday;
         private System.Windows.Forms.Label lblSunday;
+        private Components.TitleBar titleBar1;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Panel pnlBottom;
     }
 }
