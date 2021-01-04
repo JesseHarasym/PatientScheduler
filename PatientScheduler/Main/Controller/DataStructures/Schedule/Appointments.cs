@@ -2,6 +2,7 @@
 
 namespace PatientScheduler.Classes.Accounts
 {
+    //base class used for storing appointments retrieved from database into a list
     public class Appointments
     {
         public int AppointmentId { get; set; }

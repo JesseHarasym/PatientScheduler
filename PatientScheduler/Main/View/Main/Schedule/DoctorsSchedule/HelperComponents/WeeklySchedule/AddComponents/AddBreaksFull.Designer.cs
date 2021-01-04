@@ -1,6 +1,6 @@
 ﻿namespace PatientScheduler.Main.View.Main.Schedule.DoctorsSchedule.HelperComponents
 {
-    partial class AddNewBreak
+    partial class AddBreaksFull
     {
         /// <summary> 
         /// Required designer variable.
@@ -76,7 +76,7 @@
             this.pnlAddBreak.Size = new System.Drawing.Size(261, 264);
             this.pnlAddBreak.TabIndex = 43;
             // 
-            // AddNewBreak
+            // AddBreaksFull
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -88,7 +88,7 @@
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Margin = new System.Windows.Forms.Padding(5);
-            this.Name = "AddNewBreak";
+            this.Name = "AddBreaksFull";
             this.Size = new System.Drawing.Size(261, 418);
             this.ResumeLayout(false);
             this.PerformLayout();

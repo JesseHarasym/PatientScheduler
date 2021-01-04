@@ -1,5 +1,6 @@
 ﻿namespace PatientScheduler.Classes.Accounts
 {
+    //base accounts for users, which is inherited on by different types of users
     public class AccountBase
     {
         public string Username { get; set; }

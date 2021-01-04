@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace PatientScheduler.Main.View.Main.Schedule.DoctorsSchedule.SubComponents
 {
-    public partial class SpecifyBreakDate : UserControl
+    public partial class AddSpecificBreaks : UserControl
     {
-        public SpecifyBreakDate()
+        public AddSpecificBreaks()
         {
             InitializeComponent();
             SetupTextBoxes();

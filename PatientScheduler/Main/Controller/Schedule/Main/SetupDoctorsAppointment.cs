@@ -16,11 +16,11 @@ namespace PatientScheduler.Classes.Helper
             AppointmentList = appointmentList;
             DataSchedule = dataSchedule;
         }
-
         public DataGridView GetDoctorsAppointments(string selectedDoctor)
         {
             List<Appointments> doctorsAppointments = new List<Appointments>();
 
+            //check each appointment list item and if it's an appt of the currently selected doctor, then add to our list
             foreach (var a in AppointmentList)
             {
                 if (a.DoctorId.ToString() == selectedDoctor)
@@ -29,6 +29,7 @@ namespace PatientScheduler.Classes.Helper
                 }
             }
 
+            //get all of the doctors appointments data, add to the data grid calender and then return to be displayed
             SetupDocAppointments(doctorsAppointments);
             return DataSchedule;
         }
@@ -40,6 +41,7 @@ namespace PatientScheduler.Classes.Helper
                 string date = a.AppointmentDate.ToLongDateString();
                 string time = a.AppointmentDate.ToShortTimeString().ToLower();
 
+                //get time and date for each of the doctors appointments, and find which row and column they belong to on the data grid
                 int row = GetRowIndex(time);
                 var colRes = GetColumnIndex(date);
                 int col = colRes.Item1;
@@ -47,6 +49,7 @@ namespace PatientScheduler.Classes.Helper
 
                 int length = a.AppointmentLength / 15;  //because calender shows in 15 minute intervals
 
+                //if the date is in the view of the user, then add it to our calender
                 if (dateFound)
                 {
                     for (int i = 0; i < length; i++)
@@ -67,6 +70,7 @@ namespace PatientScheduler.Classes.Helper
             }
         }
 
+        //finds which column the date belongs to on the data grid
         public Tuple<int, bool> GetColumnIndex(string date)
         {
             for (int i = 0; i < DataSchedule.ColumnCount; i++)
@@ -80,6 +84,7 @@ namespace PatientScheduler.Classes.Helper
             return Tuple.Create(0, false);
         }
 
+        //finds which row the time  belong to on the data grid
         public int GetRowIndex(string time)
         {
             for (int i = 0; i < DataSchedule.RowCount; i++)
@@ -93,6 +98,7 @@ namespace PatientScheduler.Classes.Helper
             return 0;
         }
 
+        //returns which color the appointment should show as depending on its classification
         public Color SetupAppointmentColor(string classification)
         {
             Color apptColor = Color.LightSlateGray;
@@ -122,14 +128,15 @@ namespace PatientScheduler.Classes.Helper
             return apptColor;
         }
 
-        //this function allows the default back color to return before each doctor selection so that we have a fresh background to work with
+        //this function allows the default back color to return before each doctor selection so that we have a fresh background to
+        //work with
         public void ResetDatGrid()
         {
             for (int i = 0; i < DataSchedule.ColumnCount; i++)
             {
                 for (int j = 0; j < DataSchedule.RowCount; j++)
                 {
-                    DataSchedule.Rows[j].Cells[i].Style.BackColor = Color.FromArgb(44, 41, 51);
+                    DataSchedule.Rows[j].Cells[i].Style.BackColor = Color.FromArgb(68, 66, 74);
                     DataSchedule[i, j].Value = "";
                 }
             }

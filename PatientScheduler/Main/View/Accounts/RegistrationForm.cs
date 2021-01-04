@@ -20,10 +20,7 @@ namespace PatientScheduler.Components
 
         private void RegistrationForm_Load(object sender, EventArgs e)
         {
-            TextBoxStyle.TextBoxEmpty(txtUsername, "username");
-            TextBoxStyle.TextBoxEmpty(txtPassword, "password");
-            TextBoxStyle.TextBoxEmpty(txtPassword2, "password2");
-            TextBoxStyle.TextBoxEmpty(txtStaffId, "staffId");
+            SetupTextBoxes();
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -33,10 +30,12 @@ namespace PatientScheduler.Components
             string password2 = txtPassword2.Text;
             Int32.TryParse(txtStaffId.Text, out var staffId);
 
+            //validate all the registration inputs
             bool allInputsValid = ValidateInputs(username, password, password2, staffId);
 
             if (allInputsValid)
             {
+                //if all inputs are validated, send the registration data to the database and add our new account
                 var ad = new AccountsData();
                 var account = new AccountBase(username, password, staffId);
                 ad.AddAccount(account);
@@ -44,6 +43,7 @@ namespace PatientScheduler.Components
                 Dispose();
                 Login.Show();
 
+                //user message to let them know their registration was successful
                 var message = new UserMessage();
                 message.Show("Your account has been successfully created!");
             }
@@ -96,24 +96,36 @@ namespace PatientScheduler.Components
                 message.Show("This staff Id is not valid, please ensure it was entered correctly.");
                 return false;
             }
-            //if (!staffIdHasAccount)
-            //{
-            //    message.Show("This staff Id already has an account associated with it, please talk to an administrator.");
-            //    return false;
-            //}
+            //staff id already has an account
+            if (!staffIdHasAccount)
+            {
+                message.Show("This staff Id already has an account associated with it, please talk to an administrator.");
+                return false;
+            }
 
             return true;
         }
 
+        //dispose of the registration page and show login page if login link is clicked
         private void linkLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Dispose();
             Login.Show();
         }
 
+        //border drawn for our borderless form
         protected override void OnPaint(PaintEventArgs e)
         {
             ControlPaint.DrawBorder(e.Graphics, ClientRectangle, Color.DimGray, ButtonBorderStyle.Solid);
+        }
+
+        //everything below here is the set up for our custom text boxes
+        public void SetupTextBoxes()
+        {
+            TextBoxStyle.TextBoxEmpty(txtUsername, "username");
+            TextBoxStyle.TextBoxEmpty(txtPassword, "password");
+            TextBoxStyle.TextBoxEmpty(txtPassword2, "password2");
+            TextBoxStyle.TextBoxEmpty(txtStaffId, "staffId");
         }
 
         private void txtUsername_KeyUp(object sender, KeyEventArgs e)

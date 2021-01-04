@@ -1,6 +1,6 @@
 ﻿namespace PatientScheduler.Main.View.Main.Schedule.DoctorsSchedule.SubComponents
 {
-    partial class SpecifyBreakDate
+    partial class AddSpecificBreaks
     {
         /// <summary> 
         /// Required designer variable.
@@ -125,7 +125,7 @@
             this.txtBreakEnd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBreakEnd_KeyDown);
             this.txtBreakEnd.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBreakEnd_KeyUp);
             // 
-            // SpecifyBreakDate
+            // AddSpecificBreaks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -141,7 +141,7 @@
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Margin = new System.Windows.Forms.Padding(5);
-            this.Name = "SpecifyBreakDate";
+            this.Name = "AddSpecificBreaks";
             this.Size = new System.Drawing.Size(261, 264);
             this.ResumeLayout(false);
             this.PerformLayout();

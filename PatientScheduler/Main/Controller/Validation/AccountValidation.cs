@@ -6,6 +6,7 @@ namespace PatientScheduler.Classes.Validation
 {
     public class AccountValidation
     {
+        //ensure username is only a number or alphabetic letter, with at least 3 characters
         public bool ValidateUsername(string username)
         {
             bool valid = false;
@@ -21,6 +22,7 @@ namespace PatientScheduler.Classes.Validation
             return valid;
         }
 
+        //ensure passwords match, and the password length is at least 6 characters
         public Tuple<bool, bool> ValidatePassword(string password, string password2)
         {
             bool validMatch = false;

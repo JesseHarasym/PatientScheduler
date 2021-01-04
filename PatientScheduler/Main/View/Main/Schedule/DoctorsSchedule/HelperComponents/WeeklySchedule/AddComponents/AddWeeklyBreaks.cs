@@ -4,9 +4,9 @@ using System.Windows.Forms;
 
 namespace PatientScheduler.Main.View.Main.Schedule.DoctorsSchedule.SubComponents
 {
-    public partial class WeeklyBreaks : UserControl
+    public partial class AddWeeklyBreaks : UserControl
     {
-        public WeeklyBreaks()
+        public AddWeeklyBreaks()
         {
             InitializeComponent();
             SetupTextBoxes();

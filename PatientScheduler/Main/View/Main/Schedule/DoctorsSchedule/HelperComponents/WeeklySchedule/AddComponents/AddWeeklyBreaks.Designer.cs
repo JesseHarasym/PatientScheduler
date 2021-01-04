@@ -1,6 +1,6 @@
 ﻿namespace PatientScheduler.Main.View.Main.Schedule.DoctorsSchedule.SubComponents
 {
-    partial class WeeklyBreaks
+    partial class AddWeeklyBreaks
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WeeklyBreaks));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddWeeklyBreaks));
             this.pnlCombo = new System.Windows.Forms.Panel();
             this.btnComboDoctor = new System.Windows.Forms.Button();
             this.boxDayChoice = new System.Windows.Forms.ComboBox();
@@ -140,7 +140,7 @@
             this.lblBreakDay.TabIndex = 39;
             this.lblBreakDay.Text = "Choose a day";
             // 
-            // WeeklyBreaks
+            // AddWeeklyBreaks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -154,7 +154,7 @@
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Margin = new System.Windows.Forms.Padding(5);
-            this.Name = "WeeklyBreaks";
+            this.Name = "AddWeeklyBreaks";
             this.Size = new System.Drawing.Size(261, 264);
             this.pnlCombo.ResumeLayout(false);
             this.ResumeLayout(false);

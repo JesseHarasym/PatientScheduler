@@ -9,6 +9,7 @@ namespace PatientScheduler.Classes.Database
     class ScheduleData
     {
         readonly string connectionString = Connection.ConnectionString;
+
         public List<Appointments> GetDoctorsAppointments()
         {
             List<Appointments> appointmentList = new List<Appointments>();

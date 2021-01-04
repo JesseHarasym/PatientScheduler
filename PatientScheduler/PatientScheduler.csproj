@@ -79,7 +79,7 @@
     <Compile Include="Main\Model\Users\StaffData.cs" />
     <Compile Include="Main\View\Custom\Calender.cs" />
     <Compile Include="Main\Controller\Schedule\Helper\SearchScheduleDate.cs" />
-    <Compile Include="Main\Controller\Schedule\Appointments\SetupDoctorsAppointment.cs" />
+    <Compile Include="Main\Controller\Schedule\Main\SetupDoctorsAppointment.cs" />
     <Compile Include="Main\View\Custom\TextBoxStyle.cs" />
     <Compile Include="Main\Controller\Validation\AccountValidation.cs" />
     <Compile Include="Main\Controller\Validation\HashPasswords.cs" />
@@ -131,53 +131,53 @@
     <Compile Include="Main\View\Main\Reports\Reports.Designer.cs">
       <DependentUpon>Reports.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\HolidaySchedule\HelperViews\FullHolidaySchedule.cs">
+    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\HolidaySchedule\FullHolidaySchedule.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\HolidaySchedule\HelperViews\FullHolidaySchedule.Designer.cs">
+    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\HolidaySchedule\FullHolidaySchedule.Designer.cs">
       <DependentUpon>FullHolidaySchedule.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\HolidaySchedule\HelperViews\ViewAddedHoliday.cs">
+    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\HolidaySchedule\ViewComponents\ViewAddedHoliday.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\HolidaySchedule\HelperViews\ViewAddedHoliday.Designer.cs">
+    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\HolidaySchedule\ViewComponents\ViewAddedHoliday.Designer.cs">
       <DependentUpon>ViewAddedHoliday.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\WeeklySchedule\HelperViews\FullWeeklySchedule.cs">
+    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\WeeklySchedule\FullWeeklySchedule.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\WeeklySchedule\HelperViews\FullWeeklySchedule.Designer.cs">
+    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\WeeklySchedule\FullWeeklySchedule.Designer.cs">
       <DependentUpon>FullWeeklySchedule.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\HolidaySchedule\SubComponents\ViewAllDaysTakenOff.cs">
+    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\HolidaySchedule\ViewComponents\ViewAllDaysTakenOff.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\HolidaySchedule\SubComponents\ViewAllDaysTakenOff.Designer.cs">
+    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\HolidaySchedule\ViewComponents\ViewAllDaysTakenOff.Designer.cs">
       <DependentUpon>ViewAllDaysTakenOff.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\HolidaySchedule\SubComponents\ViewAllModifiedTimes.cs">
+    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\HolidaySchedule\ViewComponents\ViewAllModifiedTimes.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\HolidaySchedule\SubComponents\ViewAllModifiedTimes.Designer.cs">
+    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\HolidaySchedule\ViewComponents\ViewAllModifiedTimes.Designer.cs">
       <DependentUpon>ViewAllModifiedTimes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\WeeklySchedule\HelperViews\AddNewBreak.cs">
+    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\WeeklySchedule\AddComponents\AddBreaksFull.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\WeeklySchedule\HelperViews\AddNewBreak.Designer.cs">
-      <DependentUpon>AddNewBreak.cs</DependentUpon>
+    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\WeeklySchedule\AddComponents\AddBreaksFull.Designer.cs">
+      <DependentUpon>AddBreaksFull.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\WeeklySchedule\SubComponents\SpecifyBreakDate.cs">
+    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\WeeklySchedule\AddComponents\AddSpecificBreaks.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\WeeklySchedule\SubComponents\SpecifyBreakDate.Designer.cs">
-      <DependentUpon>SpecifyBreakDate.cs</DependentUpon>
+    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\WeeklySchedule\AddComponents\AddSpecificBreaks.Designer.cs">
+      <DependentUpon>AddSpecificBreaks.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\WeeklySchedule\SubComponents\WeeklyBreaks.cs">
+    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\WeeklySchedule\AddComponents\AddWeeklyBreaks.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\WeeklySchedule\SubComponents\WeeklyBreaks.Designer.cs">
-      <DependentUpon>WeeklyBreaks.cs</DependentUpon>
+    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\WeeklySchedule\AddComponents\AddWeeklyBreaks.Designer.cs">
+      <DependentUpon>AddWeeklyBreaks.cs</DependentUpon>
     </Compile>
     <Compile Include="Main\View\Main\Schedule\Schedule.cs">
       <SubType>UserControl</SubType>
@@ -185,34 +185,34 @@
     <Compile Include="Main\View\Main\Schedule\Schedule.Designer.cs">
       <DependentUpon>Schedule.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\WeeklySchedule\HelperViews\ViewAllAddedBreaks.cs">
+    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\WeeklySchedule\ViewComponents\ViewAllAddedBreaks.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\WeeklySchedule\HelperViews\ViewAllAddedBreaks.Designer.cs">
+    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\WeeklySchedule\ViewComponents\ViewAllAddedBreaks.Designer.cs">
       <DependentUpon>ViewAllAddedBreaks.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\HolidaySchedule\SubComponents\AddModifiedTimes.cs">
+    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\HolidaySchedule\AddComponents\AddModifiedTimes.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\HolidaySchedule\SubComponents\AddModifiedTimes.Designer.cs">
+    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\HolidaySchedule\AddComponents\AddModifiedTimes.Designer.cs">
       <DependentUpon>AddModifiedTimes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\HolidaySchedule\SubComponents\AddDaysOff.cs">
+    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\HolidaySchedule\AddComponents\AddDaysOff.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\HolidaySchedule\SubComponents\AddDaysOff.Designer.cs">
+    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\HolidaySchedule\AddComponents\AddDaysOff.Designer.cs">
       <DependentUpon>AddDaysOff.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\HolidaySchedule\HelperViews\AddHolidaySchedule.cs">
+    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\HolidaySchedule\AddComponents\AddHolidaySchedule.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\HolidaySchedule\HelperViews\AddHolidaySchedule.Designer.cs">
+    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\HolidaySchedule\AddComponents\AddHolidaySchedule.Designer.cs">
       <DependentUpon>AddHolidaySchedule.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\WeeklySchedule\HelperViews\AddWeeklySchedule.cs">
+    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\WeeklySchedule\AddComponents\AddWeeklySchedule.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\WeeklySchedule\HelperViews\AddWeeklySchedule.Designer.cs">
+    <Compile Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\WeeklySchedule\AddComponents\AddWeeklySchedule.Designer.cs">
       <DependentUpon>AddWeeklySchedule.cs</DependentUpon>
     </Compile>
     <Compile Include="Main\View\Main\Settings\Settings.cs">
@@ -259,46 +259,46 @@
     <EmbeddedResource Include="Main\View\Main\Reports\Reports.resx">
       <DependentUpon>Reports.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\HolidaySchedule\HelperViews\FullHolidaySchedule.resx">
+    <EmbeddedResource Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\HolidaySchedule\FullHolidaySchedule.resx">
       <DependentUpon>FullHolidaySchedule.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\HolidaySchedule\HelperViews\ViewAddedHoliday.resx">
+    <EmbeddedResource Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\HolidaySchedule\ViewComponents\ViewAddedHoliday.resx">
       <DependentUpon>ViewAddedHoliday.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\WeeklySchedule\HelperViews\FullWeeklySchedule.resx">
+    <EmbeddedResource Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\WeeklySchedule\FullWeeklySchedule.resx">
       <DependentUpon>FullWeeklySchedule.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\HolidaySchedule\SubComponents\ViewAllDaysTakenOff.resx">
+    <EmbeddedResource Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\HolidaySchedule\ViewComponents\ViewAllDaysTakenOff.resx">
       <DependentUpon>ViewAllDaysTakenOff.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\HolidaySchedule\SubComponents\ViewAllModifiedTimes.resx">
+    <EmbeddedResource Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\HolidaySchedule\ViewComponents\ViewAllModifiedTimes.resx">
       <DependentUpon>ViewAllModifiedTimes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\WeeklySchedule\HelperViews\AddNewBreak.resx">
-      <DependentUpon>AddNewBreak.cs</DependentUpon>
+    <EmbeddedResource Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\WeeklySchedule\AddComponents\AddBreaksFull.resx">
+      <DependentUpon>AddBreaksFull.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\HolidaySchedule\SubComponents\AddDaysOff.resx">
+    <EmbeddedResource Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\HolidaySchedule\AddComponents\AddDaysOff.resx">
       <DependentUpon>AddDaysOff.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\WeeklySchedule\SubComponents\SpecifyBreakDate.resx">
-      <DependentUpon>SpecifyBreakDate.cs</DependentUpon>
+    <EmbeddedResource Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\WeeklySchedule\AddComponents\AddSpecificBreaks.resx">
+      <DependentUpon>AddSpecificBreaks.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\WeeklySchedule\SubComponents\WeeklyBreaks.resx">
-      <DependentUpon>WeeklyBreaks.cs</DependentUpon>
+    <EmbeddedResource Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\WeeklySchedule\AddComponents\AddWeeklyBreaks.resx">
+      <DependentUpon>AddWeeklyBreaks.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main\View\Main\Schedule\Schedule.resx">
       <DependentUpon>Schedule.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\WeeklySchedule\HelperViews\ViewAllAddedBreaks.resx">
+    <EmbeddedResource Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\WeeklySchedule\ViewComponents\ViewAllAddedBreaks.resx">
       <DependentUpon>ViewAllAddedBreaks.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\HolidaySchedule\HelperViews\AddHolidaySchedule.resx">
+    <EmbeddedResource Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\HolidaySchedule\AddComponents\AddHolidaySchedule.resx">
       <DependentUpon>AddHolidaySchedule.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\WeeklySchedule\HelperViews\AddWeeklySchedule.resx">
+    <EmbeddedResource Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\WeeklySchedule\AddComponents\AddWeeklySchedule.resx">
       <DependentUpon>AddWeeklySchedule.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\HolidaySchedule\SubComponents\AddModifiedTimes.resx">
+    <EmbeddedResource Include="Main\View\Main\Schedule\DoctorsSchedule\HelperComponents\HolidaySchedule\AddComponents\AddModifiedTimes.resx">
       <DependentUpon>AddModifiedTimes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main\View\Main\Settings\Settings.resx">

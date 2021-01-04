@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace PatientScheduler.Main.View.Main.Schedule.DoctorsSchedule.HelperComponents
 {
-    public partial class AddNewBreak : UserControl
+    public partial class AddBreaksFull : UserControl
     {
-        public AddNewBreak()
+        public AddBreaksFull()
         {
             InitializeComponent();
             SetupAddNewBreak();
@@ -19,14 +19,14 @@ namespace PatientScheduler.Main.View.Main.Schedule.DoctorsSchedule.HelperCompone
         private void radioWeeklyBreak_CheckedChanged(object sender, System.EventArgs e)
         {
             pnlAddBreak.Controls.Clear();
-            var dswb = new WeeklyBreaks();
+            var dswb = new AddWeeklyBreaks();
             pnlAddBreak.Controls.Add(dswb);
         }
 
         private void radioSpecificDate_CheckedChanged(object sender, System.EventArgs e)
         {
             pnlAddBreak.Controls.Clear();
-            var dssdb = new SpecifyBreakDate();
+            var dssdb = new AddSpecificBreaks();
             pnlAddBreak.Controls.Add(dssdb);
         }
     }

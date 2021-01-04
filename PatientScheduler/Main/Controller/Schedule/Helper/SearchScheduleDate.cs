@@ -7,6 +7,7 @@ namespace PatientScheduler.Classes.Helper
     {
         public string FixDateInput(string month, string day, string year)
         {
+            //if the user doesn't input one of these inputs (month, day, year) then use today's to allow the search to work.
             if (month == "month..")
             {
                 month = DateTime.Today.Month.ToString();
@@ -27,6 +28,7 @@ namespace PatientScheduler.Classes.Helper
             return string.Format("{0}-{1}-{2}", month, day, year);
         }
 
+        //this function just creates the dictionary needed to compare the written month with the numerical month
         public Dictionary<string, string> CreateMonthChecker()
         {
             Dictionary<string, string> monthCheck = new Dictionary<string, string>()
@@ -48,6 +50,7 @@ namespace PatientScheduler.Classes.Helper
             return monthCheck;
         }
 
+        //this is used to take the original date and ensure it is a valid date and return relevant information
         public Tuple<bool, int, DateTime> CheckIfValidDate(string dateString)
         {
             bool validDate = false;

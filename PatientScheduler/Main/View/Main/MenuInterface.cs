@@ -1,20 +1,22 @@
 ﻿using PatientScheduler.Classes.Accounts;
+using PatientScheduler.Properties;
 using System.Drawing;
 using System.Windows.Forms;
-using PatientScheduler.Properties;
 
 namespace PatientScheduler.Components.Main
 {
-    public partial class CentralScreen : Form
+    public partial class MenuInterface : Form
     {
+        private LoginForm Login;
         public StaffAccounts Staff;
         public int OffSet = 28;
 
-        public CentralScreen(StaffAccounts staff)
+        public MenuInterface(StaffAccounts staff, LoginForm login)
         {
             InitializeComponent();
             Icon = Resources.StartupIcon;
             Staff = staff;
+            Login = login;
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -27,8 +29,7 @@ namespace PatientScheduler.Components.Main
             lblWelcome.Text = $"{Staff.FirstName} {Staff.LastName} \n\n Username: {Staff.Username}";
             lblPosition.Text = $"{Staff.Position} \n\n Access Level: {Staff.AccessLevel}";
             btnLogo.Enabled = false;
-            var home = new Home();
-            pnlMain.Controls.Add(home);
+            ShowHomeScreen();
         }
 
         private void btnHome_Click(object sender, System.EventArgs e)
@@ -36,7 +37,12 @@ namespace PatientScheduler.Components.Main
             pnlChoice.Height = pnlHome.Height;
             pnlChoice.Top = pnlHome.Top + OffSet;
             pnlMain.Controls.Clear();
-            var home = new Home();
+            ShowHomeScreen();
+        }
+
+        public void ShowHomeScreen()
+        {
+            var home = new Home(Login);
             pnlMain.Controls.Add(home);
         }
 

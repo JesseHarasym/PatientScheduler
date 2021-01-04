@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.viewAllAddedBreaks = new PatientScheduler.Main.View.Main.Schedule.ScheduleHelper.DoctorsSchedule.ViewAllAddedBreaks();
-            this.addNewBreak1 = new PatientScheduler.Main.View.Main.Schedule.DoctorsSchedule.HelperComponents.AddNewBreak();
+            this.addNewBreak1 = new PatientScheduler.Main.View.Main.Schedule.DoctorsSchedule.HelperComponents.AddBreaksFull();
             this.addWeeklySchedule1 = new PatientScheduler.Main.View.Main.Schedule.ScheduleHelper.AddWeeklySchedule();
             this.SuspendLayout();
             // 
@@ -89,7 +89,7 @@
 
         #endregion
         private ScheduleHelper.DoctorsSchedule.ViewAllAddedBreaks viewAllAddedBreaks;
-        private HelperComponents.AddNewBreak addNewBreak1;
+        private HelperComponents.AddBreaksFull addNewBreak1;
         private ScheduleHelper.AddWeeklySchedule addWeeklySchedule1;
     }
 }

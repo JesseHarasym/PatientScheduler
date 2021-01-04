@@ -1,5 +1,6 @@
 ﻿namespace PatientScheduler.Classes.Accounts
 {
+    //accounts for staff inherited from our accounts base so that we are able to create new users and log them in
     public class StaffAccounts : AccountBase
     {
         public string FirstName { get; set; }

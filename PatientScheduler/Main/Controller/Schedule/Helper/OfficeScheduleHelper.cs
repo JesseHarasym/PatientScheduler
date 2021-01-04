@@ -7,6 +7,7 @@ namespace PatientScheduler.Main.Controller.Helper
 {
     public class OfficeScheduleHelper
     {
+        //get offices weekly schedule from the database
         public List<WeeklySchedule> GetScheduleData()
         {
             var sd = new ScheduleData();
@@ -14,6 +15,7 @@ namespace PatientScheduler.Main.Controller.Helper
             return weeklySchedule;
         }
 
+        //find the earliest time the office is open to display accordingly onto the calender
         public TimeSpan GetEarliestStartTime(List<WeeklySchedule> weeklySchedule)
         {
             TimeSpan earliestTime = new TimeSpan(0, 0, 0);
@@ -33,6 +35,7 @@ namespace PatientScheduler.Main.Controller.Helper
             return earliestTime;
         }
 
+        //find the latest time the office is open to display accordingly onto the calender
         public TimeSpan GetLatestEndTime(List<WeeklySchedule> weeklySchedule)
         {
             TimeSpan latestTime = new TimeSpan(0, 0, 0);

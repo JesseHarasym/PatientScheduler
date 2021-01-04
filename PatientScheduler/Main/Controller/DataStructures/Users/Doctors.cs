@@ -1,5 +1,6 @@
 ﻿namespace PatientScheduler.Classes.Accounts
 {
+    //used to store list of doctors when viewing schedules, booking appointments, etc
     public class Doctors
     {
         public string FirstName { get; set; }

@@ -35,8 +35,6 @@
             this.btnCancelAppt = new System.Windows.Forms.Button();
             this.pnlLookupAppt = new System.Windows.Forms.Panel();
             this.btnLookupAppt = new System.Windows.Forms.Button();
-            this.pnlChangeDoctor = new System.Windows.Forms.Panel();
-            this.btnDoctorSchedule = new System.Windows.Forms.Button();
             this.pnlNewAppt = new System.Windows.Forms.Panel();
             this.btnNewAppt = new System.Windows.Forms.Button();
             this.pnlHome = new System.Windows.Forms.Panel();
@@ -72,10 +70,11 @@
             this.pnlFollowUp = new System.Windows.Forms.Panel();
             this.lblFollowUp = new System.Windows.Forms.Label();
             this.pnlDataGrid = new System.Windows.Forms.Panel();
+            this.btnDoctorSchedule = new System.Windows.Forms.Button();
+            this.pnlChangeDoctor = new System.Windows.Forms.Panel();
             this.pnlEditAppt.SuspendLayout();
             this.pnlCancelAppt.SuspendLayout();
             this.pnlLookupAppt.SuspendLayout();
-            this.pnlChangeDoctor.SuspendLayout();
             this.pnlNewAppt.SuspendLayout();
             this.pnlHome.SuspendLayout();
             this.pnlControls.SuspendLayout();
@@ -93,6 +92,7 @@
             this.pnlIllness.SuspendLayout();
             this.pnlFollowUp.SuspendLayout();
             this.pnlDataGrid.SuspendLayout();
+            this.pnlChangeDoctor.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlEditAppt
@@ -175,34 +175,6 @@
             this.btnLookupAppt.Text = "Lookup Appointment";
             this.btnLookupAppt.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnLookupAppt.UseVisualStyleBackColor = true;
-            // 
-            // pnlChangeDoctor
-            // 
-            this.pnlChangeDoctor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlChangeDoctor.Controls.Add(this.btnDoctorSchedule);
-            this.pnlChangeDoctor.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlChangeDoctor.Location = new System.Drawing.Point(740, 0);
-            this.pnlChangeDoctor.Name = "pnlChangeDoctor";
-            this.pnlChangeDoctor.Size = new System.Drawing.Size(181, 62);
-            this.pnlChangeDoctor.TabIndex = 8;
-            // 
-            // btnDoctorSchedule
-            // 
-            this.btnDoctorSchedule.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnDoctorSchedule.FlatAppearance.BorderSize = 0;
-            this.btnDoctorSchedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDoctorSchedule.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDoctorSchedule.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDoctorSchedule.Image = ((System.Drawing.Image)(resources.GetObject("btnDoctorSchedule.Image")));
-            this.btnDoctorSchedule.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDoctorSchedule.Location = new System.Drawing.Point(0, 0);
-            this.btnDoctorSchedule.Name = "btnDoctorSchedule";
-            this.btnDoctorSchedule.Size = new System.Drawing.Size(180, 60);
-            this.btnDoctorSchedule.TabIndex = 0;
-            this.btnDoctorSchedule.Text = "Doctors Schedule";
-            this.btnDoctorSchedule.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnDoctorSchedule.UseVisualStyleBackColor = true;
-            this.btnDoctorSchedule.Click += new System.EventHandler(this.btnDoctorSchedule_Click);
             // 
             // pnlNewAppt
             // 
@@ -626,6 +598,34 @@
             this.pnlDataGrid.Size = new System.Drawing.Size(922, 509);
             this.pnlDataGrid.TabIndex = 9;
             // 
+            // btnDoctorSchedule
+            // 
+            this.btnDoctorSchedule.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnDoctorSchedule.FlatAppearance.BorderSize = 0;
+            this.btnDoctorSchedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDoctorSchedule.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDoctorSchedule.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDoctorSchedule.Image = ((System.Drawing.Image)(resources.GetObject("btnDoctorSchedule.Image")));
+            this.btnDoctorSchedule.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnDoctorSchedule.Location = new System.Drawing.Point(0, 0);
+            this.btnDoctorSchedule.Name = "btnDoctorSchedule";
+            this.btnDoctorSchedule.Size = new System.Drawing.Size(180, 60);
+            this.btnDoctorSchedule.TabIndex = 0;
+            this.btnDoctorSchedule.Text = "Doctors Schedule";
+            this.btnDoctorSchedule.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDoctorSchedule.UseVisualStyleBackColor = true;
+            this.btnDoctorSchedule.Click += new System.EventHandler(this.btnDoctorSchedule_Click);
+            // 
+            // pnlChangeDoctor
+            // 
+            this.pnlChangeDoctor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlChangeDoctor.Controls.Add(this.btnDoctorSchedule);
+            this.pnlChangeDoctor.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlChangeDoctor.Location = new System.Drawing.Point(740, 0);
+            this.pnlChangeDoctor.Name = "pnlChangeDoctor";
+            this.pnlChangeDoctor.Size = new System.Drawing.Size(181, 62);
+            this.pnlChangeDoctor.TabIndex = 8;
+            // 
             // Schedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -641,7 +641,6 @@
             this.pnlEditAppt.ResumeLayout(false);
             this.pnlCancelAppt.ResumeLayout(false);
             this.pnlLookupAppt.ResumeLayout(false);
-            this.pnlChangeDoctor.ResumeLayout(false);
             this.pnlNewAppt.ResumeLayout(false);
             this.pnlHome.ResumeLayout(false);
             this.pnlControls.ResumeLayout(false);
@@ -661,6 +660,7 @@
             this.pnlIllness.ResumeLayout(false);
             this.pnlFollowUp.ResumeLayout(false);
             this.pnlDataGrid.ResumeLayout(false);
+            this.pnlChangeDoctor.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -672,8 +672,6 @@
         private System.Windows.Forms.Button btnCancelAppt;
         private System.Windows.Forms.Panel pnlLookupAppt;
         private System.Windows.Forms.Button btnLookupAppt;
-        private System.Windows.Forms.Panel pnlChangeDoctor;
-        private System.Windows.Forms.Button btnDoctorSchedule;
         private System.Windows.Forms.Panel pnlNewAppt;
         private System.Windows.Forms.Button btnNewAppt;
         private System.Windows.Forms.Panel pnlHome;
@@ -709,5 +707,7 @@
         private System.Windows.Forms.Button btnCombo;
         private System.Windows.Forms.Panel pnlCombo;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel pnlChangeDoctor;
+        private System.Windows.Forms.Button btnDoctorSchedule;
     }
 }

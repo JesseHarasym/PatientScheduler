@@ -2,6 +2,7 @@
 
 namespace PatientScheduler.Main.Controller.DataStructures.Schedule
 {
+    //base class used to store weekly schedules into a list
     public class WeeklySchedule
     {
         public string Day;

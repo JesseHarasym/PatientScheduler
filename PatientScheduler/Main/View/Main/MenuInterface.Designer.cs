@@ -1,6 +1,6 @@
 ﻿namespace PatientScheduler.Components.Main
 {
-    partial class CentralScreen
+    partial class MenuInterface
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CentralScreen));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuInterface));
             this.pnlMain = new System.Windows.Forms.Panel();
             this.pnlWelcome = new System.Windows.Forms.Panel();
             this.lblWelcome = new System.Windows.Forms.Label();
@@ -342,7 +342,7 @@
             this.lblLogo.Text = "Patient Scheduler";
             this.lblLogo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // CentralScreen
+            // MenuInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -353,9 +353,9 @@
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.titleBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "CentralScreen";
+            this.Name = "MenuInterface";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CentralScreen";
+            this.Text = "MenuInterface";
             this.Load += new System.EventHandler(this.CentralScreen_Load);
             this.pnlWelcome.ResumeLayout(false);
             this.pnlSettings.ResumeLayout(false);
