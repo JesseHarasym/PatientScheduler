@@ -1,6 +1,7 @@
 # PatientScheduler
 
-# A windows 10 desktop application for internally scheduling doctors appointments. Made with C#, WinForms and T-SQL
+# A windows 10 desktop application for internally scheduling doctors appointments. 
+# Made with C#, WinForms and T-SQL
 
 ## Getting Started
 
